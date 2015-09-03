@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Guest;
+namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Models\Category;
+use App\Models\Country;
 use Cache;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class AdvertisingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,20 +18,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $categoryList = Cache::remember('categoryListColums', 60, function () {
-            $category = Category::MainCategory()->with('getSubCategory')->get();
-            $columCount = count($category) % 3;
-            return [
-                $category->slice(0, $columCount),
-                $category->slice($columCount * 2, $columCount),
-                $category->slice($columCount * 3),
-            ];
-        });
 
-
-        return view('guest.index', [
-            'categoryList' => $categoryList
-        ]);
     }
 
     /**
@@ -40,7 +28,18 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+        $categoryList = Cache::remember('categoryList', 60, function () {
+            return Category::MainCategory()->with('getSubCategory')->get();
+        });
+
+        $countryList = Cache::remember('countryList', 60, function () {
+            return Country::all();
+        });
+
+        return view('account.advertisingCreate', [
+            'categoryList' => $categoryList,
+            'countryList' => $countryList,
+        ]);
     }
 
     /**

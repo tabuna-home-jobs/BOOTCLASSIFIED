@@ -22,3 +22,8 @@ Route::group(['namespace' => 'Guest'], function () {
     Route::resource('/', 'IndexController@index');
     Route::resource('category', 'CategoryController');
 });
+
+
+Route::group(['namespace' => 'Account'], function () {
+    Route::resource('advertising', 'AdvertisingController');
+});

@@ -62,13 +62,16 @@
                                     <li><a href="#"><i class=" icon-money "></i> Payment history </a></li>
                                 </ul>
                             </li>
+
+                            <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger"
+                                                   href="{{ route('advertising.create') }}">Подать объявление</a></li>
                         @else
                             <li><a href="{{ url('/auth/login') }}">Войти</a></li>
                             <li><a href="{{ url('/auth/register') }}">Зарегистрироваться</a></li>
+                            <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger"
+                                                   href="{{ url('/auth/register') }}">Подать объявление</a></li>
                         @endif
 
-                        <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger" href="#">Post Free
-                                Add</a></li>
                     </ul>
                 </div>
 
@@ -96,15 +99,14 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/js/owl.carousel.min.js"></script>
-
 <script src="/assets/js/form-validation.js"></script>
-
+<script src="/assets/js/jquery.matchHeight-min.js"></script>
+<script src="/assets/js/hideMaxListItem.js"></script>
 <script src="/assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
 <script src="/assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
-
 <script src="/assets/js/script.js"></script>
+
 </body>
 </html>
