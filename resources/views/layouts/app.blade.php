@@ -9,9 +9,12 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="/assets/ico/favicon.png">
-    <title>BOOTCLASIFIED - Responsive Classified Theme</title>
+    <title>Доска обьявлений</title>
 
     <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <link href="/assets/css/style.css" rel="stylesheet">
 
@@ -24,11 +27,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-    <script>
-        paceOptions = {
-            elements: true
-        };
-    </script>
     <script src="/assets/js/pace.min.js"></script>
 </head>
 <body>
@@ -43,7 +41,7 @@
                     <a href="{{ url('/') }}" class="navbar-brand logo logo-title">
 
                         <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>
-                        BOOT<span>CLASSIFIED </span> </a></div>
+                        Доска<span>Обьявлений </span> </a></div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
 
@@ -85,9 +83,12 @@
     <div class="footer" id="footer">
         <div class="container">
             <ul class=" pull-left navbar-link footer-nav">
-                <li><a href="{{ url('/') }}"> Home </a> <a href="#"> About us </a> <a href="#"> Terms and
-                        Conditions </a> <a href="#"> Privacy Policy </a> <a href="contact.html"> Contact us </a> <a
-                            href="faq.html"> FAQ </a>
+                <li>
+                    <a href="{{ url('/') }}"> Главная </a>
+                    <a href="{{ route('about.index') }}"> О нас </a>
+                    <a href="{{ route('about.index') }}"> Правила </a>
+                    <a href="{{ route('faq.index') }}"> Помощь </a>
+                </li>
             </ul>
             <ul class=" pull-right navbar-link footer-nav">
                 <li> &copy; 2015 BootClassified</li>

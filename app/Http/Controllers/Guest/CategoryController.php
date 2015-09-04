@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -45,10 +46,39 @@ class CategoryController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function show($category)
     {
-        return view('guest.category', [
-        ]);
+
+        if (!$category->category_id) {
+
+            $categoryList = Category::MainCategory()->get();
+            $advertising = $category->getSubCategory()->with('getAdvertising')->get();
+
+
+            return view('guest.category', [
+                'categoryList' => $categoryList,
+                'advertising' => $advertising,
+            ]);
+
+
+        } else {
+            $categoryMain = Category::find($category->category_id);
+            $categorySub = $categoryMain->getSubCategory()->get();
+            $advertising = $category->with('getAdvertising')->get();
+
+            return view('guest.category', [
+                'categoryMain' => $categoryMain,
+                'categorySub' => $categorySub,
+                'advertising' => $advertising
+            ]);
+
+
+        }
+
+
+
+
+
     }
 
     /**

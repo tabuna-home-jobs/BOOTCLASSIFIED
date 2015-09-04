@@ -4,12 +4,9 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use App\Models\Advertising;
-use App\Models\Category;
-use Cache;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,27 +15,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $categoryList = Cache::remember('categoryListColums', 60, function () {
-            $category = Category::MainCategory()->with('getSubCategory')->orderBy('name', 'ASC')->get();
-            $columCount = ceil(count($category) / 3);
-
-            return [
-                $category->slice(0, $columCount),
-                $category->slice($columCount, $columCount),
-                $category->slice($columCount * 2),
-            ];
-        });
-
-
-        $popularCategory = Cache::remember('popularCategory', 60, function () {
-            return  Advertising::popularCategory()->get();
-        });
-
-
-        return view('guest.index', [
-            'categoryList' => $categoryList,
-            'popularCategory' => $popularCategory
-        ]);
+        return view('guest.aboutUs');
     }
 
     /**

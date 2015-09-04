@@ -55,14 +55,14 @@ class Advertising extends Model
     public function scopePopularCategory($query)
     {
         return $query
-            ->join('category', 'category.category.id', '=', 'advertising.id')
-            ->selectRaw('category_id, count(advertising.id) as count')
+            ->join('category', 'category.id', '=', 'advertising.id')
+            ->selectRaw('category.name, category.slug ,advertising.category_id, count(advertising.id) as count')
             ->groupBy('category_id')
             ->orderBy('count', 'desc')
             ->limit(10);
-
-
     }
+
+
 
 
 

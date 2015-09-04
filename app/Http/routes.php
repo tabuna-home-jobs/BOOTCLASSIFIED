@@ -20,6 +20,8 @@ Route::controllers([
 
 Route::group(['namespace' => 'Guest'], function () {
     Route::resource('/', 'IndexController@index');
+    Route::resource('about', 'AboutController@index');
+    Route::resource('faq', 'FAQController@index');
     Route::resource('category', 'CategoryController');
 });
 

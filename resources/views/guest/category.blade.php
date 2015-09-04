@@ -8,13 +8,13 @@
         <div class="container ">
             <form action="#" method="GET">
                 <div class="col-sm-3">
-                    <input class="form-control keyword" type="text" placeholder="e.g. Mobile Sale">
+                    <input class="form-control keyword" type="text" placeholder="Я ищу ...">
                 </div>
                 <div class="col-sm-3">
                     <div class="selecter  closed" tabindex="0"><select class="form-control selecter selecter-element"
                                                                        name="category" id="search-category"
                                                                        tabindex="-1">
-                            <option value="" class="selecter-placeholder" selected="">Select An Item</option>
+                            <option value="" class="selecter-placeholder" selected="">Я ищу ...</option>
                             <option selected="selected" value="">All Categories</option>
                             <option value="Vehicles" style="background-color:#E9E9E9;font-weight:bold;"
                                     disabled="disabled"> - Vehicles -
@@ -62,7 +62,7 @@
                                     disabled="disabled"> - Extra -
                             </option>
                             <option value="Other"> Other</option>
-                        </select><span class="selecter-selected">All Categories</span>
+                        </select><span class="selecter-selected">Все категории</span>
 
                         <div class="selecter-options scroller">
                             <div class="scroller-bar" style="height: 100px;">
@@ -119,7 +119,7 @@
                     <div class="selecter  closed" tabindex="0"><select class="form-control selecter selecter-element"
                                                                        name="location" id="id-location" tabindex="-1">
                             <option value="" class="selecter-placeholder" selected="">Select An Item</option>
-                            <option selected="selected" value="">All Locations</option>
+                            <option selected="selected" value="">Мой город...</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -172,7 +172,7 @@
                             <option value="WI">Wisconsin</option>
                             <option value="WY">Wyoming</option>
                             <option value="Other-Locations">Other Locations</option>
-                        </select><span class="selecter-selected">All Locations</span>
+                        </select><span class="selecter-selected">Мой город...</span>
 
                         <div class="selecter-options scroller">
                             <div class="scroller-bar" style="height: 100px;">
@@ -256,75 +256,12 @@
     <div class="main-container">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3 page-sidebar">
-                    <aside>
-                        <div class="inner-box">
-                            <div class="categories-list  list-filter">
-                                <h5 class="list-title"><strong><a href="#">All Categories</a></strong></h5>
-                                <ul class=" list-unstyled">
-                                    <li><a href="sub-category-sub-location.html"><span
-                                                    class="title">Electronics</span><span
-                                                    class="count">&nbsp;8626</span></a></li>
-                                    <li><a href="sub-category-sub-location.html"><span class="title">Automobiles </span><span
-                                                    class="count">&nbsp;123</span></a></li>
-                                    <li><a href="sub-category-sub-location.html"><span
-                                                    class="title">Property </span><span
-                                                    class="count">&nbsp;742</span></a></li>
-                                    <li><a href="sub-category-sub-location.html"><span
-                                                    class="title">Services </span><span class="count">&nbsp;8525</span></a>
-                                    </li>
-                                    <li><a href="sub-category-sub-location.html"><span
-                                                    class="title">For Sale </span><span
-                                                    class="count">&nbsp;357</span></a></li>
-                                    <li><a href="sub-category-sub-location.html"><span
-                                                    class="title">Learning </span><span class="count">&nbsp;3576</span></a>
-                                    </li>
-                                    <li><a href="sub-category-sub-location.html"><span class="title">Jobs </span><span
-                                                    class="count">&nbsp;453</span></a></li>
-                                    <li><a href="sub-category-sub-location.html"><span
-                                                    class="title">Cars &amp; Vehicles</span><span class="count">&nbsp;801</span></a>
-                                    </li>
-                                    <li><a href="sub-category-sub-location.html"><span class="title">Other</span><span
-                                                    class="count">&nbsp;9803</span></a></li>
-                                </ul>
-                            </div>
 
 
-                            <div class="locations-list  list-filter">
-                                <h5 class="list-title"><strong><a href="#">Price range</a></strong></h5>
+                @if(isset($categoryList))
+                    @include('layouts.MainCategoryBlock')
+                @endif
 
-                                <form role="form" class="form-inline ">
-                                    <div class="form-group col-sm-4 no-padding">
-                                        <input type="text" placeholder="$ 2000 " id="minPrice" class="form-control">
-                                    </div>
-                                    <div class="form-group col-sm-1 no-padding text-center"> -</div>
-                                    <div class="form-group col-sm-4 no-padding">
-                                        <input type="text" placeholder="$ 3000 " id="maxPrice" class="form-control">
-                                    </div>
-                                    <div class="form-group col-sm-3 no-padding">
-                                        <button class="btn btn-default pull-right" type="submit">GO</button>
-                                    </div>
-                                </form>
-                                <div style="clear:both"></div>
-                            </div>
-
-                            <div class="locations-list  list-filter">
-                                <h5 class="list-title"><strong><a href="#">Seller</a></strong></h5>
-                                <ul class="browse-list list-unstyled long-list">
-                                    <li><a href="sub-category-sub-location.html"><strong>All Ads</strong> <span
-                                                    class="count">228,705</span></a></li>
-                                    <li><a href="sub-category-sub-location.html">Business <span
-                                                    class="count">28,705</span></a></li>
-                                    <li><a href="sub-category-sub-location.html">Personal <span
-                                                    class="count">18,705</span></a></li>
-                                </ul>
-                            </div>
-
-
-                        </div>
-
-                    </aside>
-                </div>
 
                 <div class="col-sm-9 page-content col-thin-left">
                     <div class="category-list">
@@ -332,11 +269,12 @@
 
                             <ul class="nav nav-tabs add-tabs" id="ajaxTabs" role="tablist">
                                 <li class="active"><a href="#allAds" data-url="ajax/1.html" role="tab"
-                                                      data-toggle="tab">All Ads <span class="badge">228,705</span></a>
+                                                      data-toggle="tab">Все обьявления <span
+                                                class="badge">228,705</span></a>
                                 </li>
-                                <li><a href="#businessAds" data-url="ajax/2.html" role="tab" data-toggle="tab">Business
+                                <li><a href="#businessAds" data-url="ajax/2.html" role="tab" data-toggle="tab">Компании
                                         <span class="badge">22,805</span></a></li>
-                                <li><a href="#personalAds" data-url="ajax/3.html" role="tab" data-toggle="tab">Personal
+                                <li><a href="#personalAds" data-url="ajax/3.html" role="tab" data-toggle="tab">Частные
                                         <span class="badge">18,705</span></a></li>
                             </ul>
                             <div class="tab-filter">
@@ -367,9 +305,9 @@
 
                         <div class="listing-filter">
                             <div class="pull-left col-xs-6">
-                                <div class="breadcrumb-list"><a href="#" class="current"> <span>All ads</span></a> in
-                                    New York <a href="#selectRegion" id="dropdownMenu1" data-toggle="modal"> <span
-                                                class="caret"></span> </a></div>
+                                <div class="breadcrumb-list"><a href="#" class="current">
+                                        <span>Искать</span></a> по фильтру?
+                                </div>
                             </div>
                             <div class="pull-right col-xs-6 text-right listing-view-action"><span
                                         class="list-view active"><i class="  icon-th"></i></span> <span
@@ -389,7 +327,7 @@
                                             <div class="add-image"><span class="photo-count"><i
                                                             class="fa fa-camera"></i> 2 </span> <a
                                                         href="ads-details.html"><img class="thumbnail no-margin"
-                                                                                     src="images/item/tp/Image00015.jpg"
+                                                                                     src="/images/item/tp/Image00015.jpg"
                                                                                      alt="img"></a></div>
                                         </div>
 
@@ -397,71 +335,30 @@
                                             <div class="add-details">
                                                 <h5 class="add-title"><a href="ads-details.html">
                                                         Brand New Samsung Phones </a></h5>
-                                                <span class="info-row"> <span class="add-type business-ads tooltipHere"
-                                                                              data-toggle="tooltip"
-                                                                              data-placement="right" title=""
-                                                                              data-original-title="Business Ads">B </span> <span
+                                                <span class="info-row"><span
                                                             class="date"><i
-                                                                class=" icon-clock"> </i> Today 1:21 pm </span> - <span
-                                                            class="category">Electronics </span>- <span
-                                                            class="item-location"><i class="fa fa-map-marker"></i> London </span> </span>
+                                                                class=" icon-clock"> </i>Два часа назад </span> - <span
+                                                            class="category">Электроника </span>- <span
+                                                            class="item-location"><i class="fa fa-map-marker"></i> Липецк </span> </span>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-3 text-right  price-box">
-                                            <h2 class="item-price"> $ 320 </h2>
-                                            <a class="btn btn-danger  btn-sm make-favorite"> <i
-                                                        class="fa fa-certificate"></i> <span>Top Ads</span> </a> <a
+                                            <h2 class="item-price"><i class="fa fa-rub"></i> 320 </h2> <a
                                                     class="btn btn-default  btn-sm make-favorite"> <i
-                                                        class="fa fa-heart"></i> <span>Save</span> </a></div>
-
-                                    </div>
-
-                                    <div class="item-list">
-                                        <div class="cornerRibbons featuredAds">
-                                            <a href="#"> Featured Ads</a>
-                                        </div>
-                                        <div class="col-sm-2 no-padding photobox">
-                                            <div class="add-image"><span class="photo-count"><i
-                                                            class="fa fa-camera"></i> 2 </span> <a
-                                                        href="ads-details.html"><img class="thumbnail no-margin"
-                                                                                     src="images/item/tp/Image00008.jpg"
-                                                                                     alt="img"></a></div>
-                                        </div>
-
-                                        <div class="col-sm-7 add-desc-box">
-                                            <div class="add-details">
-                                                <h5 class="add-title"><a href="ads-details.html">
-                                                        Sony Xperia dual sim 100% brand new </a></h5>
-                                                <span class="info-row"> <span class="add-type business-ads tooltipHere"
-                                                                              data-toggle="tooltip"
-                                                                              data-placement="right" title=""
-                                                                              data-original-title="Business Ads">B </span> <span
-                                                            class="date"><i
-                                                                class=" icon-clock"> </i> Today 1:21 pm </span> - <span
-                                                            class="category">Electronics </span>- <span
-                                                            class="item-location"><i class="fa fa-map-marker"></i> London </span> </span>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-3 text-right  price-box">
-                                            <h2 class="item-price"> $ 250 </h2>
-                                            <a class="btn btn-danger  btn-sm make-favorite"> <i
-                                                        class="fa fa-certificate"></i> <span>Featured Ads</span> </a> <a
-                                                    class="btn btn-default  btn-sm make-favorite"> <i
-                                                        class="fa fa-heart"></i> <span>Save</span> </a></div>
+                                                        class="fa fa-heart"></i> <span>Сохранить</span> </a></div>
 
                                     </div>
 
                                     <div class="item-list">
                                         <div class="cornerRibbons urgentAds">
-                                            <a href="#"> Urgent</a>
+                                            <a href="#"> Срочный</a>
                                         </div>
                                         <div class="col-sm-2 no-padding photobox">
                                             <div class="add-image"><span class="photo-count"><i
                                                             class="fa fa-camera"></i> 2 </span> <a
                                                         href="ads-details.html"><img class="thumbnail no-margin"
-                                                                                     src="images/item/tp/Image00014.jpg"
+                                                                                     src="/images/item/tp/Image00014.jpg"
                                                                                      alt="img"></a></div>
                                         </div>
 
@@ -469,64 +366,28 @@
                                             <div class="add-details">
                                                 <h5 class="add-title"><a href="ads-details.html"> Samsung Galaxy S Dous
                                                         (Brand New/ Intact Box) With 1year Warranty </a></h5>
-                                                <span class="info-row"> <span class="add-type business-ads tooltipHere"
-                                                                              data-toggle="tooltip"
-                                                                              data-placement="right" title=""
-                                                                              data-original-title="Business Ads">B </span> <span
+                                                <span class="info-row">  <span
                                                             class="date"><i
-                                                                class=" icon-clock"> </i> Today 1:21 pm </span> - <span
-                                                            class="category">Electronics </span>- <span
-                                                            class="item-location"><i class="fa fa-map-marker"></i> London </span> </span>
+                                                                class=" icon-clock"> </i>Два часа назад </span> - <span
+                                                            class="category">Электроника </span>- <span
+                                                            class="item-location"><i class="fa fa-map-marker"></i> Липецк </span> </span>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-3 text-right  price-box">
-                                            <h2 class="item-price"> $ 230</h2>
-                                            <a class="btn btn-danger  btn-sm make-favorite"> <i
-                                                        class="fa fa-certificate"></i> <span>Urgent</span> </a> <a
-                                                    class="btn btn-default  btn-sm make-favorite"> <i
-                                                        class="fa fa-heart"></i> <span>Save</span> </a></div>
-
-                                    </div>
-
-                                    <div class="item-list">
-                                        <div class="col-sm-2 no-padding photobox">
-                                            <div class="add-image"><span class="photo-count"><i
-                                                            class="fa fa-camera"></i> 2 </span> <a
-                                                        href="ads-details.html"><img class="thumbnail no-margin"
-                                                                                     src="images/item/tp/Image00003.jpg"
-                                                                                     alt="img"></a></div>
-                                        </div>
-
-                                        <div class="col-sm-7 add-desc-box">
-                                            <div class="add-details">
-                                                <h5 class="add-title"><a href="ads-details.html"> MSI GE70 Apache
-                                                        Pro-061 17.3" Core i5-4200H/8GB DDR3/NV GTX860M Gaming
-                                                        Laptop </a></h5>
-                                                <span class="info-row"> <span class="add-type business-ads tooltipHere"
-                                                                              data-toggle="tooltip"
-                                                                              data-placement="right" title=""
-                                                                              data-original-title="Business Ads">B </span> <span
-                                                            class="date"><i
-                                                                class=" icon-clock"> </i> Today 1:21 pm </span> - <span
-                                                            class="category">Electronics </span>- <span
-                                                            class="item-location"><i class="fa fa-map-marker"></i> London </span> </span>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-3 text-right  price-box">
-                                            <h2 class="item-price"> $ 400 </h2>
+                                            <h2 class="item-price"><i class="fa fa-rub"></i> 230</h2>
                                             <a class="btn btn-default  btn-sm make-favorite"> <i
-                                                        class="fa fa-heart"></i> <span>Save</span> </a></div>
+                                                        class="fa fa-heart"></i> <span>Сохранить</span> </a></div>
 
                                     </div>
+
 
                                     <div class="item-list">
                                         <div class="col-sm-2 no-padding photobox">
                                             <div class="add-image"><span class="photo-count"><i
                                                             class="fa fa-camera"></i> 2 </span> <a
                                                         href="ads-details.html"><img class="thumbnail no-margin"
-                                                                                     src="images/item/tp/Image00022.jpg"
+                                                                                     src="/images/item/tp/Image00022.jpg"
                                                                                      alt="img"></a></div>
                                         </div>
 
@@ -534,21 +395,18 @@
                                             <div class="add-details">
                                                 <h5 class="add-title"><a href="ads-details.html"> Apple iPod touch 16 GB
                                                         3rd Generation </a></h5>
-                                                <span class="info-row"> <span class="add-type business-ads tooltipHere"
-                                                                              data-toggle="tooltip"
-                                                                              data-placement="right" title=""
-                                                                              data-original-title="Business Ads">B </span> <span
+                                                <span class="info-row"> <span
                                                             class="date"><i
-                                                                class=" icon-clock"> </i> Today 1:21 pm </span> - <span
-                                                            class="category">Electronics </span>- <span
-                                                            class="item-location"><i class="fa fa-map-marker"></i> London </span> </span>
+                                                                class=" icon-clock"> </i>Два часа назад </span> - <span
+                                                            class="category">Электроника </span>- <span
+                                                            class="item-location"><i class="fa fa-map-marker"></i> Липецк </span> </span>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-3 text-right  price-box">
-                                            <h2 class="item-price"> $ 150 </h2>
+                                            <h2 class="item-price"><i class="fa fa-rub"></i> 150 </h2>
                                             <a class="btn btn-default  btn-sm make-favorite"> <i
-                                                        class="fa fa-heart"></i> <span>Save</span> </a></div>
+                                                        class="fa fa-heart"></i> <span>Сохранить</span> </a></div>
 
                                     </div>
 
@@ -557,7 +415,7 @@
                                             <div class="add-image"><span class="photo-count"><i
                                                             class="fa fa-camera"></i> 2 </span> <a
                                                         href="ads-details.html"><img class="thumbnail no-margin"
-                                                                                     src="images/item/FreeGreatPicture.com-46405-google-drops-price-of-nexus-4-smartphone.jpg"
+                                                                                     src="/images/item/FreeGreatPicture.com-46405-google-drops-price-of-nexus-4-smartphone.jpg"
                                                                                      alt="img"></a></div>
                                         </div>
 
@@ -565,21 +423,18 @@
                                             <div class="add-details">
                                                 <h5 class="add-title"><a href="ads-details.html"> Google drops Nexus 4
                                                         by $100, offers 15 day price protection refund </a></h5>
-                                                <span class="info-row"> <span class="add-type business-ads tooltipHere"
-                                                                              data-toggle="tooltip"
-                                                                              data-placement="right" title=""
-                                                                              data-original-title="Business Ads">B </span> <span
+                                                <span class="info-row"> <span
                                                             class="date"><i
-                                                                class=" icon-clock"> </i> Today 1:21 pm </span> - <span
-                                                            class="category">Electronics </span>- <span
-                                                            class="item-location"><i class="fa fa-map-marker"></i> London </span> </span>
+                                                                class=" icon-clock"> </i>Два часа назад </span> - <span
+                                                            class="category">Электроника </span>- <span
+                                                            class="item-location"><i class="fa fa-map-marker"></i> Липецк </span> </span>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-3 text-right  price-box">
-                                            <h2 class="item-price"> $ 150 </h2>
+                                            <h2 class="item-price"><i class="fa fa-rub"></i> 150 </h2>
                                             <a class="btn btn-default  btn-sm make-favorite"> <i
-                                                        class="fa fa-heart"></i> <span>Save</span> </a></div>
+                                                        class="fa fa-heart"></i> <span>Сохранить</span> </a></div>
 
                                     </div>
 
@@ -588,7 +443,7 @@
                                             <div class="add-image"><span class="photo-count"><i
                                                             class="fa fa-camera"></i> 2 </span> <a
                                                         href="ads-details.html"><img class="thumbnail no-margin"
-                                                                                     src="images/item/FreeGreatPicture.com-46404-google-drops-nexus-4-by-100-offers-15-day-price-protection-refund.jpg"
+                                                                                     src="/images/item/FreeGreatPicture.com-46404-google-drops-nexus-4-by-100-offers-15-day-price-protection-refund.jpg"
                                                                                      alt="img"></a></div>
                                         </div>
 
@@ -596,21 +451,18 @@
                                             <div class="add-details">
                                                 <h5 class="add-title"><a href="ads-details.html"> Google drops Nexus
                                                         4 </a></h5>
-                                                <span class="info-row"> <span class="add-type business-ads tooltipHere"
-                                                                              data-toggle="tooltip"
-                                                                              data-placement="right" title=""
-                                                                              data-original-title="Business Ads">B </span> <span
+                                                <span class="info-row"> <span
                                                             class="date"><i
-                                                                class=" icon-clock"> </i> Today 1:21 pm </span> - <span
-                                                            class="category">Electronics </span>- <span
-                                                            class="item-location"><i class="fa fa-map-marker"></i> London </span> </span>
+                                                                class=" icon-clock"> </i>Два часа назад </span> - <span
+                                                            class="category">Электроника </span>- <span
+                                                            class="item-location"><i class="fa fa-map-marker"></i> Липецк </span> </span>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-3 text-right  price-box">
-                                            <h2 class="item-price"> $ 150 </h2>
+                                            <h2 class="item-price"><i class="fa fa-rub"></i> 150 </h2>
                                             <a class="btn btn-default  btn-sm make-favorite"> <i
-                                                        class="fa fa-heart"></i> <span>Save</span> </a></div>
+                                                        class="fa fa-heart"></i> <span>Сохранить</span> </a></div>
 
                                     </div>
                                 </div>
@@ -621,21 +473,24 @@
 
                     </div>
                     <div class="pagination-bar text-center">
-                        <ul class="pagination">
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#"> ...</a></li>
-                            <li><a class="pagination-btn" href="#">Next »</a></li>
-                        </ul>
+
+
+                        <nav>
+                            <ul class="pager">
+                                <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span>
+                                        Назад</a></li>
+                                <li class="next"><a href="#">Дальше <span aria-hidden="true">&rarr;</span></a></li>
+                            </ul>
+                        </nav>
+
+
                     </div>
 
                     <div class="post-promo text-center">
-                        <h2> Do you get anything for sell ? </h2>
-                        <h5>Sell your products online FOR FREE. It's easier than you think !</h5>
-                        <a href="post-ads.html" class="btn btn-lg btn-border btn-post btn-danger">Post a Free Ad </a>
+                        <h2> Есть что нибудь для продажи? </h2>
+                        <h5>Продавать свои товары онлайн бесплатно. Это проще, чем вы думаете!</h5>
+                        <a href="{{route('advertising.create')}}" class="btn btn-lg btn-border btn-post btn-danger">Подать
+                            объявление</a>
                     </div>
 
                 </div>
