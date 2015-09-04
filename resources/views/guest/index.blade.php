@@ -9,25 +9,25 @@
         <div class="dtable hw100">
             <div class="dtable-cell hw100">
                 <div class="container text-center">
-                    <h1 class="intro-title animated fadeInDown"> Find Classified Ads </h1>
+                    <h1 class="intro-title animated fadeInDown"> Доска обьявлений </h1>
 
-                    <p class="sub animateme fittext3 animated fadeIn"> Find local classified ads on bootclassified in
-                        Minutes </p>
+                    <p class="sub animateme fittext3 animated fadeIn"> Найдите объявление в своем городе
+                        за пару минут </p>
 
                     <div class="row search-row animated fadeInUp">
                         <div class="col-lg-4 col-sm-4 search-col relative locationicon">
                             <i class="icon-location-2 icon-append"></i>
                             <input type="text" name="country" id="autocomplete-ajax"
                                    class="form-control locinput input-rel searchtag-input has-icon"
-                                   placeholder="City/Zipcode..." value="" autocomplete="off">
+                                   placeholder="Мой город..." value="" autocomplete="off">
                         </div>
                         <div class="col-lg-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
                             <input type="text" name="ads" class="form-control has-icon"
-                                   placeholder="I'm looking for a ..." value="">
+                                   placeholder="Я хочу найти..." value="">
                         </div>
                         <div class="col-lg-4 col-sm-4 search-col">
                             <button class="btn btn-primary btn-search btn-block"><i
-                                        class="icon-search"></i><strong>Find</strong></button>
+                                        class="icon-search"></i><strong>Найти</strong></button>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-sm-9 page-content col-thin-right">
                     <div class="inner-box category-content">
-                        <h2 class="title-2">Find Classified Ads World Wide </h2>
+                        <h2 class="title-2">Найдите объявление в своем городе </h2>
 
                         <div class="row">
                             <div class="col-md-4 col-sm-4 ">
@@ -162,7 +162,7 @@
                             <div class="iconbox-wrap-content">
                                 <h5><span>2200</span></h5>
 
-                                <div class="iconbox-wrap-text">Trusted Seller</div>
+                                <div class="iconbox-wrap-text">Пользователей</div>
                             </div>
                         </div>
 
@@ -177,7 +177,7 @@
                             <div class="iconbox-wrap-content">
                                 <h5><span>100</span></h5>
 
-                                <div class="iconbox-wrap-text">Categories</div>
+                                <div class="iconbox-wrap-text">Категорий</div>
                             </div>
                         </div>
 
@@ -192,7 +192,7 @@
                             <div class="iconbox-wrap-content">
                                 <h5><span>700</span></h5>
 
-                                <div class="iconbox-wrap-text">Location</div>
+                                <div class="iconbox-wrap-text">Городов</div>
                             </div>
                         </div>
 
@@ -202,12 +202,12 @@
                     <div class="iconbox-wrap">
                         <div class="iconbox">
                             <div class="iconbox-wrap-icon">
-                                <i class="icon icon-facebook"></i>
+                                <i class="icon fa fa-calendar-o"></i>
                             </div>
                             <div class="iconbox-wrap-content">
                                 <h5><span>50,000</span></h5>
 
-                                <div class="iconbox-wrap-text"> Facebook Fans</div>
+                                <div class="iconbox-wrap-text">Обьявлений</div>
                             </div>
                         </div>
 

@@ -7,7 +7,7 @@ use App\Http\Requests;
 use App\Models\Category;
 use Cache;
 use Illuminate\Http\Request;
-
+use App\Models\Advertising;
 class IndexController extends Controller
 {
     /**
@@ -28,8 +28,15 @@ class IndexController extends Controller
         });
 
 
+        $popularCategory = Cache::remember('popularCategory',-10, function () {
+            return  Advertising::popularCategory()->get();
+        });
+
+        dd($popularCategory);
+
         return view('guest.index', [
-            'categoryList' => $categoryList
+            'categoryList' => $categoryList,
+            'popularCategory' => $popularCategory
         ]);
     }
 

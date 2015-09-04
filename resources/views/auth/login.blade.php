@@ -31,42 +31,41 @@
 
                             <form role="form" method="POST" action="{{ url('/auth/login') }}">
                                 <div class="form-group">
-                                    <label for="sender-email" class="control-label">Username:</label>
+                                    <label for="sender-email" class="control-label">Email:</label>
 
                                     <div class="input-icon"><i class="icon-user fa"></i>
-                                        <input id="sender-email" placeholder="Username" type="email" name="email"
+                                        <input id="sender-email" placeholder="Email" type="email" name="email"
                                                value="{{ old('email') }}" required class="form-control email">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="user-pass" class="control-label">Password:</label>
+                                    <label for="user-pass" class="control-label">Пароль:</label>
 
                                     <div class="input-icon"><i class="icon-lock fa"></i>
                                         <input type="password" name="password" class="form-control"
-                                               placeholder="Password"
+                                               placeholder="Пароль"
                                                required id="user-pass">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     {!! csrf_field() !!}
-                                    <button type="submit" class="btn btn-primary  btn-block">Submit</button>
+                                    <button type="submit" class="btn btn-primary  btn-block">Войти</button>
                                 </div>
                             </form>
                         </div>
                         <div class="panel-footer">
                             <label class="checkbox pull-left">
                                 <input type="checkbox" value="1" name="remember" id="remember">
-                                Keep me logged in </label>
+                                Запомнить меня </label>
 
-                            <p class="text-center pull-right"><a href="{{ url('/password/email') }}"> Lost your
-                                    password? </a></p>
+                            <p class="text-center pull-right"><a href="{{ url('/password/email') }}"> Забыли пароль? </a></p>
 
                             <div style=" clear:both"></div>
                         </div>
                     </div>
                     <div class="login-box-btm text-center">
-                        <p> Don't have an account? <br>
-                            <a href="{{ url('/auth/register') }}"><strong>Sign Up !</strong> </a></p>
+                        <p> Неимеете аккаунта? <br>
+                            <a href="{{ url('/auth/register') }}"><strong>Зарегистрироваться !</strong> </a></p>
                     </div>
                 </div>
             </div>

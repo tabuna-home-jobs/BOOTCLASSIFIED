@@ -37,6 +37,11 @@ class Advertising extends Model
     ];
 
 
+    public function getCategory()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
+
     public function getImages()
     {
         return $this->hasMany('App\Models\Images');
@@ -46,6 +51,19 @@ class Advertising extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function scopePopularCategory($query)
+    {
+        return $query
+            ->join('category', 'category.category.id', '=', 'advertising.id')
+            ->selectRaw('category_id, count(advertising.id) as count')
+            ->groupBy('category_id')
+            ->orderBy('count', 'desc')
+            ->limit(10);
+
+
+    }
+
 
 
 }

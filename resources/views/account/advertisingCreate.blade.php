@@ -158,7 +158,8 @@
                                                 <label class="checkbox-inline" for="checkboxes-0">
                                                     <input name="checkboxes" id="checkboxes-0"
                                                            value="Remember above contact information." type="checkbox">
-                                                    Remember above contact information. </label>
+                                                    Я подтверждаю своё согласие с условиями<a href="terms-conditions.html"> пользовательского соглашения</a> </label>
+                                                </label>
                                             </div>
                                         </div>
 
@@ -179,23 +180,23 @@
                     <div class="reg-sidebar-inner text-center">
                         <div class="promo-text-box"><i class=" icon-picture fa fa-4x icon-color-1"></i>
 
-                            <h3><strong>Post a Free Classified</strong></h3>
 
-                            <p> Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. </p>
+                            <h3><strong>Разместить объявление бесплатно</strong></h3>
+
+                            <p> Разместить бесплатные объявления как частное лицо или компания. </p>
                         </div>
                         <div class="panel sidebar-panel">
                             <div class="panel-heading uppercase">
-                                <small><strong>How to sell quickly?</strong></small>
+                                <small><strong>КАК БЫСТРО ПРОДАТЬ?</strong></small>
                             </div>
                             <div class="panel-content">
                                 <div class="panel-body text-left">
                                     <ul class="list-check">
-                                        <li> Use a brief title and description of the item</li>
-                                        <li> Make sure you post in the correct category</li>
-                                        <li> Add nice photos to your ad</li>
-                                        <li> Put a reasonable price</li>
-                                        <li> Check the item before publish</li>
+                                        <li> Используйте краткое название и описание товара или услуги</li>
+                                        <li> Убедитесь, что вы размещаете в правильной категории</li>
+                                        <li> Добавте хорошие фотографии, чтобы ваше объявление смотрелось</li>
+                                        <li> Предложите разумную цену</li>
+                                        <li> Проверте перед публикацией</li>
                                     </ul>
                                 </div>
                             </div>

@@ -37,6 +37,14 @@ class Category extends Model
 //        return $query->where('category_id',0);
     }
 
+    public function getAdvertising()
+    {
+        return $this->hasMany('App\Models\Advertising');
+    }
+
+
+
+
 
 }
 
