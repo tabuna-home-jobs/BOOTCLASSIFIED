@@ -4,10 +4,17 @@ namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Http\Requests\Account\AdvertisingRequest;
+use App\Models\Advertising;
 use App\Models\Category;
+use App\Models\City;
 use App\Models\Country;
+use App\Models\Images;
 use Cache;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Session;
 
 class AdvertisingController extends Controller
 {
@@ -36,9 +43,16 @@ class AdvertisingController extends Controller
             return Country::all();
         });
 
+
+        $cityList = Cache::remember('cityList', 60, function () {
+            return City::all();
+        });
+
+
         return view('account.advertisingCreate', [
             'categoryList' => $categoryList,
             'countryList' => $countryList,
+            'cityList' => $cityList,
         ]);
     }
 
@@ -48,9 +62,29 @@ class AdvertisingController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(AdvertisingRequest $request)
     {
-        //
+        $advertising = new Advertising($request->all());
+        $advertising->user_id = Auth::user()->id;
+        $advertising->save();
+
+
+        foreach ($request->file('images') as $file) {
+            if (!is_null($file)) {
+                $file->move(public_path() . '/advertising/' . date("Y-m-d") . '/' . date("H"), Str::ascii(time() . '-' . $file->getClientOriginalName()));
+                $image = new Images([
+                    'advertising_id' => $advertising->id,
+                    'path' => '/advertising/' . date("Y-m-d") . '/' . date("H"),
+                    'name' => Str::ascii(time() . '-' . $file->getClientOriginalName()),
+                    'finish' => true,
+                ]);
+                $image->save();
+            }
+        }
+
+
+        Session::flash('good', 'Вы успешно изменили значения');
+        return redirect('/');
     }
 
     /**

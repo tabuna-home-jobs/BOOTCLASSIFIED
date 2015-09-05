@@ -13,14 +13,15 @@
 
                         <div class="row">
                             <div class="col-sm-12">
-                                <form class="form-horizontal">
+                                <form class="form-horizontal" action="{{route('advertising.store')}}" method="post"
+                                      enctype="multipart/form-data">
                                     <fieldset>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Категория</label>
 
                                             <div class="col-md-8">
-                                                <select name="category-group" id="category-group" class="form-control">
+                                                <select name="category_id" id="category_id" class="form-control">
                                                     <option disabled selected="selected"> Выберите категорию ...
                                                     </option>
 
@@ -46,42 +47,43 @@
 
                                             <div class="col-md-8">
                                                 <label class="radio-inline" for="radios-0">
-                                                    <input name="radios" id="radios-0" value="Private" checked="checked"
+                                                    <input name="type" id="type-0" value="0" checked="checked"
                                                            type="radio">
                                                     Личный </label>
                                                 <label class="radio-inline" for="radios-1">
-                                                    <input name="radios" id="radios-1" value="Business" type="radio">
+                                                    <input name="type" id="type-1" value="1" type="radio">
                                                     Бизнес </label>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="Adtitle">Заголовок</label>
+                                            <label class="col-md-3 control-label" for="title">Заголовок</label>
 
                                             <div class="col-md-8">
-                                                <input id="Adtitle" name="Adtitle" placeholder="Заголовок обьявления"
+                                                <input id="title" name="title" placeholder="Заголовок обьявления"
                                                        class="form-control input-md" required="" type="text">
                                                 <span class="help-block">Не пишите в заголовке цену и контактную информацию — для этого есть отдельные поля — и не используйте слово «продам» </span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="textarea">Описание</label>
+                                            <label class="col-md-3 control-label" for="description">Описание</label>
 
                                             <div class="col-md-8">
-                                                <textarea class="form-control" id="textarea" rows="10" name="textarea"
+                                                <textarea class="form-control" id="description" rows="10"
+                                                          name="description"
                                                           placeholder="Подробно опишите ваш товар или услугу. Не указывайте в описании телефон и e-mail — для этого есть отдельные поля"></textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="Price">Цена</label>
+                                            <label class="col-md-3 control-label" for="price">Цена</label>
 
                                             <div class="col-md-8">
                                                 <div class="input-group"><span class="input-group-addon"><i
                                                                 class="fa fa-rub"></i></span>
-                                                    <input id="Price" name="Price" class="form-control"
-                                                           placeholder="Цена" required="" type="number">
+                                                    <input id="price" name="price" class="form-control"
+                                                           placeholder="Цена" required="" type="number" min="0">
                                                 </div>
                                             </div>
                                         </div>
@@ -89,7 +91,85 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="textarea"> Изображения </label>
 
+
                                             <div class="col-md-8">
+
+
+                                                <div class="fileinput fileinput-new input-group"
+                                                     data-provides="fileinput">
+                                                    <div class="form-control" data-trigger="fileinput"><i
+                                                                class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                        <span class="fileinput-filename"></span></div>
+                                                    <span class="input-group-addon btn btn-default btn-file"><span
+                                                                class="fileinput-new">Выбрать</span><span
+                                                                class="fileinput-exists">Изменить</span><input
+                                                                type="file" name="images[]"></span>
+                                                    <a href="#"
+                                                       class="input-group-addon btn btn-danger fileinput-exists"
+                                                       data-dismiss="fileinput">Удалить</a>
+                                                </div>
+
+
+                                                <div class="fileinput fileinput-new input-group"
+                                                     data-provides="fileinput">
+                                                    <div class="form-control" data-trigger="fileinput"><i
+                                                                class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                        <span class="fileinput-filename"></span></div>
+                                                    <span class="input-group-addon btn btn-default btn-file"><span
+                                                                class="fileinput-new">Выбрать</span><span
+                                                                class="fileinput-exists">Изменить</span><input
+                                                                type="file" name="images[]"></span>
+                                                    <a href="#"
+                                                       class="input-group-addon btn btn-danger fileinput-exists"
+                                                       data-dismiss="fileinput">Удалить</a>
+                                                </div>
+
+
+                                                <div class="fileinput fileinput-new input-group"
+                                                     data-provides="fileinput">
+                                                    <div class="form-control" data-trigger="fileinput"><i
+                                                                class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                        <span class="fileinput-filename"></span></div>
+                                                    <span class="input-group-addon btn btn-default btn-file"><span
+                                                                class="fileinput-new">Выбрать</span><span
+                                                                class="fileinput-exists">Изменить</span><input
+                                                                type="file" name="images[]"></span>
+                                                    <a href="#"
+                                                       class="input-group-addon btn btn-danger fileinput-exists"
+                                                       data-dismiss="fileinput">Удалить</a>
+                                                </div>
+
+
+                                                <div class="fileinput fileinput-new input-group"
+                                                     data-provides="fileinput">
+                                                    <div class="form-control" data-trigger="fileinput"><i
+                                                                class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                        <span class="fileinput-filename"></span></div>
+                                                    <span class="input-group-addon btn btn-default btn-file"><span
+                                                                class="fileinput-new">Выбрать</span><span
+                                                                class="fileinput-exists">Изменить</span><input
+                                                                type="file" name="images[]"></span>
+                                                    <a href="#"
+                                                       class="input-group-addon btn btn-danger fileinput-exists"
+                                                       data-dismiss="fileinput">Удалить</a>
+                                                </div>
+
+
+                                                <div class="fileinput fileinput-new input-group"
+                                                     data-provides="fileinput">
+                                                    <div class="form-control" data-trigger="fileinput"><i
+                                                                class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                        <span class="fileinput-filename"></span></div>
+                                                    <span class="input-group-addon btn btn-default btn-file"><span
+                                                                class="fileinput-new">Выбрать</span><span
+                                                                class="fileinput-exists">Изменить</span><input
+                                                                type="file" name="images[]"></span>
+                                                    <a href="#"
+                                                       class="input-group-addon btn btn-danger fileinput-exists"
+                                                       data-dismiss="fileinput">Удалить</a>
+                                                </div>
+
+
                                                 <p class="help-block">Вы можете прикрепить не более 5 фотографий.
                                                     Пожалуйста используйте реальные изображения товара.</p>
                                             </div>
@@ -98,10 +178,10 @@
                                                 информация</strong></div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="textinput-name">Имя</label>
+                                            <label class="col-md-3 control-label" for="name">Имя</label>
 
                                             <div class="col-md-8">
-                                                <input id="textinput-name" name="textinput-name"
+                                                <input id="name" name="name"
                                                        placeholder="Имя продавца" value="{{Auth::user()->name}}"
                                                        class="form-control input-md" required="" type="text">
                                             </div>
@@ -111,9 +191,9 @@
                                             <label class="col-md-3 control-label" for="seller-email"> Email</label>
 
                                             <div class="col-md-8">
-                                                <input id="seller-email" name="seller-email" class="form-control"
+                                                <input id="email" name="email" class="form-control"
                                                        placeholder="Email продавца" value="{{Auth::user()->email}}"
-                                                       required="" type="text">
+                                                       required="" type="email">
                                             </div>
                                         </div>
 
@@ -121,17 +201,17 @@
                                             <label class="col-md-3 control-label" for="seller-Number"> Телефон</label>
 
                                             <div class="col-md-8">
-                                                <input id="seller-Number" name="seller-Number"
+                                                <input id="phone" name="phone"
                                                        placeholder="Контактный телефон" value="{{Auth::user()->phone}}"
                                                        class="form-control input-md" required="" type="text">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="seller-Location">Область</label>
+                                            <label class="col-md-3 control-label" for="country_id">Область</label>
 
                                             <div class="col-md-8">
-                                                <select id="seller-Location" name="seller-Location"
+                                                <select id="country_id" name="country_id"
                                                         class="form-control">
                                                     <option selected disabled>Выберите область ...</option>
                                                     @foreach($countryList as $value)
@@ -142,12 +222,16 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="seller-area">Город</label>
+                                            <label class="col-md-3 control-label" for="city_id">Город</label>
 
                                             <div class="col-md-8">
-                                                <select id="seller-area" name="seller-area" class="form-control">
-                                                    <option value="1">Option one</option>
-                                                    <option value="2">Option two</option>
+                                                <select id="city_id" disabled name="city_id" class="form-control">
+                                                    <option selected disabled>Выберите Город ...</option>
+                                                    @foreach($cityList as $value)
+                                                        <option value="{{$value->id}}"
+                                                                data-country="{{$value->country_id}}">{{$value->name}}</option>
+                                                    @endforeach
+
                                                 </select>
                                             </div>
                                         </div>
@@ -156,9 +240,10 @@
 
                                             <div class="col-md-8">
                                                 <label class="checkbox-inline" for="checkboxes-0">
-                                                    <input name="checkboxes" id="checkboxes-0"
-                                                           value="Remember above contact information." type="checkbox">
-                                                    Я подтверждаю своё согласие с условиями<a href="terms-conditions.html"> пользовательского соглашения</a> </label>
+                                                    <input name="terms" id="terms"
+                                                           value="1" type="checkbox">
+                                                    Я подтверждаю своё согласие с условиями<a href="#">
+                                                        пользовательского соглашения</a> </label>
                                                 </label>
                                             </div>
                                         </div>
@@ -166,8 +251,12 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label"></label>
 
-                                            <div class="col-md-8"><a href="posting-success.html" id="button1id"
-                                                                     class="btn btn-success btn-lg">Отправить</a></div>
+                                            {!! csrf_field() !!}
+                                            <div class="col-md-8">
+                                                <button id="button1id" type="submit"
+                                                        class="btn btn-success btn-lg">Отправить
+                                                </button>
+                                            </div>
                                         </div>
                                     </fieldset>
                                 </form>
@@ -208,6 +297,25 @@
         </div>
 
     </div>
+
+
+    <script>
+        window.onload = function () {
+            $("#country_id").change(function () {
+                $("#city_id").prop('disabled', false);
+                var activeCountry = $("#country_id").val();
+                $("#city_id option").each(function () {
+
+                    if ($(this).data('country') == activeCountry)
+                        $(this).removeClass("hide");
+                    else
+                        $(this).addClass("hide");
+
+                });
+            });
+        }
+    </script>
+
 
 
 @endsection

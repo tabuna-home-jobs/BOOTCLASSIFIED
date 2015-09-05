@@ -21,6 +21,8 @@
     <link href="/assets/css/owl.carousel.css" rel="stylesheet">
     <link href="/assets/css/owl.theme.css" rel="stylesheet">
 
+    <link href="/assets/bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
+
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -51,13 +53,12 @@
                                     <span>{{Auth::user()->name}} {{Auth::user()->lastname}}</span> <i
                                             class="icon-user fa"></i> <i class=" icon-down-open-big fa"></i></a>
                                 <ul class="dropdown-menu user-menu">
-                                    <li class="active"><a href="#"><i class="icon-home"></i> Personal Home </a></li>
-                                    <li><a href="#"><i class="icon-th-thumb"></i> My ads </a></li>
-                                    <li><a href="#"><i class="icon-heart"></i> Favourite ads </a></li>
-                                    <li><a href="#"><i class="icon-star-circled"></i> Saved search </a></li>
-                                    <li><a href="#"><i class="icon-folder-close"></i> Archived ads </a></li>
-                                    <li><a href="#"><i class="icon-hourglass"></i> Pending approval </a></li>
-                                    <li><a href="#"><i class=" icon-money "></i> Payment history </a></li>
+                                    <li class="active"><a href="{{route('settings.index')}}"><i class="icon-home"></i>
+                                            Профиль </a></li>
+                                    <li><a href="#"><i class="icon-th-thumb"></i> Мои обьявления </a></li>
+                                    <li><a href="#"><i class="icon-heart"></i> Мне понравилось </a></li>
+                                    <li><a href="#"><i class="icon-folder-close"></i> Архив обьявлений </a></li>
+                                    <li><a href="#"><i class="icon-money "></i> История платежей </a></li>
                                 </ul>
                             </li>
 
@@ -99,10 +100,12 @@
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/bootstrap/js/jasny-bootstrap.min.js"></script>
+
+
 <script src="/assets/js/owl.carousel.min.js"></script>
-<script src="/assets/js/form-validation.js"></script>
 <script src="/assets/js/jquery.matchHeight-min.js"></script>
 <script src="/assets/js/hideMaxListItem.js"></script>
 <script src="/assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
