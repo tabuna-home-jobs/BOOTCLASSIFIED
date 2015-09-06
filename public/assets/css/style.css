@@ -28,6 +28,13 @@ a:hover, a:focus {
     color: #FA7722;
 }
 
+a.active {
+    color: #FA7722 !important;
+}
+
+
+
+
 ul, ol {
     list-style: none;
     margin: 0;

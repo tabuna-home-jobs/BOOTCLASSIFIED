@@ -49,34 +49,23 @@ class CategoryController extends Controller
     public function show($category)
     {
 
-        if (!$category->category_id) {
-
-            $categoryList = Category::MainCategory()->get();
-            $advertising = $category->getSubCategory()->with('getAdvertising')->get();
-
-
-            return view('guest.category', [
-                'categoryList' => $categoryList,
-                'advertising' => $advertising,
-            ]);
-
-
-        } else {
-            $categoryMain = Category::find($category->category_id);
-            $categorySub = $categoryMain->getSubCategory()->get();
-            $advertising = $category->with('getAdvertising')->get();
-
-            return view('guest.category', [
-                'categoryMain' => $categoryMain,
-                'categorySub' => $categorySub,
-                'advertising' => $advertising
-            ]);
-
-
+        $categoryMain = Category::find($category->category_id);
+        if (is_null($categoryMain)) {
+            $categoryMain = $category;
         }
 
+        $categorySub = $categoryMain->getSubCategory()->get();
+        //$advertising = $category->with('getAdvertising')->get();
 
 
+        //dd($categoryMain,$categorySub);
+
+
+        return view('guest.category', [
+            'categoryMain' => $categoryMain,
+            'categorySub' => $categorySub,
+            // 'advertising' => $advertising
+        ]);
 
 
     }

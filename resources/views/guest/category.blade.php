@@ -254,9 +254,55 @@
             <div class="row">
 
 
-                @if(isset($categoryList))
-                    @include('layouts.MainCategoryBlock')
-                @endif
+                <div class="col-sm-3 page-sidebar">
+                    <aside>
+                        <div class="inner-box">
+
+                            <div class="categories-list  list-filter">
+                                <h5 class="list-title"><strong><a href="{{url('/')}}"><i class="fa fa-angle-left"></i>
+                                            Все категории</a></strong></h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{route('category.show',$categoryMain->slug)}}"><span
+                                                    class="title"><strong>{{$categoryMain->name}}</strong></span><span
+                                                    class="count">&nbsp;86626</span></a>
+                                        <ul class="list-unstyled long-list">
+
+
+                                            @foreach($categorySub as $value)
+                                                <li><a class="{{Active::path('category/'.$value->slug)}}"
+                                                       href="{{route('category.show',$value->slug)}}">
+                                                        {{$value->name}}</a></li>
+                                            @endforeach
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="locations-list  list-filter">
+                                <h5 class="list-title"><strong><a href="#">Цена</a></strong></h5>
+
+                                <form role="form" class="form-inline ">
+                                    <div class="form-group col-sm-4 no-padding">
+                                        <input type="text" placeholder="2000 " id="minPrice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-sm-1 no-padding text-center"> -</div>
+                                    <div class="form-group col-sm-4 no-padding">
+                                        <input type="text" placeholder="3000 " id="maxPrice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-sm-3 no-padding">
+                                        <button class="btn btn-default pull-right" type="submit">Ок</button>
+                                    </div>
+                                </form>
+                                <div style="clear:both"></div>
+                            </div>
+
+
+                        </div>
+
+                    </aside>
+                </div>
 
 
                 <div class="col-sm-9 page-content col-thin-left">

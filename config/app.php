@@ -149,7 +149,7 @@ return [
          * Мои
          */
         Intervention\Image\ImageServiceProvider::class,
-
+        Watson\Active\ActiveServiceProvider::class,
     ],
 
     /*
@@ -199,7 +199,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
-
+        'Active' => Watson\Active\Facades\Active::class,
     ],
 
 ];

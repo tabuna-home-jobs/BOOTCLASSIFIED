@@ -40,7 +40,7 @@
     <div class="main-container">
         <div class="container">
             <div class="row">
-                <div class="col-sm-9 page-content col-thin-right">
+                <div class="col-xs-12 col-sm-9 page-content col-thin-right">
                     <div class="inner-box category-content">
                         <h2 class="title-2">Объявления в моём городе </h2>
 
@@ -52,11 +52,12 @@
                                         <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
                                                         class="count">277,959</span> </a>
-                                            <span data-target=".cat-id-1" data-toggle="collapse"
+                                            <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
                                                   class="btn-cat-collapsed collapsed"> <span
                                                         class=" icon-down-open-big"></span> </span>
                                         </h3>
-                                        <ul class="cat-collapse collapse in cat-id-1" style="height: auto;">
+                                        <ul class="cat-collapse collapse in cat-id-{{$value->id}}"
+                                            style="height: auto;">
                                             @foreach($value->getSubCategory as $subValue)
                                                 <li>
                                                     <a href="{{route('category.show',$subValue->slug)}}">{{$subValue->name}}</a>
@@ -74,11 +75,12 @@
                                         <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
                                                         class="count">277,959</span> </a>
-                                            <span data-target=".cat-id-1" data-toggle="collapse"
+                                            <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
                                                   class="btn-cat-collapsed collapsed"> <span
                                                         class=" icon-down-open-big"></span> </span>
                                         </h3>
-                                        <ul class="cat-collapse collapse in cat-id-1" style="height: auto;">
+                                        <ul class="cat-collapse collapse in cat-id-{{$value->id}}"
+                                            style="height: auto;">
                                             @foreach($value->getSubCategory as $subValue)
                                                 <li>
                                                     <a href="{{route('category.show',$subValue->slug)}}">{{$subValue->name}}</a>
@@ -96,11 +98,12 @@
                                         <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
                                                         class="count">277,959</span> </a>
-                                            <span data-target=".cat-id-1" data-toggle="collapse"
+                                            <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
                                                   class="btn-cat-collapsed collapsed"> <span
                                                         class=" icon-down-open-big"></span> </span>
                                         </h3>
-                                        <ul class="cat-collapse collapse in cat-id-1" style="height: auto;">
+                                        <ul class="cat-collapse collapse in cat-id-{{$value->id}}"
+                                            style="height: auto;">
                                             @foreach($value->getSubCategory as $subValue)
                                                 <li>
                                                     <a href="{{route('category.show',$subValue->slug)}}">{{$subValue->name}}</a>
@@ -115,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3 page-sidebar col-thin-left">
+                <div class="hidden-xs col-sm-3 page-sidebar col-thin-left">
                     <aside>
                         <div class="inner-box no-padding">
                             <div class="inner-box-content"><a href="#"><img class="img-responsive"
@@ -151,7 +154,7 @@
 
 
 
-    <div class="page-info" style="background: url(images/bg.jpg); background-size:cover">
+    <div class="page-info hidden-xs" style="background: url(images/bg.jpg); background-size:cover">
         <div class="container text-center section-promo">
             <div class="row">
                 <div class="col-sm-3 col-xs-6 col-xxs-12">
