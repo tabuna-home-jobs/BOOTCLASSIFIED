@@ -19,7 +19,6 @@ class GeoIpMiddleware
      */
     public function handle($request, Closure $next)
     {
-
         if (!Session::has('GeoCity')) {
             $ascii_name = GeoIP::getLocation()['city'];
             $city = City::where('ascii_name', $ascii_name)->first();
@@ -33,7 +32,7 @@ class GeoIpMiddleware
 
 
         View::composer('*', function () {
-            $ThisCity = City::find(Session::get('GeoCity'))->first();
+            $ThisCity = City::find(Session::get('GeoCity'));
             View::share('ThisCity', $ThisCity);
         });
 
