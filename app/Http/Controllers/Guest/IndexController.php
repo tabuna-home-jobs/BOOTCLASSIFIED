@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Models\Advertising;
 use App\Models\Category;
+use App\Models\City;
 use Cache;
 use Illuminate\Http\Request;
 
@@ -34,10 +35,15 @@ class IndexController extends Controller
             return  Advertising::popularCategory()->get();
         });
 
+        $allCity = Cache::remember('allCity', 60, function () {
+            return City::lists('id', 'name');
+        });
+
 
         return view('guest.index', [
             'categoryList' => $categoryList,
-            'popularCategory' => $popularCategory
+            'popularCategory' => $popularCategory,
+            'allCity' => $allCity,
         ]);
     }
 

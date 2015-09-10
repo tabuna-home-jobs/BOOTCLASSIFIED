@@ -24,6 +24,9 @@
     <link href="/assets/bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
 
 
+    <link href="/assets/bootstrap/css/chosen.min.css" rel="stylesheet">
+
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -103,6 +106,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/bootstrap/js/jasny-bootstrap.min.js"></script>
+<script src="/assets/bootstrap/js/chosen.jquery.min.js"></script>
 
 
 <script src="/assets/js/owl.carousel.min.js"></script>
@@ -111,6 +115,14 @@
 <script src="/assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
 <script src="/assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
 <script src="/assets/js/script.js"></script>
+
+
+<script>
+    jQuery(document).ready(function () {
+        jQuery(".chosen").data("placeholder", "Select Frameworks...").chosen();
+    });
+</script>
+
 
 </body>
 </html>

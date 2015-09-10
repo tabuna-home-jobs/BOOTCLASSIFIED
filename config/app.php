@@ -150,6 +150,7 @@ return [
          */
         Intervention\Image\ImageServiceProvider::class,
         Watson\Active\ActiveServiceProvider::class,
+        Torann\GeoIP\GeoIPServiceProvider::class,
     ],
 
     /*
@@ -200,6 +201,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Active' => Watson\Active\Facades\Active::class,
+        'GeoIP' => Torann\GeoIP\GeoIPFacade::class,
     ],
 
 ];

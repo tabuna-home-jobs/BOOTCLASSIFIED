@@ -5,6 +5,7 @@
 
 
 
+
     <div class="intro">
         <div class="dtable hw100">
             <div class="dtable-cell hw100">
@@ -17,9 +18,13 @@
                     <div class="row search-row animated fadeInUp">
                         <div class="col-lg-4 col-sm-4 search-col relative locationicon">
                             <i class="icon-location-2 icon-append"></i>
-                            <input type="text" name="country" id="autocomplete-ajax"
-                                   class="form-control locinput input-rel searchtag-input has-icon"
-                                   placeholder="Мой город..." value="" autocomplete="off">
+                            <button type="text" name="country"
+                                    class="form-control locinput input-rel searchtag-input has-icon text-left"
+                                    data-toggle="modal"
+                                    data-target=".cityModal">
+                                Мой город {{$ThisCity->name}}</button>
+
+
                         </div>
                         <div class="col-lg-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
                             <input type="text" name="ads" class="form-control has-icon"
@@ -224,7 +229,14 @@
 
 
 
+    <div class="modal fade cityModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
 
+
+            </div>
+        </div>
+    </div>
 
 
 
