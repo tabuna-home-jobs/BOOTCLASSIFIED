@@ -10,6 +10,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 
+
 class User extends Model implements AuthenticatableContract,
     AuthorizableContract,
     CanResetPasswordContract
@@ -36,4 +37,12 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    public function getAdvertising()
+    {
+        return $this->hasMany(Advertising::class);
+    }
+
+
 }

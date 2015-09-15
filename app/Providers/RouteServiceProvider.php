@@ -32,6 +32,13 @@ class RouteServiceProvider extends ServiceProvider
             return \App\Models\Category::where('slug', $value)->firstOrFail();
         });
 
+
+        $router->bind('advertising', function ($value) {
+            return \App\Models\Advertising::whereId($value)->firstOrFail();
+        });
+
+
+
     }
 
     /**

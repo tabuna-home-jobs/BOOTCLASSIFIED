@@ -22,7 +22,7 @@
                                     class="form-control locinput input-rel searchtag-input has-icon text-left"
                                     data-toggle="modal"
                                     data-target=".cityModal">
-                                Мой город {{$ThisCity->name}}</button>
+                                Мой город {{$GeoCity->name}}</button>
 
 
                         </div>
@@ -159,7 +159,7 @@
 
 
 
-    <div class="page-info hidden-xs" style="background: url(images/bg.jpg); background-size:cover">
+    <div class="page-info hidden-xs" style="background: url('/images/bg.jpg'); background-size:cover">
         <div class="container text-center section-promo">
             <div class="row">
                 <div class="col-sm-3 col-xs-6 col-xxs-12">

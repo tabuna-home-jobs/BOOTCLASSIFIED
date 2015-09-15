@@ -111,8 +111,8 @@ return [
     'providers' => [
 
         /*
-         * Laravel Framework Service Providers...
-         */
+             * Laravel Framework Service Providers...
+             */
         Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -151,6 +151,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Watson\Active\ActiveServiceProvider::class,
         Torann\GeoIP\GeoIPServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+
     ],
 
     /*
@@ -165,6 +167,7 @@ return [
     */
 
     'aliases' => [
+
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
@@ -199,9 +202,14 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Мои
+         */
         'Image' => Intervention\Image\Facades\Image::class,
         'Active' => Watson\Active\Facades\Active::class,
         'GeoIP' => Torann\GeoIP\GeoIPFacade::class,
+        'Flash' => Laracasts\Flash\Flash::class,
     ],
 
 ];

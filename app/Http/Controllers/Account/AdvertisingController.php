@@ -11,6 +11,7 @@ use App\Models\City;
 use App\Models\Country;
 use App\Models\Images;
 use Cache;
+use Flash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -25,6 +26,11 @@ class AdvertisingController extends Controller
      */
     public function index()
     {
+        $advertisingList = Advertising::with('getImages')->whereUserId(Auth::user()->id)->paginate(15);
+
+        return view('account.advertisingIndex', [
+            'advertisingList' => $advertisingList
+        ]);
 
     }
 
@@ -83,7 +89,7 @@ class AdvertisingController extends Controller
         }
 
 
-        Session::flash('good', 'Вы успешно изменили значения');
+        Flash::success('Вы успешно добавили обьявление');
         return redirect('/');
     }
 
@@ -98,27 +104,53 @@ class AdvertisingController extends Controller
         //
     }
 
+
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return Response
+     * @param Advertising $advertising
+     * @return \Illuminate\View\View
      */
-    public function edit($id)
+    public function edit(Advertising $advertising)
     {
-        //
+        //Может ли человек сюда заходить
+        $this->authorize($advertising);
+        $advertising->images = $advertising->getImages()->get();
+
+
+        $categoryList = Cache::remember('categoryList', 60, function () {
+            return Category::MainCategory()->with('getSubCategory')->get();
+        });
+
+        $countryList = Cache::remember('countryList', 60, function () {
+            return Country::all();
+        });
+
+
+        $cityList = Cache::remember('cityList', 60, function () {
+            return City::all();
+        });
+
+
+        return view('account.advertisingEdit', [
+            'advertising' => $advertising,
+            'categoryList' => $categoryList,
+            'countryList' => $countryList,
+            'cityList' => $cityList,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request $request
-     * @param  int $id
-     * @return Response
+     * @param AdvertisingRequest $request
+     * @param Advertising $advertising
      */
-    public function update(Request $request, $id)
+    public function update(AdvertisingRequest $request, Advertising $advertising)
     {
-        //
+        $this->authorize($advertising);
+        $advertising->fill($request->all());
+        $advertising->save();
+        Flash::success('Вы успешно обновили обьявление');
+        return redirect()->route('advertising.index');
     }
 
     /**

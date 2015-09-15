@@ -9,7 +9,8 @@
 
                     <div class="panel-collapse collapse in" id="MyClassified">
                         <ul class="acc-list">
-                            <li><a class="active" href="{{route('settings.index')}}"><i class="icon-cog"></i> Настройки
+                            <li><a class="{{Active::route('settings.*')}}" href="{{route('settings.index')}}"><i
+                                            class="icon-cog"></i> Настройки
                                 </a></li>
                         </ul>
                     </div>
@@ -22,7 +23,8 @@
 
                     <div class="panel-collapse collapse in" id="MyAds">
                         <ul class="acc-list">
-                            <li><a href="account-myads.html"><i class="icon-docs"></i> Мои обьявления <span
+                            <li><a class="{{Active::route('advertising.*')}}" href="{{route('advertising.index')}}"><i
+                                            class="icon-docs"></i> Мои обьявления <span
                                             class="badge">42</span> </a></li>
                             <li><a href="account-favourite-ads.html"><i class="icon-heart"></i> Мне понравились <span
                                             class="badge">42</span> </a></li>
