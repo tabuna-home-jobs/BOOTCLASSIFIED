@@ -39,7 +39,7 @@ class Advertising extends Model
 
     public function getCategory()
     {
-        return $this->belongsTo('App\Models\Category');
+        return $this->belongsTo('App\Models\Category', 'category_id');
     }
 
     public function getImages()
@@ -51,6 +51,13 @@ class Advertising extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function getCity()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+
 
     public function scopePopularCategory($query)
     {

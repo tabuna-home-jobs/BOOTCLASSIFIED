@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Session;
 
 class CategoryController extends Controller
 {
@@ -55,16 +56,17 @@ class CategoryController extends Controller
         }
 
         $categorySub = $categoryMain->getSubCategory()->get();
-        //$advertising = $category->with('getAdvertising')->get();
 
 
-        //dd($categoryMain,$categorySub);
-
+        $advertisingList = $category->getAdvertising()
+            ->with('getImages', 'getCategory', 'getCity')
+            ->where('city_id', Session::get('GeoCity'))
+            ->simplePaginate();
 
         return view('guest.category', [
             'categoryMain' => $categoryMain,
             'categorySub' => $categorySub,
-            // 'advertising' => $advertising
+            'advertisingList' => $advertisingList
         ]);
 
 

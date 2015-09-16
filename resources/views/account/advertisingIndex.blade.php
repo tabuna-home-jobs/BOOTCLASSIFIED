@@ -13,9 +13,7 @@
                     <div class="inner-box">
                         <h2 class="title-2"><i class="icon-docs"></i> Мои обьявления </h2>
 
-
                         @include('flash::message')
-
 
                         <div class="table-responsive">
 
@@ -71,7 +69,6 @@
 
                     </div>
 
-
                 </div>
 
             </div>
@@ -79,10 +76,4 @@
         </div>
 
     </div>
-
-
-
-
-
-
 @endsection
