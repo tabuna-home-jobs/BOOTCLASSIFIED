@@ -303,8 +303,8 @@ p.required, .required sup {
 }
 
 .btn-danger {
-    background-color: #E74C3C;
-    color: #FFFFFF;
+    background-color: #E74C3C !important;
+    color: #FFFFFF !important;
 }
 
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger, .btn-post:hover, .btn-post:active {
@@ -517,7 +517,7 @@ btn-post:hover, .btn-post:focus, .btn-post:active, .btn-post.active, .open .drop
         line-height: normal;
         padding: 12px 35px;
         text-transform: uppercase;
-        width: 170px;
+        /*width: 170px; */
     }
 
     li .user-menu {
@@ -2621,7 +2621,7 @@ td.ads-details-td {
     padding: 80px 0;
     display: block;
     clear: both;
-    clear: #fff;
+    color: #fff;
 
 }
 
