@@ -91,7 +91,7 @@
                 </li>
             </ul>
             <ul class=" pull-right navbar-link footer-nav">
-                <li> &copy; 2015 BootClassified</li>
+                <li> &copy; 2015 Доска Обьявлений</li>
             </ul>
         </div>
     </div>
