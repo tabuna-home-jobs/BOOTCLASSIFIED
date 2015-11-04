@@ -28,7 +28,7 @@ class Category extends Model
 
     public function getParrentCategory()
     {
-        return $this->belongsTo('App\Models\Category');
+        return $this->belongsTo('App\Models\Category', 'category_id', 'id');
     }
 
     public function scopeMainCategory($query)

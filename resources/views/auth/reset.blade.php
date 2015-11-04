@@ -51,20 +51,20 @@
 
 
                                 <div class="form-group">
-                                    <label for="user-pass" class="control-label">Password:</label>
+                                    <label for="user-pass" class="control-label">Пароль:</label>
 
                                     <div class="input-icon"><i class="icon-lock fa"></i>
                                         <input type="password" name="password" class="form-control"
-                                               placeholder="Password" required=>
+                                               placeholder="Пароль" required=>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label for="user-pass" class="control-label">Confirm Password:</label>
+                                    <label for="user-pass" class="control-label">Повторите пароль:</label>
 
                                     <div class="input-icon"><i class="icon-lock fa"></i>
-                                        <input type="password" placeholder="Confirm Password"
+                                        <input type="password" placeholder="Повторите пароль"
                                                name="password_confirmation" class="form-control" required>
                                     </div>
                                 </div>

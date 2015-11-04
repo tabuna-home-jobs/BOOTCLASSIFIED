@@ -29,9 +29,8 @@
                                                     @foreach($categoryList as $value)
 
                                                         <optgroup label="{{$value->name}}">
-
                                                             @foreach($value->getSubCategory as $subValue)
-                                                                <option value="{{$value->id}}">{{$subValue->name}}</option>
+                                                                <option value="{{$subValue->id}}">{{$subValue->name}}</option>
                                                             @endforeach
                                                         </optgroup>
 

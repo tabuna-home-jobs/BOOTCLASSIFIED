@@ -12,7 +12,7 @@
                             <h2 class="logo-title">
                                 <span class="logo-icon"><i
                                             class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>
-                                BOOT<span>CLASSIFIED </span></h2>
+                                Доска<span>Обьявлений</span></h2>
                         </div>
                         <div class="panel-body">
 

@@ -144,19 +144,6 @@
                             </div>
                         </div>
 
-                        <div class="listing-filter">
-                            <div class="pull-left col-xs-6">
-                                <div class="breadcrumb-list"><a href="#" class="current">
-                                        <span>Искать</span></a> по фильтру?
-                                </div>
-                            </div>
-                            <div class="pull-right col-xs-6 text-right listing-view-action"><span
-                                        class="list-view active"><i class="  icon-th"></i></span> <span
-                                        class="compact-view"><i class=" icon-th-list  "></i></span> <span
-                                        class="grid-view "><i class=" icon-th-large "></i></span></div>
-                            <div style="clear:both"></div>
-                        </div>
-
                         <div class="adds-wrapper">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="allAds">
@@ -168,15 +155,17 @@
                                             <div class="add-image"><span class="photo-count"><i
                                                             class="fa fa-camera"></i> {{count($ads->getImages)}} </span>
                                                 <a
-                                                        href="ads-details.html"><img class="thumbnail no-margin"
-                                                                                     src="@if(is_null($ads->getImages->first())) /images/noimage.jpg @else {{$ads->getImages->first()->path .'/'. $ads->getImages->first()->name}} @endif"
+                                                        href="{{route('category.advertising.show',[$category->slug,$ads->id])}}"><img
+                                                            class="thumbnail no-margin"
+                                                            src="@if(is_null($ads->getImages->first())) /images/noimage.jpg @else{{$ads->getImages->first()->path .'/'. $ads->getImages->first()->name}}@endif"
                                                                                      alt="img"></a></div>
                                         </div>
 
                                         <div class="col-sm-7 add-desc-box">
                                             <div class="add-details">
-                                                <h5 class="add-title"><a href="ads-details.html">
-                                                        {{$ads->name}} </a></h5>
+                                                <h5 class="add-title"><a
+                                                            href="{{route('category.advertising.show',[$category->slug,$ads->id])}}">
+                                                        {{$ads->title}} </a></h5>
                                                 <span class="info-row"><span
                                                             class="date"><i
                                                                 class=" icon-clock"> </i> {{$ads->created_at->diffForHumans() }} </span> - <span
@@ -187,7 +176,9 @@
                                         </div>
 
                                         <div class="col-sm-3 text-right  price-box">
-                                            <h2 class="item-price"><i class="fa fa-rub"></i> {{$ads->price}} </h2> <a
+                                            <h2 class="item-price"><i
+                                                        class="fa fa-rub"></i> {{ number_format($ads->price, 0, ',', ' ')}}
+                                            </h2> <a
                                                     class="btn btn-default  btn-sm make-favorite"> <i
                                                         class="fa fa-heart"></i> <span>Сохранить</span> </a></div>
 
@@ -203,12 +194,17 @@
                     </div>
                     <div class="pagination-bar text-center">
 
-
                         <nav>
                             <ul class="pager">
-                                <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span>
+                                <li class="previous
+                                @if($advertisingList->currentPage() == 1) disabled @endif
+                                        "><a href="{{$advertisingList->previousPageUrl()}}"><span
+                                                aria-hidden="true">&larr;</span>
                                         Назад</a></li>
-                                <li class="next"><a href="#">Дальше <span aria-hidden="true">&rarr;</span></a></li>
+                                <li class="next
+                                @if(!$advertisingList->hasMorePages()) disabled @endif
+                                        "><a href="{{$advertisingList->nextPageUrl()}}">Дальше <span
+                                                aria-hidden="true">&rarr;</span></a></li>
                             </ul>
                         </nav>
                     </div>

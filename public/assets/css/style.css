@@ -2384,8 +2384,8 @@ li.divider {
 }
 
 .user-panel-sidebar ul li a.active {
-    background-color: #2a3744;
-    color: #FFFFFF;
+    background-color: #2a3744 !important;
+    color: #FFFFFF !important;
 }
 
 .accountContent h3 {

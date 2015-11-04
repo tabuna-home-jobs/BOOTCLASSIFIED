@@ -2,9 +2,6 @@
 
 @section('main')
 
-
-
-
     <div class="main-container">
         <div class="container">
             <div class="row">
@@ -14,7 +11,7 @@
                             <h2 class="logo-title">
 
                                 <span class="logo-icon"><i
-                                            class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span> BOOT<span>CLASSIFIED </span>
+                                            class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>Доска<span>Обьявлений </span>
                             </h2>
                         </div>
                         <div class="panel-body">
@@ -50,20 +47,20 @@
                                 </div>
                                 <div class="form-group">
                                     {!! csrf_field() !!}
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Send me my password
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Прислать мне пароль
                                     </button>
                                 </div>
                             </form>
                         </div>
                         <div class="panel-footer">
-                            <p class="text-center "><a href="{{url('auth/login')}}"> Back to Login </a></p>
+                            <p class="text-center "><a href="{{url('auth/login')}}"> Я вспомнил пароль </a></p>
 
                             <div style=" clear:both"></div>
                         </div>
                     </div>
                     <div class="login-box-btm text-center">
-                        <p> Don't have an account? <br>
-                            <a href="{{url('auth/register')}}"><strong>Sign Up !</strong> </a></p>
+                        <p> Неимеете аккаунта? <br>
+                            <a href="{{url('auth/register')}}"><strong>Зарегистрироваться !</strong> </a></p>
                     </div>
                 </div>
             </div>

@@ -61,12 +61,15 @@ class CategoryController extends Controller
         $advertisingList = $category->getAdvertising()
             ->with('getImages', 'getCategory', 'getCity')
             ->where('city_id', Session::get('GeoCity'))
-            ->simplePaginate();
+            ->orderBy('id', 'DESC')
+            ->simplePaginate(10);
+
 
         return view('guest.category', [
             'categoryMain' => $categoryMain,
             'categorySub' => $categorySub,
-            'advertisingList' => $advertisingList
+            'advertisingList' => $advertisingList,
+            'category'        => $category,
         ]);
 
 
@@ -87,8 +90,9 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  Request $request
-     * @param  int $id
-     * @return Response
+     * @param  int     $idcreated_at
+     *
+*@return Response
      */
     public function update(Request $request, $id)
     {

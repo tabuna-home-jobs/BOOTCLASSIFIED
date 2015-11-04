@@ -125,11 +125,7 @@
                 </div>
                 <div class="hidden-xs col-sm-3 page-sidebar col-thin-left">
                     <aside>
-                        <div class="inner-box no-padding">
-                            <div class="inner-box-content"><a href="#"><img class="img-responsive"
-                                                                            src="images/site/app.jpg" alt="tv"></a>
-                            </div>
-                        </div>
+
                         <div class="inner-box">
                             <h2 class="title-2">Популярные категории </h2>
 
@@ -169,7 +165,7 @@
                                 <i class="icon  icon-group"></i>
                             </div>
                             <div class="iconbox-wrap-content">
-                                <h5><span>2200</span></h5>
+                                <h5><span>{{$UserCount}}</span></h5>
 
                                 <div class="iconbox-wrap-text">Пользователей</div>
                             </div>
@@ -184,7 +180,7 @@
                                 <i class="icon  icon-th-large-1"></i>
                             </div>
                             <div class="iconbox-wrap-content">
-                                <h5><span>100</span></h5>
+                                <h5><span>{{$CategoryCount}}</span></h5>
 
                                 <div class="iconbox-wrap-text">Категорий</div>
                             </div>
@@ -199,7 +195,7 @@
                                 <i class="icon  icon-map"></i>
                             </div>
                             <div class="iconbox-wrap-content">
-                                <h5><span>700</span></h5>
+                                <h5><span>{{ $CityCount }}</span></h5>
 
                                 <div class="iconbox-wrap-text">Городов</div>
                             </div>
@@ -214,7 +210,7 @@
                                 <i class="icon fa fa-calendar-o"></i>
                             </div>
                             <div class="iconbox-wrap-content">
-                                <h5><span>50,000</span></h5>
+                                <h5><span>{{$advertisingCount}}</span></h5>
 
                                 <div class="iconbox-wrap-text">Обьявлений</div>
                             </div>
