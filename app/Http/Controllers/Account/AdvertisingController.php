@@ -77,7 +77,6 @@ class AdvertisingController extends Controller
 
         foreach ($request->file('images') as $file) {
             if (!is_null($file)) {
-                dd($file);
                 $file->move(public_path() . '/advertising/' . date("Y-m-d") . '/' . date("H"), Str::ascii(time() . '-' . $file->getClientOriginalName()));
                 $image = new Images([
                     'advertising_id' => $advertising->id,
