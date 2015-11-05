@@ -77,10 +77,10 @@ class AdvertisingController extends Controller
 
         foreach ($request->file('images') as $file) {
             if (!is_null($file)) {
-                $file->move(public_path() . '/advertising/' . date("Y-m-d") . '/' . date("H"), Str::ascii(time() . '-' . $file->getClientOriginalName()));
+                $file->move(public_path() . '/adv/' . date("Y-m-d") . '/' . date("H"), Str::ascii(time() . '-' . $file->getClientOriginalName()));
                 $image = new Images([
                     'advertising_id' => $advertising->id,
-                    'path' => '/advertising/' . date("Y-m-d") . '/' . date("H"),
+                    'path' => '/adv/' . date("Y-m-d") . '/' . date("H"),
                     'name' => Str::ascii(time() . '-' . $file->getClientOriginalName()),
                     'finish' => true,
                 ]);
