@@ -135,9 +135,9 @@
                                 <div class="selecter select-short-by closed"><select
                                             class="selectpicker selecter-selected" data-style="btn-select"
                                             data-width="auto">
-                                        <option value="Short by">Short by</option>
-                                        <option value="Price: Low to High">Price: Low to High</option>
-                                        <option value="Price: High to Low">Price: High to Low</option>
+                                        <option value="Short by">Сортировать по </option>
+                                        <option value="Price: Low to High">Цене: дешевле</option>
+                                        <option value="Price: High to Low">Цене: дороже</option>
                                     </select>
 
                                 </div>
