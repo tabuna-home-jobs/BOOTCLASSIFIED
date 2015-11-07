@@ -46,20 +46,9 @@ class AdvertisingController extends Controller
             return Category::MainCategory()->with('getSubCategory')->get();
         });
 
-        $countryList = Cache::remember('countryList', 60, function () {
-            return Country::all();
-        });
-
-
-        $cityList = Cache::remember('cityList', 60, function () {
-            return City::all();
-        });
-
 
         return view('account.advertisingCreate', [
             'categoryList' => $categoryList,
-            'countryList' => $countryList,
-            'cityList' => $cityList,
         ]);
     }
 

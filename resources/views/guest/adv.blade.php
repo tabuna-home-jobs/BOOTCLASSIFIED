@@ -25,7 +25,10 @@
             <div class="col-sm-9 page-content col-thin-right">
                 <div class="inner inner-box ads-details-wrapper">
                     <h2> {{$advertising->title}} @if($advertising->type)<small class="label label-default adlistingtype">Компания</small>@endif </h2>
-                    <span class="info-row"> <span class="date"><i class=" icon-clock"> </i> {{$advertising->created_at->diffForHumans() }} </span> - <span class="category"> {{$advertising->getCategory->name}} </span> - <span class="item-location"><i class="fa fa-map-marker"></i> {{$advertising->getCity->name}} </span> </span>
+                    <span class="info-row"> <span class="date"><i
+                                    class="fa fa-clock-o"> </i> {{$advertising->created_at->diffForHumans() }} </span> - <span
+                                class="category"><i class="fa fa-tag"></i> {{$advertising->getCategory->name}} </span> - <span
+                                class="item-location"><i class="fa fa-map-marker"></i> {{$advertising->getCity->name}} </span> </span>
                     <div class="ads-image">
                         <h1 class="pricetag">{{ number_format($advertising->price, 0, ',', ' ')}} <i class="fa fa-rub"></i></h1>
 
@@ -66,10 +69,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-footer text-left"><a class="btn  btn-default" data-toggle="modal"
-                                                                 href="#contactAdvertiser"><i class="icon-mail-2"></i>
-                                Написать сообщение </a> <a class="btn  btn-info"><i class="icon-phone-1"></i> {{$advertising->phone}}
-                            </a></div>
                     </div>
                 </div>
 
@@ -88,8 +87,8 @@
                                 </div>
                                 <div class="user-ads-action">
                                     <a href="#contactAdvertiser" data-toggle="modal" class="btn btn-default btn-block">
-                                        <i class="icon-mail-2"></i> Написать сообщение </a>
-                                    <a class="btn btn-info btn-block"><i class="icon-phone-1"></i>
+                                        <i class="fa fa-envelope-o"></i> Написать сообщение </a>
+                                    <a class="btn btn-info btn-block"><i class="fa fa-phone"></i>
                                         {{$advertising->phone}} </a>
                                 </div>
                             </div>
@@ -169,7 +168,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title"><i class=" icon-mail-2"></i> Написать продавцу </h4>
+                    <h4 class="modal-title"><i class="fa fa-envelope-o"></i> Написать продавцу </h4>
                 </div>
                 <div class="modal-body">
                     <form role="form">

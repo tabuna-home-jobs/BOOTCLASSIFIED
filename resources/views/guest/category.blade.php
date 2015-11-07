@@ -131,8 +131,9 @@
                                                         {{$ads->title}} </a></h5>
                                                 <span class="info-row"><span
                                                             class="date"><i
-                                                                class=" icon-clock"> </i> {{$ads->created_at->diffForHumans() }} </span> - <span
-                                                            class="category"> {{$ads->getCategory->name}} </span>- <span
+                                                                class="fa fa-clock-o"></i> {{$ads->created_at->diffForHumans() }} </span> - <span
+                                                            class="category"><i
+                                                                class="fa fa-tag"></i> {{$ads->getCategory->name}} </span>- <span
                                                             class="item-location"><i
                                                                 class="fa fa-map-marker"></i> {{$ads->getCity->name}} </span> </span>
                                             </div>

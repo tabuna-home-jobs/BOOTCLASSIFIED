@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Models\Advertising;
 use App\Models\Category;
-use App\Models\City;
 use Cache;
 use Illuminate\Http\Request;
 use Session;
@@ -54,16 +53,11 @@ class CategoryController extends Controller
     {
 
         /*
-         * Все категории и города
+         * Все категории
          */
-
 
         $categoryList = Cache::remember('categoryList', 60, function () {
             return Category::MainCategory()->with('getSubCategory')->get();
-        });
-
-        $cityList = Cache::remember('cityList', 60, function () {
-            return City::all();
         });
 
 
@@ -85,7 +79,7 @@ class CategoryController extends Controller
         }
 
         $advertisingList = Advertising::with('getImages', 'getCategory', 'getCity')
-            ->where('city_id', Session::get('GeoCity'))
+            ->where('city_id', Session::get('GeoCity')->id)
             ->whereIn('category_id', $WhereCategory)
             ->orderBy('id', 'DESC')
             ->simplePaginate(10);
@@ -115,7 +109,6 @@ class CategoryController extends Controller
 
             'CountAdvListAll' => $CountAdvListAll,
             'categoryList'    => $categoryList,
-            'cityList'        => $cityList,
         ]);
 
 

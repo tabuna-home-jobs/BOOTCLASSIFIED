@@ -3,9 +3,6 @@
 @section('main')
 
 
-
-
-
     <div class="intro">
         <div class="dtable hw100">
             <div class="dtable-cell hw100">
@@ -22,7 +19,8 @@
                                     class="form-control locinput input-rel searchtag-input has-icon text-left"
                                     data-toggle="modal"
                                     data-target=".cityModal">
-                                Мой город {{$GeoCity->name}}</button>
+
+                            Мой город {{$GeoCity->name}}</button>
 
 
                         </div>

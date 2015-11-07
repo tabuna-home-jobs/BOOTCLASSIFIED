@@ -16,11 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link href="/assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="/assets/css/owl.theme.css" rel="stylesheet">
     <link href="/assets/bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
-
-
     <link href="/assets/plugins/bxslider/jquery.bxslider.css" rel="stylesheet"/>
 
 
@@ -49,17 +45,19 @@
                         <li><a href="#">{{$GeoCity->name}} <i class=" icon-map"></i></a></li>
 
                     @if(Auth::check())
-                            <li><a href="{{url('auth/logout')}}">Выйти <i class="glyphicon glyphicon-off"></i> </a></li>
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <span>{{Auth::user()->name}} {{Auth::user()->lastname}}</span> <i
-                                            class="icon-user fa"></i> <i class=" icon-down-open-big fa"></i></a>
+                                            class="fa fa-user"></i> <i class=" icon-down-open-big fa"></i></a>
                                 <ul class="dropdown-menu user-menu">
-                                    <li class="active"><a href="{{route('settings.index')}}"><i class="icon-home"></i>
+                                    <li class="active"><a href="{{route('settings.index')}}"><i class="fa fa-home"></i>
                                             Профиль </a></li>
-                                    <li><a href="#"><i class="icon-th-thumb"></i> Мои обьявления </a></li>
-                                    <li><a href="#"><i class="icon-heart"></i> Мне понравилось </a></li>
-                                    <li><a href="#"><i class="icon-folder-close"></i> Архив Объявлений </a></li>
-                                    <li><a href="#"><i class="icon-money "></i> История платежей </a></li>
+                                    <li><a href="#"><i class="fa fa-th-large"></i> Мои обьявления </a></li>
+                                    <li><a href="#"><i class="fa fa-heart"></i> Мне понравилось </a></li>
+                                    <li><a href="#"><i class="fa fa-folder"></i> Архив </a></li>
+                                    <li><a href="#"><i class="fa fa-money "></i> Платежи </a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="{{url('auth/logout')}}"><i class="fa fa-sign-out"></i> Выйти </a></li>
+
                                 </ul>
                             </li>
 
@@ -104,7 +102,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/bootstrap/js/jasny-bootstrap.min.js"></script>
-<script src="/assets/js/owl.carousel.min.js"></script>
 
 <script src="/assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
 <script src="/assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
