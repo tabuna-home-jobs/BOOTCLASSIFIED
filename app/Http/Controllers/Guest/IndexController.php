@@ -52,10 +52,9 @@ class IndexController extends Controller
             return City::lists('id', 'name');
         });
 
-        $CityCount = Cache::remember('CityCOunt', 60, function () use ($allCity) {
-            return $allCity->count();
+        $CityCount = Cache::remember('CityCount', 60, function () use ($allCity) {
+            return City::count();
         });
-
 
         /*
          * Пользователи

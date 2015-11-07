@@ -86,14 +86,14 @@
         <div class="container">
             <ul class=" pull-left navbar-link footer-nav">
                 <li>
-                    <a href="{{ url('/') }}"> Главная </a>
-                    <a href="{{ route('about.index') }}"> О нас </a>
-                    <a href="{{ route('about.index') }}"> Правила </a>
-                    <a href="{{ route('faq.index') }}"> Помощь </a>
+                    <a href="{{ url('/') }}"><i class="fa fa-home"></i> Главная </a>
+                    <a href="{{ route('about.index') }}"><i class="fa fa-users"></i> О нас </a>
+                    <a href="{{ route('about.index') }}"><i class="fa fa-exclamation-triangle"></i> Правила </a>
+                    <a href="{{ route('faq.index') }}"><i class="fa fa-life-ring"></i> Помощь </a>
                 </li>
             </ul>
             <ul class=" pull-right navbar-link footer-nav">
-                <li> &copy; 2015 Доска Объявлений</li>
+                <li><i class="fa fa-copyright"></i> 2015 Доска Объявлений</li>
             </ul>
         </div>
     </div>
