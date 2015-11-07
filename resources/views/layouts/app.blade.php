@@ -36,7 +36,7 @@
                                 class="icon-bar"></span> <span class="icon-bar"></span></button>
                     <a href="{{ url('/') }}" class="navbar-brand logo logo-title">
 
-                        <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>
+                        <span class="logo-icon"><i class="fa fa-search ln-shadow-logo shape-0"></i> </span>
                         Доска<span>Объявлений </span> </a></div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -47,7 +47,7 @@
                     @if(Auth::check())
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <span>{{Auth::user()->name}} {{Auth::user()->lastname}}</span> <i
-                                            class="fa fa-user"></i> <i class=" icon-down-open-big fa"></i></a>
+                                            class="fa fa-user"></i></a>
                                 <ul class="dropdown-menu user-menu">
                                     <li class="active"><a href="{{route('settings.index')}}"><i class="fa fa-home"></i>
                                             Профиль </a></li>
