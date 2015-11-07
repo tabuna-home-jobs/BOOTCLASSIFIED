@@ -45,4 +45,11 @@ class User extends Model implements AuthenticatableContract,
     }
 
 
+    public function likes()
+    {
+        return $this->belongsToMany(Advertising::class, 'like', 'user_id', 'advertising_id')->withTimestamps();
+    }
+
+
+
 }

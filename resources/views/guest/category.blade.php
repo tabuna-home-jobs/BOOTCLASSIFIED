@@ -141,9 +141,18 @@
                                         <div class="col-sm-3 text-right  price-box">
                                             <h2 class="item-price"><i
                                                         class="fa fa-rub"></i> {{ number_format($ads->price, 0, ',', ' ')}}
-                                            </h2> <a
-                                                    class="btn btn-default  btn-sm make-favorite"> <i
-                                                        class="fa fa-heart"></i> <span>Сохранить</span> </a></div>
+                                            </h2>
+
+                                            @if(Auth::check())
+                                                <form action="{{route('like.store')}}" method="post">
+                                                    <button type="submit" class="btn btn-default  btn-sm make-favorite">
+                                                        <i
+                                                                class="fa fa-heart"></i> <span>Сохранить</span></button>
+                                                    <input type="hidden" name="adv" value="{{$ads->id}}">
+                                                    {!! csrf_field() !!}
+                                                </form>
+                                            @endif
+                                        </div>
 
                                     </div>
                                     @endforeach

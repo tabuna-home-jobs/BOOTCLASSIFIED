@@ -41,6 +41,7 @@ class AdvertisingController extends Controller
      */
     public function create()
     {
+
         $categoryList = Cache::remember('categoryList', 60, function () {
             return Category::MainCategory()->with('getSubCategory')->get();
         });
