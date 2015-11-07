@@ -25,13 +25,13 @@
                         <ul class="acc-list">
                             <li><a class="{{Active::route('advertising.*')}}" href="{{route('advertising.index')}}"><i
                                             class="icon-docs"></i> Мои обьявления <span
-                                            class="badge">42</span> </a></li>
+                                            class="badge">{{Auth::user()->getAdvertising()->count()}}</span> </a></li>
                             <li><a href="account-favourite-ads.html"><i class="icon-heart"></i> Мне понравились <span
-                                            class="badge">42</span> </a></li>
+                                            class="badge"></span> </a></li>
                             <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i> Архив <span
-                                            class="badge">42</span></a></li>
+                                            class="badge"></span></a></li>
                             <li><a href="account-pending-approval-ads.html"><i class="icon-money "></i> Платежи <span
-                                            class="badge">42</span></a></li>
+                                            class="badge"></span></a></li>
                         </ul>
                     </div>
                 </div>

@@ -38,13 +38,13 @@
                                         <td style="width:58%" class="ads-details-td">
                                             <div>
                                                 <p><strong>
-                                                        <a href="{{route('advertising.edit',$adv->id)}}">{{$adv->name}}</a>
+                                                        <a href="{{route('advertising.edit',$adv->id)}}">{{$adv->title}}</a>
                                                     </strong></p>
 
                                                 <p><strong> Опубликован </strong>:
                                                     {{$adv->created_at}} </p>
 
-                                                <p><strong>Просмотров </strong>: 221 </p>
+                                                <p><strong>Просмотров </strong>: {{$adv->visits}} </p>
                                             </div>
                                         </td>
                                         <td style="width:16%" class="price-td">

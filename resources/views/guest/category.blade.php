@@ -11,43 +11,30 @@
                     <input class="form-control keyword" type="text" placeholder="Я ищу ...">
                 </div>
                 <div class="col-sm-3">
-                    <div class="selecter  closed" tabindex="0"><select class="form-control selecter selecter-selected"
+                    <div class="selecter  closed" tabindex="0">
+                        <select class="form-control selecter selecter-selected"
                                                                        name="category">
-                            <option value="" class="selecter-placeholder" selected="">Я ищу ...</option>
-                            <option selected="selected" value="">All Categories</option>
-                            <option value="Vehicles" style="background-color:#E9E9E9;font-weight:bold;"
-                                    disabled="disabled"> - Vehicles -
-                            </option>
-                            <option value="Other"> Other</option>
+                            @foreach($categoryList as $value)
+
+                                <optgroup label="{{$value->name}}">
+                                    @foreach($value->getSubCategory as $subValue)
+                                        <option value="{{$subValue->id}}">{{$subValue->name}}</option>
+                                    @endforeach
+                                </optgroup>
+
+                            @endforeach
+
+
                         </select>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="selecter  closed" tabindex="0"><select class="form-control selecter-selected  selecter"
                                                                        name="location">
-                            <option value="" class="selecter-placeholder" selected="">Select An Item</option>
-                            <option selected="selected" value="">Мой город...</option>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="Other-Locations">Other Locations</option>
+                            @foreach($cityList as $value)
+                                <option value="{{$value->id}}">{{$value->name}}</option>
+                            @endforeach
+
                         </select>
                     </div>
                 </div>
@@ -77,7 +64,7 @@
                                 <ul class="list-unstyled">
                                     <li><a href="{{route('category.show',$categoryMain->slug)}}"><span
                                                     class="title"><strong>{{$categoryMain->name}}</strong></span><span
-                                                    class="count">&nbsp;86626</span></a>
+                                                    class="count">&nbsp; {{number_format($CountAdvListAll, 0, ',', ' ')}}</span></a>
                                         <ul class="list-unstyled long-list">
 
 
@@ -119,30 +106,6 @@
 
                 <div class="col-sm-9 page-content col-thin-left">
                     <div class="category-list">
-                        <div class="tab-box ">
-
-                            <ul class="nav nav-tabs add-tabs" id="ajaxTabs" role="tablist">
-                                <li class="active"><a href="#allAds" data-url="ajax/1.html" role="tab"
-                                                      data-toggle="tab">Все обьявления <span
-                                                class="badge">228,705</span></a>
-                                </li>
-                                <li><a href="#businessAds" data-url="ajax/2.html" role="tab" data-toggle="tab">Компании
-                                        <span class="badge">22,805</span></a></li>
-                                <li><a href="#personalAds" data-url="ajax/3.html" role="tab" data-toggle="tab">Частные
-                                        <span class="badge">18,705</span></a></li>
-                            </ul>
-                            <div class="tab-filter">
-                                <div class="selecter select-short-by closed"><select
-                                            class="selectpicker selecter-selected" data-style="btn-select"
-                                            data-width="auto">
-                                        <option value="Short by">Сортировать по </option>
-                                        <option value="Price: Low to High">Цене: дешевле</option>
-                                        <option value="Price: High to Low">Цене: дороже</option>
-                                    </select>
-
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="adds-wrapper">
                             <div class="tab-content">

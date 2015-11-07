@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="/assets/ico/favicon.png">
-    <title>Доска обьявлений</title>
+    <title>Доска Объявлений</title>
 
     <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -41,7 +41,7 @@
                     <a href="{{ url('/') }}" class="navbar-brand logo logo-title">
 
                         <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>
-                        Доска<span>Обьявлений </span> </a></div>
+                        Доска<span>Объявлений </span> </a></div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
 
@@ -55,7 +55,7 @@
                                             Профиль </a></li>
                                     <li><a href="#"><i class="icon-th-thumb"></i> Мои обьявления </a></li>
                                     <li><a href="#"><i class="icon-heart"></i> Мне понравилось </a></li>
-                                    <li><a href="#"><i class="icon-folder-close"></i> Архив обьявлений </a></li>
+                                    <li><a href="#"><i class="icon-folder-close"></i> Архив Объявлений </a></li>
                                     <li><a href="#"><i class="icon-money "></i> История платежей </a></li>
                                 </ul>
                             </li>
@@ -90,7 +90,7 @@
                 </li>
             </ul>
             <ul class=" pull-right navbar-link footer-nav">
-                <li> &copy; 2015 Доска Обьявлений</li>
+                <li> &copy; 2015 Доска Объявлений</li>
             </ul>
         </div>
     </div>

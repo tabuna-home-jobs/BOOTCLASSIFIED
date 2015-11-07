@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Models\Advertising;
 use App\Models\Category;
+use App\Models\City;
+use Cache;
 use Illuminate\Http\Request;
 use Session;
 
@@ -50,6 +53,24 @@ class CategoryController extends Controller
     public function show($category)
     {
 
+        /*
+         * Все категории и города
+         */
+
+
+        $categoryList = Cache::remember('categoryList', 60, function () {
+            return Category::MainCategory()->with('getSubCategory')->get();
+        });
+
+        $cityList = Cache::remember('cityList', 60, function () {
+            return City::all();
+        });
+
+
+        /*
+         * Выборка
+         */
+
         $categoryMain = Category::find($category->category_id);
         if (is_null($categoryMain)) {
             $categoryMain = $category;
@@ -58,11 +79,32 @@ class CategoryController extends Controller
         $categorySub = $categoryMain->getSubCategory()->get();
 
 
-        $advertisingList = $category->getAdvertising()
-            ->with('getImages', 'getCategory', 'getCity')
+        $WhereCategory = [];
+        foreach ($categorySub as $value) {
+            $WhereCategory[] = $value->id;
+        }
+
+        $advertisingList = Advertising::with('getImages', 'getCategory', 'getCity')
             ->where('city_id', Session::get('GeoCity'))
+            ->whereIn('category_id', $WhereCategory)
             ->orderBy('id', 'DESC')
             ->simplePaginate(10);
+
+
+        /*
+         * Количество
+         */
+
+
+        $count_separated = implode(",", $WhereCategory);
+
+        $CountAdvListAll = Cache::remember('CountAdvListAll' . $count_separated . 'City' . Session::get('GeoCity'), 60, function () use ($WhereCategory) {
+            return Advertising::where('city_id', Session::get('GeoCity'))
+                ->whereIn('category_id', $WhereCategory)
+                ->orderBy('id', 'DESC')
+                ->count();
+        });
+
 
 
         return view('guest.category', [
@@ -70,6 +112,10 @@ class CategoryController extends Controller
             'categorySub' => $categorySub,
             'advertisingList' => $advertisingList,
             'category'        => $category,
+
+            'CountAdvListAll' => $CountAdvListAll,
+            'categoryList'    => $categoryList,
+            'cityList'        => $cityList,
         ]);
 
 

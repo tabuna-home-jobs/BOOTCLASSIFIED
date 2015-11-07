@@ -34,6 +34,7 @@ class Advertising extends Model
         'country_id',
         'city_id',
         'user_id',
+        'visits',
     ];
 
 

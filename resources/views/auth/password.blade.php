@@ -11,7 +11,7 @@
                             <h2 class="logo-title">
 
                                 <span class="logo-icon"><i
-                                            class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>Доска<span>Обьявлений </span>
+                                            class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>Доска<span>Объявлений </span>
                             </h2>
                         </div>
                         <div class="panel-body">

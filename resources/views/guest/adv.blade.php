@@ -53,7 +53,7 @@
                         <div class="row">
                             <div class="ads-details-info col-md-8">
                                 <p>
-                                    {{$advertising->description}}
+                                    {{ $advertising->description}}
                                 </p>
                             </div>
                             <div class="col-md-4">
