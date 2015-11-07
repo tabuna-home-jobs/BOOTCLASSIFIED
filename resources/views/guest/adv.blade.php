@@ -26,8 +26,8 @@
                 <div class="inner inner-box ads-details-wrapper">
                     <h2> {{$advertising->title}} @if($advertising->type)<small class="label label-default adlistingtype">Компания</small>@endif </h2>
                     <span class="info-row"> <span class="date"><i
-                                    class="fa fa-clock-o"> </i> {{$advertising->created_at->diffForHumans() }} </span> - <span
-                                class="category"><i class="fa fa-tag"></i> {{$advertising->getCategory->name}} </span> - <span
+                                    class="fa fa-clock-o"> </i> {{$advertising->created_at->diffForHumans() }} </span> &nbsp; <span
+                                class="category"><i class="fa fa-tag"></i> {{$advertising->getCategory->name}} </span> &nbsp; <span
                                 class="item-location"><i class="fa fa-map-marker"></i> {{$advertising->getCity->name}} </span> </span>
                     <div class="ads-image">
                         <h1 class="pricetag">{{ number_format($advertising->price, 0, ',', ' ')}} <i class="fa fa-rub"></i></h1>

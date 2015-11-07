@@ -10,7 +10,7 @@
                     <div class="panel-collapse collapse in" id="MyClassified">
                         <ul class="acc-list">
                             <li><a class="{{Active::route('settings.*')}}" href="{{route('settings.index')}}"><i
-                                            class="icon-cog"></i> Настройки
+                                            class="fa fa-cog"></i> Настройки
                                 </a></li>
                         </ul>
                     </div>
@@ -24,13 +24,13 @@
                     <div class="panel-collapse collapse in" id="MyAds">
                         <ul class="acc-list">
                             <li><a class="{{Active::route('advertising.*')}}" href="{{route('advertising.index')}}"><i
-                                            class="icon-docs"></i> Мои обьявления <span
+                                            class="fa fa-th-large"></i> Мои обьявления <span
                                             class="badge">{{Auth::user()->getAdvertising()->count()}}</span> </a></li>
-                            <li><a href="account-favourite-ads.html"><i class="icon-heart"></i> Мне понравились <span
+                            <li><a href="account-favourite-ads.html"><i class="fa fa-heart"></i> Мне понравились <span
                                             class="badge"></span> </a></li>
-                            <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i> Архив <span
+                            <li><a href="account-archived-ads.html"><i class="fa fa-folder"></i> Архив <span
                                             class="badge"></span></a></li>
-                            <li><a href="account-pending-approval-ads.html"><i class="icon-money "></i> Платежи <span
+                            <li><a href="account-pending-approval-ads.html"><i class="fa fa-money"></i> Платежи <span
                                             class="badge"></span></a></li>
                         </ul>
                     </div>
@@ -43,7 +43,7 @@
 
                     <div class="panel-collapse collapse in" id="TerminateAccount">
                         <ul class="acc-list">
-                            <li><a href="{{ url('/auth/logout') }}"><i class="icon-cancel-circled "></i> Выйти </a></li>
+                            <li><a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-out"></i> Выйти </a></li>
                         </ul>
                     </div>
                 </div>

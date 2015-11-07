@@ -185,7 +185,7 @@
                     <div class="iconbox-wrap">
                         <div class="iconbox">
                             <div class="iconbox-wrap-icon">
-                                <i class="icon  icon-group"></i>
+                                <i class="fa fa-users"></i>
                             </div>
                             <div class="iconbox-wrap-content">
                                 <h5><span>{{$UserCount}}</span></h5>
@@ -200,7 +200,7 @@
                     <div class="iconbox-wrap">
                         <div class="iconbox">
                             <div class="iconbox-wrap-icon">
-                                <i class="icon  icon-th-large-1"></i>
+                                <i class="fa fa-th"></i>
                             </div>
                             <div class="iconbox-wrap-content">
                                 <h5><span>{{$CategoryCount}}</span></h5>
@@ -215,7 +215,7 @@
                     <div class="iconbox-wrap">
                         <div class="iconbox">
                             <div class="iconbox-wrap-icon">
-                                <i class="icon  icon-map"></i>
+                                <i class="fa fa-map-o"></i>
                             </div>
                             <div class="iconbox-wrap-content">
                                 <h5><span>{{ $CityCount }}</span></h5>
