@@ -42,7 +42,32 @@
 
 
 
+
+
+
     <div class="main-container">
+
+        @if (Session::has('flash_notification.message'))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 page-content">
+                        <div class="inner-box category-content">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <div class="alert alert-{{ Session::get('flash_notification.level') }} pgray  alert-lg"
+                                         role="alert">
+                                        <h2 class="no-margin no-padding">{{ Session::get('flash_notification.message') }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+
+
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-9 page-content col-thin-right">

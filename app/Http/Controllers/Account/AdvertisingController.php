@@ -89,7 +89,7 @@ class AdvertisingController extends Controller
         }
 
 
-        Flash::success('Вы успешно добавили обьявление');
+        Flash::success('Вы успешно добавили объявление');
         return redirect('/');
     }
 
