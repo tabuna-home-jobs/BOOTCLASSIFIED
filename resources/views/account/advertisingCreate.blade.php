@@ -21,7 +21,8 @@
                                             <label class="col-md-3 control-label">Категория</label>
 
                                             <div class="col-md-8">
-                                                <select name="category_id" id="category_id" class="form-control">
+                                                <select name="category_id" id="category_id"
+                                                        class="form-control selecter">
                                                     <option disabled selected="selected"> Выберите категорию ...
                                                     </option>
 
@@ -211,7 +212,7 @@
 
                                             <div class="col-md-8">
                                                 <select id="country_id" name="country_id"
-                                                        class="form-control">
+                                                        class="form-control selecter">
                                                     <option selected disabled>Выберите область ...</option>
                                                     @foreach($countryList as $value)
                                                         <option value="{{$value->id}}">{{$value->name}}</option>
@@ -224,7 +225,8 @@
                                             <label class="col-md-3 control-label" for="city_id">Город</label>
 
                                             <div class="col-md-8">
-                                                <select id="city_id" disabled name="city_id" class="form-control">
+                                                <select id="city_id" disabled name="city_id"
+                                                        class="form-control selecter">
                                                     <option selected disabled>Выберите Город ...</option>
                                                     @foreach($cityList as $value)
                                                         <option value="{{$value->id}}"

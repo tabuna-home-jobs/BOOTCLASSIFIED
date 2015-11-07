@@ -45,7 +45,10 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
 
-                        @if(Auth::check())
+
+                        <li><a href="#">{{$GeoCity->name}} <i class=" icon-map"></i></a></li>
+
+                    @if(Auth::check())
                             <li><a href="{{url('auth/logout')}}">Выйти <i class="glyphicon glyphicon-off"></i> </a></li>
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <span>{{Auth::user()->name}} {{Auth::user()->lastname}}</span> <i
@@ -103,12 +106,17 @@
 <script src="/assets/bootstrap/js/jasny-bootstrap.min.js"></script>
 <script src="/assets/js/owl.carousel.min.js"></script>
 
+<script src="/assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
+<script src="/assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
 
 <script src="/assets/plugins/bxslider/jquery.bxslider.min.js"></script>
 <script>
     $('.bxslider').bxSlider({
         pagerCustom: '#bx-pager'
     });
+
+    $('.selecter').selecter();
+
 </script>
 
 
