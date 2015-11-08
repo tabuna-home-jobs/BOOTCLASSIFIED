@@ -78,13 +78,27 @@
                         <div class="row">
                             <div class="ads-details-info col-md-8">
                                 <p>
-                                    {{ $advertising->description}}
+                                    {!! nl2br(e($advertising->description)) !!}
                                 </p>
                             </div>
                             <div class="col-md-4">
                                 <div class="ads-action">
                                     <ul class="list-border">
-                                        <li><a href="#"> <i class=" fa fa-heart"></i> Мне нравиться </a></li>
+                                        <li>
+
+
+                                            @if(Auth::check() && !Auth::user()->likes()->find($advertising->id))
+                                                <form action="{{route('like.store')}}" method="post">
+                                                    <button type="submit" class="btn btn-default  btn-sm make-favorite">
+                                                        <i class="fa fa-heart"></i> <span>Мне нравиться</span></button>
+                                                    <input type="hidden" name="adv" value="{{$advertising->id}}">
+                                                    {!! csrf_field() !!}
+                                                </form>
+                                            @endif
+
+                                            <a href="#"> <i class=" fa fa-heart"></i> Мне нравиться </a>
+
+                                        </li>
                                         <li><a href="#"> <i class="fa fa-share-alt"></i> Поделиться </a></li>
                                         <li><a href="#reportAdvertiser" data-toggle="modal"> <i
                                                         class="fa icon-info-circled-alt"></i> Пожаловаться </a></li>
