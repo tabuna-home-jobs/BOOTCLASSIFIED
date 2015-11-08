@@ -42,7 +42,8 @@
                     <ul class="nav navbar-nav navbar-right">
 
 
-                        <li><a href="#">{{$GeoCity->name}} <i class=" icon-map"></i></a></li>
+                        <li><a href="#" data-toggle="modal"
+                               data-target=".cityModal">{{$GeoCity->name}} <i class=" icon-map"></i></a></li>
 
                     @if(Auth::check())
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -96,6 +97,94 @@
         </div>
     </div>
 
+</div>
+
+
+<div class="modal cityModal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel"><i class=" icon-map"></i> Выберите свой регион</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div style="clear:both"></div>
+                        <div class="col-sm-12 no-padding">
+
+
+                            <select id="country_id" name="country_id"
+                                    class="form-control selecter">
+                                <option selected disabled>Выберите область ...</option>
+                                @foreach($countryList as $value)
+                                    <option value="{{$value->id}}">{{$value->name}}</option>
+                                @endforeach
+                            </select>
+
+
+                            <select class="form-control selecter" id="region-state"
+                                    name="region-state" tabindex="-1">
+                                @foreach($cityList as $value)
+                                    <option value="{{$value->id}}">{{$value->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div style="clear:both"></div>
+                        <hr class="hr-thin">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-link list-unstyled">
+                            <li><a href="category.html#" title="">All Cities</a></li>
+                            <li><a href="category.html#" title="Albany">Albany</a></li>
+                            <li><a href="category.html#" title="Altamont">Altamont</a></li>
+                            <li><a href="category.html#" title="Amagansett">Amagansett</a></li>
+                            <li><a href="category.html#" title="Amawalk">Amawalk</a></li>
+                            <li><a href="category.html#" title="Bellport">Bellport</a></li>
+                            <li><a href="category.html#" title="Centereach">Centereach</a></li>
+                            <li><a href="category.html#" title="Chappaqua">Chappaqua</a></li>
+                            <li><a href="category.html#" title="East Elmhurst">East Elmhurst</a></li>
+                            <li><a href="category.html#" title="East Greenbush">East Greenbush</a></li>
+                            <li><a href="category.html#" title="East Meadow">East Meadow</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-link list-unstyled">
+                            <li><a href="category.html#" title="Elmont">Elmont</a></li>
+                            <li><a href="category.html#" title="Elmsford">Elmsford</a></li>
+                            <li><a href="category.html#" title="Farmingville">Farmingville</a></li>
+                            <li><a href="category.html#" title="Floral Park">Floral Park</a></li>
+                            <li><a href="category.html#" title="Flushing">Flushing</a></li>
+                            <li><a href="category.html#" title="Fonda">Fonda</a></li>
+                            <li><a href="category.html#" title="Freeport">Freeport</a></li>
+                            <li><a href="category.html#" title="Fresh Meadows">Fresh Meadows</a></li>
+                            <li><a href="category.html#" title="Fultonville">Fultonville</a></li>
+                            <li><a href="category.html#" title="Gansevoort">Gansevoort</a></li>
+                            <li><a href="category.html#" title="Garden City">Garden City</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-link list-unstyled">
+                            <li><a href="category.html#" title="Oceanside">Oceanside</a></li>
+                            <li><a href="category.html#" title="Orangeburg">Orangeburg</a></li>
+                            <li><a href="category.html#" title="Orient">Orient</a></li>
+                            <li><a href="category.html#" title="Ozone Park">Ozone Park</a></li>
+                            <li><a href="category.html#" title="Palatine Bridge">Palatine Bridge</a></li>
+                            <li><a href="category.html#" title="Patterson">Patterson</a></li>
+                            <li><a href="category.html#" title="Pearl River">Pearl River</a></li>
+                            <li><a href="category.html#" title="Peekskill">Peekskill</a></li>
+                            <li><a href="category.html#" title="Pelham">Pelham</a></li>
+                            <li><a href="category.html#" title="Penn Yan">Penn Yan</a></li>
+                            <li><a href="category.html#" title="Peru">Peru</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

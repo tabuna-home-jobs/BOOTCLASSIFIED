@@ -12,8 +12,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="selecter  closed" tabindex="0">
-                        <select class="form-control selecter selecter-selected"
-                                                                       name="category">
+                        <select class="form-control selecter selecter-selected" name="category">
                             @foreach($categoryList as $value)
 
                                 <optgroup label="{{$value->name}}">
@@ -29,8 +28,8 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="selecter  closed" tabindex="0"><select class="form-control selecter-selected  selecter"
-                                                                       name="location">
+                    <div class="selecter  closed" tabindex="0">
+                        <select class="form-control selecter-selected selecter" name="location">
                             @foreach($cityList as $value)
                                 <option value="{{$value->id}}">{{$value->name}}</option>
                             @endforeach
