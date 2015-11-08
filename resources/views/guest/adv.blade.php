@@ -42,7 +42,7 @@
             <div class="col-sm-9 page-content col-thin-right">
                 <div class="inner inner-box ads-details-wrapper">
                     <h2> {{$advertising->title}} @if($advertising->type)
-                            <small class="label label-default adlistingtype">Компания</small>@endif </h2>
+                            <small class="label label-default adlistingtype  pull-right">Компания</small>@endif </h2>
                    <span class="info-row"> <span class="date"><i
                                    class="fa fa-clock-o"> </i> {{$advertising->created_at->diffForHumans() }} </span> &nbsp; <span
                                class="category"><i class="fa fa-tag"></i> {{$advertising->getCategory->name}} </span> &nbsp; <span

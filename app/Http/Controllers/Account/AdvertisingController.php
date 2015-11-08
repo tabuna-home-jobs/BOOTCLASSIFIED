@@ -29,7 +29,7 @@ class AdvertisingController extends Controller
      */
     public function index()
     {
-        $advertisingList = Advertising::with('getImages')->whereUserId(Auth::user()->id)->paginate(15);
+        $advertisingList = Advertising::with('getImages', 'getCategory')->whereUserId(Auth::user()->id)->paginate(15);
 
         return view('account.advertisingIndex', [
             'advertisingList' => $advertisingList

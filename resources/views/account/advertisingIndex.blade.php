@@ -39,7 +39,7 @@
                                         <td style="width:58%" class="ads-details-td">
                                             <div>
                                                 <p><strong>
-                                                        <a href="{{route('advertising.edit',$adv->id)}}">{{$adv->title}}</a>
+                                                        <a href="{{route('category.advertising.show',[$adv->getCategory->slug,$adv->id])}}">{{$adv->title}}</a>
                                                     </strong></p>
 
                                                 <p><strong> Опубликован </strong>:
