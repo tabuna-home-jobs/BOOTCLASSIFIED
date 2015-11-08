@@ -137,6 +137,7 @@
                             </select>
 
 
+
                             <select class="form-control selecter" id="region-state"
                                     name="region-state" tabindex="-1">
                                 @foreach($cityList as $value)
@@ -215,7 +216,24 @@
     $('.selecter').selecter();
 
 </script>
+<script type="text/javascript">
+    $(document).ready(function(){
 
+        $("#country_id").change(function(){
+            alert('ww');
+            //Запрпашиваем города
+            $.ajax({
+                type: "POST",
+                url: "/townslist/towns/",
+                success: function(data){
+                    console.log(data);
+                }
+            });
+
+        });
+
+    });
+</script>
 
 </body>
 </html>

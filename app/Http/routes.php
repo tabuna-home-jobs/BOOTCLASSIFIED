@@ -24,6 +24,11 @@ Route::group(['namespace' => 'Guest'], function () {
     Route::resource('faq', 'FAQController@index');
     Route::resource('category', 'CategoryController');
     Route::resource('category.advertising', 'AdvertisingController');
+
+
+	//Города взять
+	Route::controller('townslist', 'CategoryController');
+
 });
 
 
