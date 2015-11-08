@@ -28,6 +28,3 @@ class City extends Model
 
 
 }
-
-
-

@@ -1,7 +1,6 @@
 <?php namespace App\Providers;
 
 use App\Http\Composers\CountryComposers;
-use App\Http\Composers\GeoComposers;
 use Illuminate\Support\ServiceProvider;
 use View;
 
@@ -16,7 +15,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('*', CountryComposers::class);
-        View::composer('*', GeoComposers::class);
+        //View::composer('*', GeoComposers::class);
     }
 
     /**

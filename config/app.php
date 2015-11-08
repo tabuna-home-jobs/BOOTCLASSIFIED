@@ -152,7 +152,6 @@ return [
         Watson\Active\ActiveServiceProvider::class,
         Torann\GeoIP\GeoIPServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-
     ],
 
     /*

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Models\Advertising;
 use App\Models\Category;
+use App\Models\City;
 use Cache;
 use Illuminate\Http\Request;
 use Session;
@@ -62,6 +63,16 @@ class CategoryController extends Controller
 
 
         /*
+         *  Близлежащие города
+         */
+
+
+        $locationCity = Cache::remember('locationCity', 60, function () {
+            return City::where('country_id', Session::get('GeoCity')->country_id)->get();
+        });
+
+
+        /*
          * Выборка
          */
 
@@ -93,7 +104,7 @@ class CategoryController extends Controller
         $count_separated = implode(",", $WhereCategory);
 
         $CountAdvListAll = Cache::remember('CountAdvListAll' . $count_separated . 'City' . Session::get('GeoCity'), 60, function () use ($WhereCategory) {
-            return Advertising::where('city_id', Session::get('GeoCity'))
+            return Advertising::where('city_id', Session::get('GeoCity')->id)
                 ->whereIn('category_id', $WhereCategory)
                 ->orderBy('id', 'DESC')
                 ->count();
@@ -109,6 +120,7 @@ class CategoryController extends Controller
 
             'CountAdvListAll' => $CountAdvListAll,
             'categoryList'    => $categoryList,
+            'locationCity' => $locationCity,
         ]);
 
 

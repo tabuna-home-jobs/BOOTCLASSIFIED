@@ -29,11 +29,7 @@ class Images extends Model
     public function scopeMainCategory($query)
     {
         return $query->whereCategory_id(0);
-//        return $query->where('category_id',0);
     }
 
 
 }
-
-
-

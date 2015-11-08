@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Session;
 
 class Advertising extends Model
 {
@@ -63,8 +64,9 @@ class Advertising extends Model
     public function scopePopularCategory($query)
     {
         return $query
-            ->join('category', 'category.id', '=', 'advertising.id')
+            ->join('category', 'category.id', '=', 'advertising.category_id')
             ->selectRaw('category.name, category.slug ,advertising.category_id, count(advertising.id) as count')
+            ->where('city_id', Session::get('GeoCity')->id)
             ->groupBy('category_id')
             ->orderBy('count', 'desc')
             ->limit(10);
@@ -72,9 +74,4 @@ class Advertising extends Model
 
 
 
-
-
 }
-
-
-

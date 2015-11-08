@@ -30,7 +30,7 @@
                 <div class="col-sm-3">
                     <div class="selecter  closed" tabindex="0">
                         <select class="form-control selecter-selected selecter" name="location">
-                            @foreach($cityList as $value)
+                            @foreach($locationCity as $value)
                                 <option value="{{$value->id}}">{{$value->name}}</option>
                             @endforeach
 
@@ -48,6 +48,29 @@
 
 
     <div class="main-container">
+
+
+        @if (Session::has('flash_notification.message'))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 page-content">
+                        <div class="inner-box category-content">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <div class="alert alert-{{ Session::get('flash_notification.level') }} pgray  alert-lg"
+                                         role="alert">
+                                        <h2 class="no-margin no-padding">{{ Session::get('flash_notification.message') }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+
+
 
     <div class="container">
             <div class="row">
@@ -168,15 +191,17 @@
 
                         <nav>
                             <ul class="pager">
-                                <li class="previous
-                                @if($advertisingList->currentPage() == 1) disabled @endif
-                                        "><a href="{{$advertisingList->previousPageUrl()}}"><span
+
+                                @if(!$advertisingList->currentPage())
+                                    <li class="previous"><a href="{{$advertisingList->previousPageUrl()}}"><span
                                                 aria-hidden="true">&larr;</span>
                                         Назад</a></li>
-                                <li class="next
-                                @if(!$advertisingList->hasMorePages()) disabled @endif
-                                        "><a href="{{$advertisingList->nextPageUrl()}}">Дальше <span
-                                                aria-hidden="true">&rarr;</span></a></li>
+                                @endif
+
+                                @if($advertisingList->hasMorePages())
+                                    <li class="next"><a href="{{$advertisingList->nextPageUrl()}}">Дальше <span
+                                                    aria-hidden="true">&rarr;</span></a></li>
+                                @endif
                             </ul>
                         </nav>
                     </div>

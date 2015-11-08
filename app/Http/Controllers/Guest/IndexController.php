@@ -10,6 +10,7 @@ use App\Models\City;
 use App\Models\User;
 use Cache;
 use Illuminate\Http\Request;
+use Session;
 
 class IndexController extends Controller
 {
@@ -25,7 +26,11 @@ class IndexController extends Controller
          * Категории
          */
         $categoryList = Cache::remember('categoryListColums', 60, function () {
-            $category = Category::MainCategory()->with('getSubCategory')->orderBy('name', 'ASC')->get();
+            $category = Category::MainCategory()
+                ->with('getSubCategory')
+                ->orderBy('name', 'ASC')
+                ->get();
+
             $columCount = ceil(count($category) / 3);
 
             return [
@@ -36,7 +41,7 @@ class IndexController extends Controller
         });
 
 
-        $popularCategory = Cache::remember('popularCategory', 60, function () {
+        $popularCategory = Cache::remember('popularCategory-' . Session::get('GeoCity')->id, 60, function () {
             return  Advertising::popularCategory()->get();
         });
 

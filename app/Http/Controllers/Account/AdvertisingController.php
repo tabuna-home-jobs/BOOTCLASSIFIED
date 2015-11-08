@@ -15,6 +15,7 @@ use Flash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Image;
 use Session;
 
 class AdvertisingController extends Controller
@@ -67,7 +68,22 @@ class AdvertisingController extends Controller
 
         foreach ($request->file('images') as $file) {
             if (!is_null($file)) {
+
+
+                /*
+                 * Тут должна быть ресайз изоюражений и их уменьшение качества
+                 */
+
                 $file->move(public_path() . '/adv/' . date("Y-m-d") . '/' . date("H"), Str::ascii(time() . '-' . $file->getClientOriginalName()));
+
+                /*
+                $name = public_path() . '/adv/' . date("Y-m-d") . '/' . date("H"). Str::ascii(time() . '-' . $file->getClientOriginalName());
+
+                $img = Image::make($file)
+                    ->resize(300, 200)
+                    ->save($name,60);
+                */
+
                 $image = new Images([
                     'advertising_id' => $advertising->id,
                     'path' => '/adv/' . date("Y-m-d") . '/' . date("H"),

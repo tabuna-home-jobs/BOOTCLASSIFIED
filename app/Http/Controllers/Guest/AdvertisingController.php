@@ -49,6 +49,8 @@
          */
         public function show($category, $advertising)
         {
+            $advertising->visits++;
+            $advertising->save();
             return view('guest.adv', [
                 'category'    => $category,
                 'advertising' => $advertising,

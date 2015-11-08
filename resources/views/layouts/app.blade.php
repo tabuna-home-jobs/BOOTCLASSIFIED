@@ -9,7 +9,18 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="/assets/ico/favicon.png">
-    <title>Доска Объявлений</title>
+
+    <title>@yield('title','Доска Объявлений')</title>
+    <meta id="token" name="token" value="{{ csrf_token() }}">
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
+    <meta property="og:title" content="@yield('title')">
+    <meta property="og:description" content="@yield('description')">
+    <meta property="og:image" content="@yield('avatar')">
+    <meta name="twitter:title" content="@yield('title')">
+    <meta name="twitter:description" content="@yield('description')"/>
+    <meta name="twitter:image:src" content="@yield('avatar')"/>
+
 
     <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 

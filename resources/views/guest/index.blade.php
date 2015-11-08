@@ -79,7 +79,7 @@
                                     <div class="cat-list">
                                         <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
-                                                        class="count">277,959</span> </a>
+                                                        class="count">{{$value->getAdvertisingCount()}}</span> </a>
                                             <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
                                                   class="btn-cat-collapsed collapsed"> <span
                                                         class=" icon-down-open-big"></span> </span>
@@ -102,7 +102,7 @@
                                     <div class="cat-list">
                                         <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
-                                                        class="count">277,959</span> </a>
+                                                        class="count">{{$value->getAdvertisingCount()}}</span> </a>
                                             <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
                                                   class="btn-cat-collapsed collapsed"> <span
                                                         class=" icon-down-open-big"></span> </span>
@@ -125,7 +125,7 @@
                                     <div class="cat-list">
                                         <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
-                                                        class="count">277,959</span> </a>
+                                                        class="count">{{$value->getAdvertisingCount()}}</span> </a>
                                             <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
                                                   class="btn-cat-collapsed collapsed"> <span
                                                         class=" icon-down-open-big"></span> </span>
