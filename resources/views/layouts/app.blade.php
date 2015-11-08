@@ -141,60 +141,23 @@
                             </select>
 
 
-
-                            <select class="form-control selecter" id="region-state"
-                                    name="region-state" tabindex="-1">
-
-
-                            </select>
                         </div>
                         <div style="clear:both"></div>
                         <hr class="hr-thin">
                     </div>
-                    <div class="col-md-4">
-                        <ul class="list-link list-unstyled">
-                            <li><a href="category.html#" title="">All Cities</a></li>
-                            <li><a href="category.html#" title="Albany">Albany</a></li>
-                            <li><a href="category.html#" title="Altamont">Altamont</a></li>
-                            <li><a href="category.html#" title="Amagansett">Amagansett</a></li>
-                            <li><a href="category.html#" title="Amawalk">Amawalk</a></li>
-                            <li><a href="category.html#" title="Bellport">Bellport</a></li>
-                            <li><a href="category.html#" title="Centereach">Centereach</a></li>
-                            <li><a href="category.html#" title="Chappaqua">Chappaqua</a></li>
-                            <li><a href="category.html#" title="East Elmhurst">East Elmhurst</a></li>
-                            <li><a href="category.html#" title="East Greenbush">East Greenbush</a></li>
-                            <li><a href="category.html#" title="East Meadow">East Meadow</a></li>
+                    <div id="countryListSelect">
+                        <div class="col-md-4">
+                            <ul class="list-link list-unstyled" id="countryListSelect-1">
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <ul class="list-link list-unstyled">
-                            <li><a href="category.html#" title="Elmont">Elmont</a></li>
-                            <li><a href="category.html#" title="Elmsford">Elmsford</a></li>
-                            <li><a href="category.html#" title="Farmingville">Farmingville</a></li>
-                            <li><a href="category.html#" title="Floral Park">Floral Park</a></li>
-                            <li><a href="category.html#" title="Flushing">Flushing</a></li>
-                            <li><a href="category.html#" title="Fonda">Fonda</a></li>
-                            <li><a href="category.html#" title="Freeport">Freeport</a></li>
-                            <li><a href="category.html#" title="Fresh Meadows">Fresh Meadows</a></li>
-                            <li><a href="category.html#" title="Fultonville">Fultonville</a></li>
-                            <li><a href="category.html#" title="Gansevoort">Gansevoort</a></li>
-                            <li><a href="category.html#" title="Garden City">Garden City</a></li>
+                        <ul class="list-link list-unstyled" id="countryListSelect-2">
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <ul class="list-link list-unstyled">
-                            <li><a href="category.html#" title="Oceanside">Oceanside</a></li>
-                            <li><a href="category.html#" title="Orangeburg">Orangeburg</a></li>
-                            <li><a href="category.html#" title="Orient">Orient</a></li>
-                            <li><a href="category.html#" title="Ozone Park">Ozone Park</a></li>
-                            <li><a href="category.html#" title="Palatine Bridge">Palatine Bridge</a></li>
-                            <li><a href="category.html#" title="Patterson">Patterson</a></li>
-                            <li><a href="category.html#" title="Pearl River">Pearl River</a></li>
-                            <li><a href="category.html#" title="Peekskill">Peekskill</a></li>
-                            <li><a href="category.html#" title="Pelham">Pelham</a></li>
-                            <li><a href="category.html#" title="Penn Yan">Penn Yan</a></li>
-                            <li><a href="category.html#" title="Peru">Peru</a></li>
+                        <ul class="list-link list-unstyled" id="countryListSelect-3">
                         </ul>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -221,6 +184,7 @@
 </script>
 <script type="text/javascript">
 
+    /*
     //Шаблончик для списка option
     function selectElems(id, name){
         var option = "<option value='"+id+"'>";
@@ -235,6 +199,8 @@
         span += '</span>';
         return span;
     }
+
+     */
 
     $(document).ready(function(){
 
@@ -252,22 +218,43 @@
                 data: currentId,
                 success: function(data){
 
-                    var elem = '';
-                    var visElem = '';
-                    for(var i = 0; i < data.length; i++){
-                        elem += selectElems(data[i].id, data[i].name);
-                        visElem += selecterSelected(data[i].id, data[i].name);
+
+                    var list1 = '';
+                    for (var i = 0; i < data.length; i++) {
+                        list1 += "<li><a href='/city/" + data[2][i].id + "'>" + data[2][i].name + "</a></li>";
                     }
+                    $("#countryListSelect-1").html(list1);
+
+                    for (var i = 0; i < data.length; i++) {
+                        list1 += "<li><a href='/city/" + data[1][i].id + "'>" + data[1][i].name + "</a></li>";
+                    }
+                    $("#countryListSelect-2").html(list1);
+
+                    for (var i = 0; i < data.length; i++) {
+                        list1 += "<li><a href='/city/" + data[0][i].id + "'>" + data[0][i].name + "</a></li>";
+                    }
+                    $("#countryListSelect-3").html(list1);
+
+
+                    /*
+                     var elem = '';
+                     var visElem = '';
+                     for(var i = 0; i < data.length; i++){
+                     elem += selectElems(data[i].id, data[i].name);
+                     visElem += selecterSelected(data[i].id, data[i].name);
+                     }
 
 
                     $("#region-state").html(elem);
                     $("#region-state").parent().find("span.selecter-selected").html(data[0].name);
                     $("#region-state").parent().find(".scroller .scroller-content").html(visElem);
+                     */
+
+
                 }
             });
 
         });
-
 
     });
 </script>

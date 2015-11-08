@@ -93,8 +93,16 @@ class IndexController extends Controller
 
 	public function getStowns($id){
 
-		return City::select('id', 'name')->where('country_id', $id)->get()->toJson();
+        $city = City::select('id', 'name')->where('country_id', $id)->get();
+        $columCount = ceil(count($city) / 3);
 
+        $city = [
+            $city->slice(0, $columCount),
+            $city->slice($columCount, $columCount),
+            $city->slice($columCount * 2),
+        ];
+
+        return response()->json($city);
 	}
 
     /**
