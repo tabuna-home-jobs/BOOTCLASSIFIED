@@ -144,9 +144,8 @@
 
                             <select class="form-control selecter" id="region-state"
                                     name="region-state" tabindex="-1">
-                                @foreach($cityList as $value)
-                                    <option value="{{$value->id}}">{{$value->name}}</option>
-                                @endforeach
+
+
                             </select>
                         </div>
                         <div style="clear:both"></div>
@@ -221,20 +220,54 @@
 
 </script>
 <script type="text/javascript">
+
+    //Шаблончик для списка option
+    function selectElems(id, name){
+        var option = "<option value='"+id+"'>";
+        option += name;
+        option += "</optin>";
+        return option;
+    }
+    //Шаблон для красивого списка
+    function selecterSelected(id, name){
+        var span = '<span class="selecter-item" data-value="'+id+'">';
+        span += name;
+        span += '</span>';
+        return span;
+    }
+
     $(document).ready(function(){
 
         $("#country_id").change(function(){
-            alert('ww');
             //Запрпашиваем города
+            //region-state
+            var obj = $(this);
+            var currentId = $('option:selected',obj).val();
+
+
             $.ajax({
-                type: "POST",
-                url: "/townslist/towns/",
+                type: "GET",
+                url: "/townslist/stowns/"+currentId,
+                dataType: 'json',
+                data: currentId,
                 success: function(data){
-                    console.log(data);
+
+                    var elem = '';
+                    var visElem = '';
+                    for(var i = 0; i < data.length; i++){
+                        elem += selectElems(data[i].id, data[i].name);
+                        visElem += selecterSelected(data[i].id, data[i].name);
+                    }
+
+
+                    $("#region-state").html(elem);
+                    $("#region-state").parent().find("span.selecter-selected").html(data[0].name);
+                    $("#region-state").parent().find(".scroller .scroller-content").html(visElem);
                 }
             });
 
         });
+
 
     });
 </script>

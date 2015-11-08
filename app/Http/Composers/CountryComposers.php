@@ -18,16 +18,17 @@ class CountryComposers
     public function compose(View $view)
     {
 
+	    /*
         $cityList = Cache::remember('cityList', 60, function () {
             return City::all();
-        });
+        });*/
 
         $countryList = Cache::remember('countryList', 60, function () {
             return Country::all();
         });
 
 
-        $view->with('cityList', $cityList);
+        //$view->with('cityList', $cityList);
         $view->with('countryList', $countryList);
     }
 
