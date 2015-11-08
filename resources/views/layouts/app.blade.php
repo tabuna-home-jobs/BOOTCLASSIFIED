@@ -98,7 +98,7 @@
                 <li>
                     <a href="{{ url('/') }}"><i class="fa fa-home"></i> Главная </a>
                     <a href="{{ route('about.index') }}"><i class="fa fa-users"></i> О нас </a>
-                    <a href="{{ route('about.index') }}"><i class="fa fa-exclamation-triangle"></i> Правила </a>
+                    <a href="{{ route('rules.index') }}"><i class="fa fa-exclamation-triangle"></i> Правила </a>
                     <a href="{{ route('faq.index') }}"><i class="fa fa-life-ring"></i> Помощь </a>
                 </li>
             </ul>
