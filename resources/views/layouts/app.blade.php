@@ -61,11 +61,15 @@
                                     <span>{{Auth::user()->name}} {{Auth::user()->lastname}}</span> <i
                                             class="fa fa-user"></i></a>
                                 <ul class="dropdown-menu user-menu">
-                                    <li class="active"><a href="{{route('settings.index')}}"><i class="fa fa-home"></i>
+                                    <li class="{{Active::route('settings.*')}}"><a href="{{route('settings.index')}}"><i
+                                                    class="fa fa-home"></i>
                                             Профиль </a></li>
-                                    <li><a href="#"><i class="fa fa-th-large"></i> Мои обьявления </a></li>
+                                    <li class="{{Active::route('advertising.*')}}"><a
+                                                href="{{route('advertising.index')}}"><i class="fa fa-th-large"></i> Мои
+                                            обьявления </a></li>
                                     <li><a href="#"><i class="fa fa-heart"></i> Мне понравилось </a></li>
-                                    <li><a href="#"><i class="fa fa-folder"></i> Архив </a></li>
+                                    <li class="{{Active::route('archive.*')}}"><a href="{{route('archive.index')}}"><i
+                                                    class="fa fa-folder"></i> Архив </a></li>
                                     <li><a href="#"><i class="fa fa-money "></i> Платежи </a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{url('auth/logout')}}"><i class="fa fa-sign-out"></i> Выйти </a></li>
