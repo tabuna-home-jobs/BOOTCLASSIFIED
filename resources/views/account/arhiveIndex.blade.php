@@ -4,6 +4,8 @@
 
     <div class="main-container">
 
+
+
         <div class="container">
             <div class="row">
                 @include('layouts.AccountSidebar')
@@ -53,17 +55,26 @@
                                         </td>
                                         <td style="width:10%" class="action-td">
                                             <div>
-                                                <p><a href="{{route('advertising.edit',$adv->id)}}"
-                                                      class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i>
-                                                        Редактировать </a></p>
 
-                                                <form action="{{route('advertising.destroy',$adv->id)}}" method="POST">
+                                                <form action="{{route('archive.update',$adv->id)}}" method="POST">
+                                                    <input type="hidden" name="_method" value="PUT">
+                                                    {!! csrf_field() !!}
+                                                    <p>
+                                                        <button type="submit"
+                                                                class="btn btn-success btn-xs"> <i class="fa fa-reply"></i>
+                                                            Востановить
+                                                        </button>
+                                                    </p>
+                                                </form>
+
+
+                                                <form action="{{route('archive.destroy',$adv->id)}}" method="POST">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     {!! csrf_field() !!}
 
                                                     <p>
                                                         <button type="submit"
-                                                      class="btn btn-danger btn-xs"> <i class=" fa fa-trash"></i>
+                                                                class="btn btn-danger btn-xs"> <i class=" fa fa-trash"></i>
                                                             Удалить
                                                         </button>
                                                     </p>
