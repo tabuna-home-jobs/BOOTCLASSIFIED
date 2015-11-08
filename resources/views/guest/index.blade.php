@@ -163,12 +163,6 @@
                         </div>
 
 
-                        <div class="inner-box no-padding">
-                            <div class="inner-box-content"><a href="#"><img class="img-responsive"
-                                                                            src="images/site/app.jpg" alt="tv"></a>
-                            </div>
-                        </div>
-
 
                     </aside>
                 </div>

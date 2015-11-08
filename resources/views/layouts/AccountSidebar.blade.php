@@ -28,7 +28,8 @@
                                             class="badge">{{Auth::user()->getAdvertising()->count()}}</span> </a></li>
                             <li><a href="account-favourite-ads.html"><i class="fa fa-heart"></i> Мне понравились <span
                                             class="badge"></span> </a></li>
-                            <li><a href="account-archived-ads.html"><i class="fa fa-folder"></i> Архив <span
+                            <li><a class="{{Active::route('archive.*')}}" href="{{route('archive.index')}}"><i
+                                            class="fa fa-folder"></i> Архив <span
                                             class="badge"></span></a></li>
                             <li><a href="account-pending-approval-ads.html"><i class="fa fa-money"></i> Платежи <span
                                             class="badge"></span></a></li>

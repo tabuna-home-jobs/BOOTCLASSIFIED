@@ -243,7 +243,8 @@
                                                 <label class="checkbox-inline" for="checkboxes-0">
                                                     <input name="terms" id="terms"
                                                            value="1" type="checkbox">
-                                                    Я подтверждаю своё согласие с условиями<a href="#">
+                                                    Я подтверждаю своё согласие с условиями<a
+                                                            href="{{route('rules.index')}}" target="_blank">
                                                         пользовательского соглашения</a> </label>
                                                 </label>
                                             </div>

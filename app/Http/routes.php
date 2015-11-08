@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Guest'], function () {
 
 Route::group(['namespace' => 'Account'], function () {
     Route::resource('advertising', 'AdvertisingController');
+    Route::resource('archive', 'ArchiveController');
     Route::resource('settings', 'SettingsController');
     Route::resource('like', 'LikesController');
 
