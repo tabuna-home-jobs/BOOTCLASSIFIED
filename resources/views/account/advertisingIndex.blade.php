@@ -3,6 +3,28 @@
 @section('main')
 
     <div class="main-container">
+
+
+        @if (Session::has('flash_notification.message'))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 page-content">
+                        <div class="inner-box category-content">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <div class="alert alert-{{ Session::get('flash_notification.level') }} pgray  alert-lg"
+                                         role="alert">
+                                        <h2 class="no-margin no-padding">{{ Session::get('flash_notification.message') }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+
         <div class="container">
             <div class="row">
                 @include('layouts.AccountSidebar')
@@ -56,9 +78,17 @@
                                                       class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i>
                                                         Редактировать </a></p>
 
-                                                <p><a href="{{route('advertising.edit',$adv->id)}}"
+                                                <form action="{{route('advertising.destroy',$adv->id)}}" method="POST">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    {!! csrf_field() !!}
+
+                                                    <p>
+                                                        <button type="submit"
                                                       class="btn btn-danger btn-xs"> <i class=" fa fa-trash"></i>
-                                                        Удалить </a></p>
+                                                            Удалить
+                                                        </button>
+                                                    </p>
+                                                </form>
                                             </div>
                                         </td>
                                     </tr>

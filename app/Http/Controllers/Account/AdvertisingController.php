@@ -10,13 +10,15 @@ use App\Models\Category;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\Images;
+use Auth;
 use Cache;
 use Flash;
+use Gate;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Image;
 use Session;
+
 
 class AdvertisingController extends Controller
 {
@@ -162,11 +164,19 @@ class AdvertisingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     * @return Response
+     * @param  Advertising $advertising
+     *
+*@return Response
      */
-    public function destroy($id)
+    public function destroy(Advertising $advertising)
     {
-        //
+        if ($advertising->user_id == Auth::user()->id) {
+            $advertising->delete();
+            Flash::success('Вы успешно удалили обьявление');
+
+            return redirect()->route('advertising.index');
+        } else {
+            abort(404);
+        }
     }
 }

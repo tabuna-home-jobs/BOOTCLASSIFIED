@@ -34,4 +34,12 @@ class AdvertisingPolicy
     }
 
 
+    public function destroy(User $user, Advertising $advertising)
+    {
+        dd($user->id, $advertising->user_id);
+
+        return $user->id === $advertising->user_id;
+    }
+
+
 }
