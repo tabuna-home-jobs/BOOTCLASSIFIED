@@ -91,6 +91,15 @@ class IndexController extends Controller
         ]);
     }
 
+	public function getTowns(){
+		/*
+         * Города
+         */
+		//$allCity = Cache::remember('allCity', 60, function () {
+		return City::lists('id', 'name')->toJson();
+		//});
+	}
+
     /**
      * Show the form for creating a new resource.
      *
