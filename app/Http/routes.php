@@ -28,7 +28,7 @@ Route::group(['namespace' => 'Guest'], function () {
 
 
 	//Города взять
-	Route::controller('townslist', 'CategoryController');
+	Route::controller('townslist', 'IndexController');
 
 });
 
