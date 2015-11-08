@@ -34,7 +34,10 @@
                 Session::put('GeoCity', $GeoCity);
             }
 
-            View::composer('GeoCity', Session::get('GeoCity'));
+
+            View::composer('*', function () {
+                View::share('GeoCity', Session::get('GeoCity'));
+            });
 
             return $next($request);
         }
