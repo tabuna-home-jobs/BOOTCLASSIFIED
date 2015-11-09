@@ -18,9 +18,8 @@ class CategoryController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
     }
 
     /**
@@ -41,7 +40,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -89,9 +88,25 @@ class CategoryController extends Controller
             $WhereCategory[] = $value->id;
         }
 
+
+        /*
+         * Если категория являеться главной, то бежим по всем, если же нет
+         * то только по ней
+         */
+
+        if ($category == $categoryMain)
+            $WhereIn = $WhereCategory;
+        else
+            $WhereIn = [$category->id];
+
+
+        /*
+         * Сама выборка
+         */
+
         $advertisingList = Advertising::with('getImages', 'getCategory', 'getCity')
             ->where('city_id', Session::get('GeoCity')->id)
-            ->whereIn('category_id', $WhereCategory)
+            ->whereIn('category_id', $WhereIn)
             ->orderBy('id', 'DESC')
             ->simplePaginate(10);
 

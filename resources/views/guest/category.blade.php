@@ -6,13 +6,17 @@
 
     <div class="search-row-wrapper">
         <div class="container ">
-            <form action="#" method="GET">
+            <form action="{{route('category.index')}}" method="GET">
                 <div class="col-sm-3">
-                    <input class="form-control keyword" type="text" placeholder="Я ищу ...">
+                    <input class="form-control keyword" name="query" type="text" required placeholder="Я ищу ..."
+                           min="3" max="255">
                 </div>
                 <div class="col-sm-3">
-                    <div class="selecter  closed" tabindex="0">
-                        <select class="form-control selecter selecter-selected" name="category">
+                    <div class="selecter" tabindex="0">
+
+
+                        <select name="category_id"
+                                class="form-control selecter">
                             @foreach($categoryList as $value)
 
                                 <optgroup label="{{$value->name}}">
@@ -22,23 +26,23 @@
                                 </optgroup>
 
                             @endforeach
-
-
                         </select>
+
+
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="selecter  closed" tabindex="0">
-                        <select class="form-control selecter-selected selecter" name="location">
+                    <div class="selecter" tabindex="0">
+                        <select name="city_id"
+                                class="form-control selecter">
                             @foreach($locationCity as $value)
                                 <option value="{{$value->id}}">{{$value->name}}</option>
                             @endforeach
-
                         </select>
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <button class="btn btn-block btn-primary  "><i class="fa fa-search"></i></button>
+                    <button class="btn btn-block btn-primary"><i class="fa fa-search"></i></button>
                 </div>
             </form>
         </div>

@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Nicolaslopezj\Searchable\SearchableTrait;
 use Session;
 
 class Advertising extends Model
 {
 
-
-    use SoftDeletes;
+    use SoftDeletes, SearchableTrait;
     /**
      * The database table used by the model.
      *
@@ -38,6 +38,24 @@ class Advertising extends Model
         'visits',
     ];
 
+    /**
+     * Searchable rules.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        'columns' => [
+            'title'       => 3,
+            'description' => 10,
+            //'city_id' => 1,
+            //'category_id' => 1,
+        ],
+    ];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
 
     public function getCategory()
     {
