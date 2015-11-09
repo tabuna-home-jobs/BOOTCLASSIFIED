@@ -121,7 +121,7 @@
                                                 <div class="termbox mb10">
                                                     <label class="checkbox-inline" for="terms">
                                                         <input name="terms" value="1" type="checkbox">
-                                                        Я подтверждаю своё согласие с условиями<a href="terms-conditions.html"> пользовательского соглашения</a> </label>
+                                                        Я подтверждаю своё согласие с условиями<a href="{{route('rules.index')}}"> пользовательского соглашения</a> </label>
                                                 </div>
                                                 <div style="clear:both"></div>
 
