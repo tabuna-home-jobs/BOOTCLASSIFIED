@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+
+@section('title', $category->name  .' | Доска Объявлений |' . Session::get('GeoCity')->name )
+@section('description', $category->name  .' | Доска Объявлений |' . Session::get('GeoCity')->name )
+@section('keywords', $category->name  .' | Доска Объявлений |' . Session::get('GeoCity')->name)
+
+
+
 @section('main')
 
 
