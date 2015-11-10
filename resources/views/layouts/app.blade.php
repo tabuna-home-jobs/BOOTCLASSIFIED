@@ -67,10 +67,8 @@
                                     <li class="{{Active::route('advertising.*')}}"><a
                                                 href="{{route('advertising.index')}}"><i class="fa fa-th-large"></i> Мои
                                             обьявления </a></li>
-                                    <li><a href="#"><i class="fa fa-heart"></i> Мне понравилось </a></li>
                                     <li class="{{Active::route('archive.*')}}"><a href="{{route('archive.index')}}"><i
                                                     class="fa fa-folder"></i> Архив </a></li>
-                                    <li><a href="#"><i class="fa fa-money "></i> Платежи </a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{url('auth/logout')}}"><i class="fa fa-sign-out"></i> Выйти </a></li>
 

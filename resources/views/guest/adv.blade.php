@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 
-@section('title', $advertising->title)
-@section('description', $advertising->description)
-@section('keywords', 'Купить '. $advertising->title . ' в '. Session::get('GeoCity')->name)
+@section('title', $advertising->title .' | '. $advertising->getCategory->name .' | Доска Объявлений |' . Session::get('GeoCity')->name )
+@section('description', str_limit($advertising->description, $limit = 100, $end = '...') )
+@section('keywords', 'Купить '. $advertising->title . ' '.  Session::get('GeoCity')->name)
 
 
 
@@ -76,36 +76,27 @@
                         <h5 class="list-title"><strong>Описание</strong></h5>
 
                         <div class="row">
-                            <div class="ads-details-info col-md-8">
+                            <div class="ads-details-info col-md-12">
                                 <p>
                                     {!! nl2br(e($advertising->description)) !!}
                                 </p>
                             </div>
-                            <div class="col-md-4">
-                                <div class="ads-action">
-                                    <ul class="list-border">
-                                        <li>
-
-
-                                            @if(Auth::check() && !Auth::user()->likes()->find($advertising->id))
-                                                <form action="{{route('like.store')}}" method="post">
-                                                    <button type="submit" class="btn btn-default  btn-sm make-favorite">
-                                                        <i class="fa fa-heart"></i> <span>Мне нравиться</span></button>
-                                                    <input type="hidden" name="adv" value="{{$advertising->id}}">
-                                                    {!! csrf_field() !!}
-                                                </form>
-                                            @endif
-
-                                            <a href="#"> <i class=" fa fa-heart"></i> Мне нравиться </a>
-
-                                        </li>
-                                        <li><a href="#"> <i class="fa fa-share-alt"></i> Поделиться </a></li>
-                                        <li><a href="#reportAdvertiser" data-toggle="modal"> <i
-                                                        class="fa icon-info-circled-alt"></i> Пожаловаться </a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
+
+                        <div class="content-footer text-left">
+
+                            <a href="#contactAdvertiser" data-toggle="modal" class="btn btn-default">
+                                <i class="fa fa-envelope-o"></i> Написать сообщение </a>
+                            <a class="btn btn-info "><i class="fa fa-phone"></i>
+                                {{$advertising->phone}} </a>
+
+                            <a href="#reportAdvertiser" data-toggle="modal" class="btn btn-primary pull-right"> <i
+                                        class="fa icon-info-circled-alt"></i> Пожаловаться </a>
+
+
+                        </div>
+
+
                     </div>
                 </div>
 
@@ -172,7 +163,9 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <form role="form">
+                    <form role="form"
+                          action="{{route('category.advertising.destroy',[$category->slug,$advertising->id])}}"
+                          method="post">
                         <div class="form-group">
                             <label for="report-reason" class="control-label">Причина:</label>
                             <select name="report-reason" id="report-reason" class="form-control">
@@ -194,6 +187,8 @@
                                         class="text-count">(300) </span>:</label>
                             <textarea class="form-control" id="message-text2" rows="5"></textarea>
                         </div>
+
+                        {!! csrf_field() !!}
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -215,7 +210,9 @@
                     <h4 class="modal-title"><i class="fa fa-envelope-o"></i> Написать продавцу </h4>
                 </div>
                 <div class="modal-body">
-                    <form role="form">
+                    <form role="form"
+                          action="{{route('category.advertising.store',[$category->slug,$advertising->id])}}"
+                          method="post">
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Имя:</label>
                             <input class="form-control required" id="recipient-name" placeholder="Ваше имя"
@@ -243,6 +240,7 @@
                             <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not
                                 valid. </p>
                         </div>
+                        {!! csrf_field() !!}
                     </form>
                 </div>
                 <div class="modal-footer">

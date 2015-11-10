@@ -32,7 +32,7 @@
                                 @foreach($advertisingList as $adv)
                                     <tr>
                                         <td style="width:14%" class="add-img-td"><a
-                                                    href="{{route('advertising.edit',$adv->id)}}"><img
+                                                    href="{{route('category.advertising.show',[$adv->getCategory->slug,$adv->id])}}"><img
                                                         class="thumbnail  img-responsive"
                                                         src="@if(is_null($adv->getImages->first())) /images/noimage.jpg @else {{$adv->getImages->first()->path .'/'. $adv->getImages->first()->name}} @endif"
                                                         alt="img"></a></td>
@@ -53,10 +53,6 @@
                                         </td>
                                         <td style="width:10%" class="action-td">
                                             <div>
-                                                <p><a href="{{route('advertising.edit',$adv->id)}}"
-                                                      class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i>
-                                                        Редактировать </a></p>
-
                                                 <form action="{{route('advertising.destroy',$adv->id)}}" method="POST">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     {!! csrf_field() !!}

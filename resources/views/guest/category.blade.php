@@ -7,23 +7,21 @@
     <div class="search-row-wrapper">
         <div class="container ">
             <form action="{{route('category.index')}}" method="GET">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <input class="form-control keyword" name="query" type="text" required placeholder="Я ищу ..."
                            min="3" max="255">
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="selecter" tabindex="0">
 
 
                         <select name="category_id"
                                 class="form-control selecter">
-                            @foreach($categoryList as $value)
+                            @foreach($categorySub as $value)
 
-                                <optgroup label="{{$value->name}}">
-                                    @foreach($value->getSubCategory as $subValue)
-                                        <option value="{{$subValue->id}}">{{$subValue->name}}</option>
-                                    @endforeach
-                                </optgroup>
+                                <option value="{{$value->id}}"
+                                        @if($value->id == $category->id) selected @endif>{{$value->name}}</option>
+
 
                             @endforeach
                         </select>
@@ -31,17 +29,7 @@
 
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="selecter" tabindex="0">
-                        <select name="city_id"
-                                class="form-control selecter">
-                            @foreach($locationCity as $value)
-                                <option value="{{$value->id}}">{{$value->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <button class="btn btn-block btn-primary"><i class="fa fa-search"></i></button>
                 </div>
             </form>
@@ -106,25 +94,6 @@
                             </div>
 
 
-                            <div class="locations-list  list-filter">
-                                <h5 class="list-title"><strong><a href="#">Цена</a></strong></h5>
-
-                                <form role="form" class="form-inline ">
-                                    <div class="form-group col-sm-4 no-padding">
-                                        <input type="text" placeholder="2000 " id="minPrice" class="form-control">
-                                    </div>
-                                    <div class="form-group col-sm-1 no-padding text-center"> -</div>
-                                    <div class="form-group col-sm-4 no-padding">
-                                        <input type="text" placeholder="3000 " id="maxPrice" class="form-control">
-                                    </div>
-                                    <div class="form-group col-sm-3 no-padding">
-                                        <button class="btn btn-default pull-right" type="submit">Ок</button>
-                                    </div>
-                                </form>
-                                <div style="clear:both"></div>
-                            </div>
-
-
                         </div>
 
                     </aside>
@@ -155,6 +124,8 @@
                                                 <h5 class="add-title"><a
                                                             href="{{route('category.advertising.show',[$category->slug,$ads->id])}}">
                                                         {{$ads->title}} </a></h5>
+
+                                                <p>{{str_limit($ads->description, $limit = 55, $end = '...')}}</p>
                                                 <span class="info-row"><span
                                                             class="date"><i
                                                                 class="fa fa-clock-o"></i> {{$ads->created_at->diffForHumans() }} </span> &nbsp;  <span
