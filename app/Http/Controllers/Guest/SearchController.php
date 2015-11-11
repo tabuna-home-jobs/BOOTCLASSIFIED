@@ -6,9 +6,11 @@
     use App\Http\Requests;
     use App\Models\Advertising;
     use App\Models\Category;
+    use App\Models\City;
     use Cache;
     use Illuminate\Http\Request;
     use Session;
+
 
     class SearchController extends Controller
     {
