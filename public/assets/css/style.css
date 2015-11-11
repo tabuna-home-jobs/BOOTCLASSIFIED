@@ -3002,3 +3002,123 @@ td.ads-details-td {
         width: 300px;
     }
 }
+
+/*--------------
+  Illustration
+--------------*/
+.illustration {
+    position: relative;
+    width: 947px;
+    height: 437px;
+    display: inline-block;
+}
+
+.illustration .island {
+    background: url(/images/island.png) no-repeat;
+    width: 947px;
+    height: 437px;
+    position: absolute;
+    z-index: 0;
+    background-position: center;
+    background-size: 100%;
+}
+
+.illustration .char {
+    background: url(/images/char.png) no-repeat;
+    background-size: 100%;
+    width: 177px;
+    height: 306px;
+    display: inline-block;
+    z-index: 2;
+    position: absolute;
+    top: 100px;
+    left: 430px;
+}
+
+.illustration .hand {
+    background: url(/images/hand.png) no-repeat;
+    width: 133px;
+    height: 74px;
+    background-size: 100%;
+    display: inline-block;
+    z-index: 1;
+    position: absolute;
+    top: 150px;
+    left: 560px;
+    -moz-animation: 1s ease 0s normal none infinite hand;
+    -moz-transform-origin: 0% 80%;
+    -webkit-animation: hand 1s infinite ease-in-out;
+    -webkit-transform-origin: 0% 80%;
+    -o-animation: 1s ease 0s normal none infinite hand;
+    -o-transform-origin: 0% 80%;
+    -o-animation: hand 1s infinite ease-in-out;
+    -o-transform-origin: 0% 80%;
+    -ms-animation: 1s ease 0s normal none infinite hand;
+    -ms-transform-origin: 0% 80%;
+    -ms-animation: hand 1s infinite ease-in-out;
+    -ms-transform-origin: 0% 80%;
+    animation: 1s ease 0s normal none infinite hand;
+    transform-origin: 0% 80%;
+    animation: hand 1s infinite ease-in-out;
+    transform-origin: 0% 80%;
+}
+
+@-moz-keyframes hand {
+    0% {
+        -moz-transform: rotate(-4deg)
+    }
+    50% {
+        -moz-transform: rotate(4deg)
+    }
+    100% {
+        -moz-transform: rotate(-4deg)
+    }
+}
+
+@-webkit-keyframes hand {
+    0% {
+        -webkit-transform: rotate(-4deg)
+    }
+    50% {
+        -webkit-transform: rotate(4deg)
+    }
+    100% {
+        -webkit-transform: rotate(-4deg)
+    }
+}
+
+@-o-keyframes hand {
+    0% {
+        -o-transform: rotate(-4deg)
+    }
+    50% {
+        -o-transform: rotate(4deg)
+    }
+    100% {
+        -o-transform: rotate(-4deg)
+    }
+}
+
+@-ms-keyframes hand {
+    0% {
+        -ms-transform: rotate(-4deg)
+    }
+    50% {
+        -ms-transform: rotate(4deg)
+    }
+    100% {
+        -ms-transform: rotate(-4deg)
+    }
+}
+
+@keyframes hand {
+    0% {
+        transform: rotate(-4deg)
+    }
+    50% {
+        transform: rotate(4deg)
+    }
+    100% {
+        transform: rotate(-4deg)
+    }
+}

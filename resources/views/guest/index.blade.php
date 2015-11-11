@@ -24,14 +24,16 @@
 
 
                         </div>
+                        <form action="{{route('search.index')}}" method="get">
                         <div class="col-lg-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
-                            <input type="text" name="ads" class="form-control has-icon"
+                            <input type="text" name="query" class="form-control has-icon"
                                    placeholder="Я хочу найти..." value="">
                         </div>
                         <div class="col-lg-4 col-sm-4 search-col">
-                            <button class="btn btn-primary btn-search btn-block"><i
+                            <button type="submit" class="btn btn-primary btn-search btn-block"><i
                                         class="icon-search"></i><strong>Найти</strong></button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

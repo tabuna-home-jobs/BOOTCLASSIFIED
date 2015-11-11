@@ -24,6 +24,7 @@ Route::group(['namespace' => 'Guest'], function () {
     Route::resource('faq', 'FAQController@index');
     Route::resource('rules', 'RulesController@index');
     Route::resource('city', 'CityController@show');
+    Route::resource('search', 'SearchController@index');
     Route::resource('category', 'CategoryController');
     Route::resource('category.advertising', 'AdvertisingController');
 
