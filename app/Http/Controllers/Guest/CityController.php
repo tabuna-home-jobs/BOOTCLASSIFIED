@@ -6,6 +6,7 @@
     use App\Http\Requests;
     use App\Models\City;
     use Auth;
+    use Cache;
     use Flash;
     use Illuminate\Http\Request;
     use Session;
@@ -53,10 +54,10 @@
          */
         public function show($id)
         {
-            $city = City::findOrFail($id);
+            $city = Cache::remember('CityChanged-' . $id, 60, function () use ($id) {
+                return City::findOrFail($id);
+            });
             Session::put('GeoCity', $city);
-            Flash::success('Вы успешно сменили город');
-
             return redirect()->back();
         }
 

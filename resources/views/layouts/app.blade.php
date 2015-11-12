@@ -221,21 +221,25 @@
                 success: function(data){
 
 
-                    var list1 = '';
+                    var list = '';
                     for (var i = 0; i < data.length; i++) {
-                        list1 += "<li><a href='/city/" + data[2][i].id + "'>" + data[2][i].name + "</a></li>";
+                        list += "<li><a href='/city/" + data[0][i].id + "'>" + data[0][i].name + "</a></li>";
                     }
-                    $("#countryListSelect-1").html(list1);
+                    $("#countryListSelect-1").html(list);
 
-                    for (var i = 0; i < data.length; i++) {
-                        list1 += "<li><a href='/city/" + data[1][i].id + "'>" + data[1][i].name + "</a></li>";
-                    }
-                    $("#countryListSelect-2").html(list1);
 
+                    var list = '';
                     for (var i = 0; i < data.length; i++) {
-                        list1 += "<li><a href='/city/" + data[0][i].id + "'>" + data[0][i].name + "</a></li>";
+                        list += "<li><a href='/city/" + data[1][i].id + "'>" + data[1][i].name + "</a></li>";
                     }
-                    $("#countryListSelect-3").html(list1);
+                    $("#countryListSelect-2").html(list);
+
+
+                    var list = '';
+                    for (var i = 0; i < data.length; i++) {
+                        list += "<li><a href='/city/" + data[2][i].id + "'>" + data[2][i].name + "</a></li>";
+                    }
+                    $("#countryListSelect-3").html(list);
 
 
                     /*
