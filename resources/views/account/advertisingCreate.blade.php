@@ -211,7 +211,7 @@
                                             <label class="col-md-3 control-label" for="country_id">Область</label>
 
                                             <div class="col-md-8">
-                                                <select id="country_id" name="country_id"
+                                                <select id="selector-country_id" name="country_id"
                                                         class="form-control selecter">
                                                     <option selected disabled>Выберите область ...</option>
                                                     @foreach($countryList as $value)
@@ -226,13 +226,8 @@
 
                                             <div class="col-md-8">
                                                 <select id="city_id" disabled name="city_id"
-                                                        class="form-control selecter">
+                                                        class="form-control">
                                                     <option selected disabled>Выберите Город ...</option>
-                                                    @foreach($cityList as $value)
-                                                        <option value="{{$value->id}}"
-                                                                data-country="{{$value->country_id}}">{{$value->name}}</option>
-                                                    @endforeach
-
                                                 </select>
                                             </div>
                                         </div>
@@ -300,23 +295,6 @@
 
     </div>
 
-
-    <script>
-        window.onload = function () {
-            $("#country_id").change(function () {
-                $("#city_id").prop('disabled', false);
-                var activeCountry = $("#country_id").val();
-                $("#city_id option").each(function () {
-
-                    if ($(this).data('country') == activeCountry)
-                        $(this).removeClass("hide");
-                    else
-                        $(this).addClass("hide");
-
-                });
-            });
-        }
-    </script>
 
 
 

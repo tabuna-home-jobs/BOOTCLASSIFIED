@@ -217,7 +217,7 @@
                 type: "GET",
                 url: "/townslist/stowns/"+currentId,
                 dataType: 'json',
-                data: currentId,
+                //data: currentId,
                 success: function(data){
 
 
@@ -261,6 +261,58 @@
             });
 
         });
+
+
+        $("#selector-country_id").change(function () {
+            //Запрпашиваем города
+            //region-state
+            var obj = $(this);
+            var currentId = $('option:selected', obj).val();
+
+
+            $.ajax({
+                type: "GET",
+                url: "/townslist/city/" + currentId,
+                dataType: 'json',
+                //data: currentId,
+                success: function (data) {
+
+                    $.each(data, function (key, value) {
+                        $('#city_id')
+                                .append($("<option></option>")
+                                        .attr("value", value.id)
+                                        .text(value.name));
+                    });
+
+                    $('option:selected', obj).remove();
+
+
+                    $('.deleteSub div').remove();
+                    $('.deleteSub span').remove();
+
+
+                    $('#city_id').appendTo('.deleteSub');
+                    $('.deleteSub').remove();
+
+                    $('#city_id').prop('disabled', false);
+                    $('#city_id').selecter({
+                        customClass: "deleteSub"
+                    });
+
+                }
+            });
+
+        });
+
+
+
+
+
+
+
+
+
+
 
     });
 </script>

@@ -51,8 +51,15 @@
             });
 
 
+            $countryList = Cache::remember('countryList', 60, function () {
+                return Country::all();
+            });
+
+
+
             return view('account.advertisingCreate', [
                 'categoryList' => $categoryList,
+                'countryList'  => $countryList,
             ]);
         }
 

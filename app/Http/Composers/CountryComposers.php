@@ -1,6 +1,5 @@
 <?php namespace App\Http\Composers;
 
-use App\Models\City;
 use App\Models\Country;
 use Cache;
 use Illuminate\Contracts\View\View;
@@ -18,17 +17,18 @@ class CountryComposers
     public function compose(View $view)
     {
 
-
+        /*
         $cityList = Cache::remember('cityList', 60, function () {
             return City::all();
         });
+        */
 
         $countryList = Cache::remember('countryList', 60, function () {
             return Country::all();
         });
 
 
-        $view->with('cityList', $cityList);
+        //$view->with('cityList', $cityList);
         $view->with('countryList', $countryList);
     }
 
