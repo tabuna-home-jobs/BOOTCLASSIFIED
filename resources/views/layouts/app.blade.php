@@ -277,6 +277,7 @@
                 //data: currentId,
                 success: function (data) {
 
+                    $('#city_id').html('');
                     $.each(data, function (key, value) {
                         $('#city_id')
                                 .append($("<option></option>")
@@ -285,19 +286,20 @@
                     });
 
                     $('option:selected', obj).remove();
+                    $("#city_id").attr('disabled',false);
+
+                   // $('.deleteSub div').remove();
+                   // $('.deleteSub span').remove();
 
 
-                    $('.deleteSub div').remove();
-                    $('.deleteSub span').remove();
+                  //  $('#city_id').appendTo('.deleteSub');
+                   // $('.deleteSub').remove();
 
-
-                    $('#city_id').appendTo('.deleteSub');
-                    $('.deleteSub').remove();
-
-                    $('#city_id').prop('disabled', false);
+                 //   $('#city_id').prop('disabled', false);
+                    /*
                     $('#city_id').selecter({
                         customClass: "deleteSub"
-                    });
+                    });*/
 
                 }
             });
