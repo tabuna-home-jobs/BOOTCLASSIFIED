@@ -112,6 +112,23 @@
             return response()->json($cityList);
         }
 
+
+        public function getCity($id)
+        {
+            $cityList = Cache::remember('getCity-' . $id, 60, function () use ($id) {
+                $city = City::select('id', 'name')
+                    ->where('country_id', $id)
+                    ->orderBy('name', 'ASC')
+                    ->get();
+
+                return $city;
+            });
+
+            return response()->json($cityList);
+        }
+
+
+
         /**
          * Show the form for creating a new resource.
          *

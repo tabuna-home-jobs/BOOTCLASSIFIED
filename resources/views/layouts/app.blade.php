@@ -222,21 +222,21 @@
 
 
                     var list = '';
-                    for (var i = 0; i < data.length; i++) {
+                    for (var i = 0; i < data[0].length; i++) {
                         list += "<li><a href='/city/" + data[0][i].id + "'>" + data[0][i].name + "</a></li>";
                     }
                     $("#countryListSelect-1").html(list);
 
 
                     var list = '';
-                    for (var i = 0; i < data.length; i++) {
+                    for (var i = 0; i < data[1].length; i++) {
                         list += "<li><a href='/city/" + data[1][i].id + "'>" + data[1][i].name + "</a></li>";
                     }
                     $("#countryListSelect-2").html(list);
 
 
                     var list = '';
-                    for (var i = 0; i < data.length; i++) {
+                    for (var i = 0; i < data[2].length; i++) {
                         list += "<li><a href='/city/" + data[2][i].id + "'>" + data[2][i].name + "</a></li>";
                     }
                     $("#countryListSelect-3").html(list);
