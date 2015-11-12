@@ -1,16 +1,16 @@
 <?php
-namespace Mautab\Observer;
+    namespace Mautab\Observer;
 
-class SlugGenerateObserver
-{
-    public function saving($model)
+    class SlugGenerateObserver
     {
-        $model->slug = str_slug($model->title, '-');
+        public function saving($model)
+        {
+            $model->slug = str_slug($model->title, '-');
+        }
+
+        public function saved($model)
+        {
+        }
     }
 
-    public function saved($model)
-    {
-    }
-}
-
-?>
+    ?>

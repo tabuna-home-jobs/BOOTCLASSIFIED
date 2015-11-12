@@ -1,30 +1,30 @@
 <?php
 
-namespace App\Models;
+    namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
-{
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'city';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['country_id', 'name', 'ascii_name'];
-
-
-    public function getCountry()
+    class City extends Model
     {
-        return $this->belongsTo('App\Models\Country');
+        /**
+         * The database table used by the model.
+         *
+         * @var string
+         */
+        protected $table = 'city';
+
+        /**
+         * The attributes that are mass assignable.
+         *
+         * @var array
+         */
+        protected $fillable = ['country_id', 'name', 'ascii_name'];
+
+
+        public function getCountry()
+        {
+            return $this->belongsTo('App\Models\Country');
+        }
+
+
     }
-
-
-}

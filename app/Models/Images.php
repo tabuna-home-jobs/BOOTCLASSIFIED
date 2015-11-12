@@ -1,35 +1,35 @@
 <?php
 
-namespace App\Models;
+    namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Model;
 
-class Images extends Model
-{
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'images';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['advertising_id', 'path', 'name'];
-
-
-    public function getAdvertising()
+    class Images extends Model
     {
-        return $this->belongsTo('App\Models\Advertising');
+        /**
+         * The database table used by the model.
+         *
+         * @var string
+         */
+        protected $table = 'images';
+
+        /**
+         * The attributes that are mass assignable.
+         *
+         * @var array
+         */
+        protected $fillable = ['advertising_id', 'path', 'name'];
+
+
+        public function getAdvertising()
+        {
+            return $this->belongsTo('App\Models\Advertising');
+        }
+
+        public function scopeMainCategory($query)
+        {
+            return $query->whereCategory_id(0);
+        }
+
+
     }
-
-    public function scopeMainCategory($query)
-    {
-        return $query->whereCategory_id(0);
-    }
-
-
-}

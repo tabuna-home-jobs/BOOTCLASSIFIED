@@ -24,10 +24,11 @@
                 $ascii_name = GeoIP::getLocation()['city'];
                 $city = City::where('ascii_name', $ascii_name)->first();
 
-                if (is_null($city))
+                if (is_null($city)) {
                     $city = 1;
-                else
+                } else {
                     $city = $city->id;
+                }
 
 
                 $GeoCity = City::find($city);

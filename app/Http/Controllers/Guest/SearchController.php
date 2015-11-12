@@ -80,10 +80,11 @@
              * то только по ней
              */
 
-            if ($category == $categoryMain)
+            if ($category == $categoryMain) {
                 $WhereIn = $WhereCategory;
-            else
+            } else {
                 $WhereIn = [$category->id];
+            }
 
 
             /*
@@ -93,12 +94,13 @@
 
             $count_separated = implode(",", $WhereCategory);
 
-            $CountAdvListAll = Cache::remember('CountAdvListAll' . $count_separated . 'City' . Session::get('GeoCity'), 60, function () use ($WhereCategory) {
-                return Advertising::where('city_id', Session::get('GeoCity')->id)
-                    ->whereIn('category_id', $WhereCategory)
-                    ->orderBy('id', 'DESC')
-                    ->count();
-            });
+            $CountAdvListAll = Cache::remember('CountAdvListAll' . $count_separated . 'City' . Session::get('GeoCity'),
+                60, function () use ($WhereCategory) {
+                    return Advertising::where('city_id', Session::get('GeoCity')->id)
+                        ->whereIn('category_id', $WhereCategory)
+                        ->orderBy('id', 'DESC')
+                        ->count();
+                });
 
 
             return view('guest.category', [

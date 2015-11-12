@@ -1,30 +1,30 @@
 <?php
 
-namespace App\Providers;
+    namespace App\Providers;
 
-use Carbon\Carbon;
-use Illuminate\Support\ServiceProvider;
+    use Carbon\Carbon;
+    use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    class AppServiceProvider extends ServiceProvider
     {
-        //Устанавливаем локализацию для формитирования дат
-        Carbon::setLocale(config('app.locale'));
-    }
+        /**
+         * Bootstrap any application services.
+         *
+         * @return void
+         */
+        public function boot()
+        {
+            //Устанавливаем локализацию для формитирования дат
+            Carbon::setLocale(config('app.locale'));
+        }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
+        /**
+         * Register any application services.
+         *
+         * @return void
+         */
+        public function register()
+        {
+            //
+        }
     }
-}
