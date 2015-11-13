@@ -13,7 +13,7 @@
 
     <div class="search-row-wrapper">
         <div class="container ">
-            <form action="{{route('category.index')}}" method="GET">
+            <form action="{{route('search.index')}}" method="GET">
                 <div class="col-sm-4">
                     <input class="form-control keyword" name="query" type="text" required placeholder="Я ищу ..."
                            min="3" max="255">
@@ -28,8 +28,6 @@
 
                                 <option value="{{$value->id}}"
                                         @if($value->id == $category->id) selected @endif>{{$value->name}}</option>
-
-
                             @endforeach
                         </select>
 

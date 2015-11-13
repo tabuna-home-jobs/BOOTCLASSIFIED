@@ -4,7 +4,10 @@
 
     use App\Http\Controllers\Controller;
     use App\Http\Requests;
+    use App\Http\Requests\FeedBackRequest;
+    use Flash;
     use Illuminate\Http\Request;
+    use Mail;
 
     class AdvertisingController extends Controller
     {
@@ -35,9 +38,19 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function store(Request $request)
+        public function store(FeedBackRequest $request, $advertising)
         {
-            //
+
+            Mail::send('emails.feedback', ['request' => $request->all()], function ($message) use ($advertising) {
+                $message
+                    ->to($advertising->email)
+                    ->subject('Вашим объявлением заинтересовались');
+            });
+
+            Flash::success('Вы успешно отправиили сообщение');
+
+            return redirect()->back();
+
         }
 
         /**

@@ -17,6 +17,21 @@
                                       enctype="multipart/form-data">
                                     <fieldset>
 
+
+                                        @if (count($errors) > 0)
+                                            <div class="col-xs-12">
+                                                <div class="alert alert-danger">
+                                                    <strong>Упс!</strong> Обнаруженны следующие проблемы:<br><br>
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        @endif
+
+
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Категория</label>
 
@@ -31,7 +46,8 @@
 
                                                         <optgroup label="{{$value->name}}">
                                                             @foreach($value->getSubCategory as $subValue)
-                                                                <option value="{{$subValue->id}}">{{$subValue->name}}</option>
+                                                                <option value="{{$subValue->id}}"
+                                                                        @if(old('category_id') == $subValue->id) selected @endif>{{$subValue->name}}</option>
                                                             @endforeach
                                                         </optgroup>
 
@@ -47,11 +63,14 @@
 
                                             <div class="col-md-8">
                                                 <label class="radio-inline" for="radios-0">
-                                                    <input name="type" id="type-0" value="0" checked="checked"
-                                                           type="radio">
+                                                    <input name="type" id="type-0" value="0" type="radio"
+                                                           @if(old('type') == '0') checked
+                                                           @else checked="checked" @endif
+                                                    >
                                                     Личный </label>
                                                 <label class="radio-inline" for="radios-1">
-                                                    <input name="type" id="type-1" value="1" type="radio">
+                                                    <input name="type" id="type-1" value="1" type="radio"
+                                                           @if(old('type') == '1') checked @endif>
                                                     Бизнес </label>
                                             </div>
                                         </div>
@@ -61,7 +80,8 @@
 
                                             <div class="col-md-8">
                                                 <input id="title" name="title" placeholder="Заголовок обьявления"
-                                                       class="form-control input-md" required="" type="text">
+                                                       class="form-control input-md" required="" type="text"
+                                                       value="{{old('title')}}">
                                                 <span class="help-block">Не пишите в заголовке цену и контактную информацию — для этого есть отдельные поля — и не используйте слово «продам» </span>
                                             </div>
                                         </div>
@@ -72,7 +92,7 @@
                                             <div class="col-md-8">
                                                 <textarea class="form-control" id="description" rows="10"
                                                           name="description"
-                                                          placeholder="Подробно опишите ваш товар или услугу. Не указывайте в описании телефон и e-mail — для этого есть отдельные поля"></textarea>
+                                                          placeholder="Подробно опишите ваш товар или услугу. Не указывайте в описании телефон и e-mail — для этого есть отдельные поля">{{old('description')}}</textarea>
                                             </div>
                                         </div>
 
@@ -83,6 +103,7 @@
                                                 <div class="input-group"><span class="input-group-addon"><i
                                                                 class="fa fa-rub"></i></span>
                                                     <input id="price" name="price" class="form-control"
+                                                           value="{{old('price')}}"
                                                            placeholder="Цена" required="" type="number" min="0">
                                                 </div>
                                             </div>

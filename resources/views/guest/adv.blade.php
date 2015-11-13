@@ -37,6 +37,35 @@
     </div>
 
 
+
+
+
+
+    @if (Session::has('flash_notification.message'))
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 page-content">
+                    <div class="inner-box category-content">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="alert alert-{{ Session::get('flash_notification.level') }} pgray  alert-lg"
+                                     role="alert">
+                                    <h2 class="no-margin no-padding">{{ Session::get('flash_notification.message') }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+
+
+
+
+
+
     <div class="container">
         <div class="row">
             <div class="col-sm-9 page-content col-thin-right">
@@ -90,7 +119,7 @@
                             <a class="btn btn-info "><i class="fa fa-phone"></i>
                                 {{$advertising->phone}} </a>
 
-                            <a href="#reportAdvertiser" data-toggle="modal" class="btn btn-primary pull-right"> <i
+                            <a href="#reportAdvertiser" data-toggle="modal" class="hide btn btn-primary pull-right"> <i
                                         class="fa icon-info-circled-alt"></i> Пожаловаться </a>
 
 
@@ -204,49 +233,47 @@
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <form role="form"
+                      action="{{route('category.advertising.store',$advertising->id)}}"
+                      method="post">
+
+                    <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
                                 class="sr-only">Close</span></button>
                     <h4 class="modal-title"><i class="fa fa-envelope-o"></i> Написать продавцу </h4>
                 </div>
                 <div class="modal-body">
-                    <form role="form"
-                          action="{{route('category.advertising.store',[$category->slug,$advertising->id])}}"
-                          method="post">
+
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Имя:</label>
                             <input class="form-control required" id="recipient-name" placeholder="Ваше имя"
-                                   data-placement="top" data-trigger="manual"
-                                   data-content="Must be at least 3 characters long, and must only contain letters."
-                                   type="text">
+                                   name="fio" type="text">
                         </div>
                         <div class="form-group">
                             <label for="sender-email" class="control-label">E-mail:</label>
-                            <input id="sender-email" type="text"
-                                   data-content="Must be a valid e-mail address (user@gmail.com)" data-trigger="manual"
-                                   data-placement="top" placeholder="email@you.com" class="form-control email">
+                            <input id="sender-email" type="text" name="email"
+                                   placeholder="email@you.com" class="form-control email">
                         </div>
                         <div class="form-group">
                             <label for="recipient-Phone-Number" class="control-label">Номер телефона:</label>
-                            <input type="text" maxlength="60" class="form-control" id="recipient-Phone-Number">
+                            <input type="text" maxlength="60" class="form-control" name="phone"
+                                   id="recipient-Phone-Number">
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="control-label">Сообщение <span
                                         class="text-count">(300) </span>:</label>
-                            <textarea class="form-control" id="message-text" rows="5" placeholder="Напишите сообщение"
-                                      data-placement="top" data-trigger="manual"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not
-                                valid. </p>
+                            <textarea class="form-control" id="message-text" rows="5" name="message"
+                                      placeholder="Напишите сообщение"
+                            ></textarea>
                         </div>
                         {!! csrf_field() !!}
-                    </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
                     <button type="submit" class="btn btn-success pull-right">Отправить сообщение!</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>

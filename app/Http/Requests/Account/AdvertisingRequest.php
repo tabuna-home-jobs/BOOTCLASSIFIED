@@ -36,7 +36,7 @@
             ];
 
             foreach ($this->file('images') as $key => $val) {
-                $rules['images.' . $key] = 'image';
+                $rules['images.' . $key] = 'image|image_size:<=1000';
             }
 
             return $rules;
