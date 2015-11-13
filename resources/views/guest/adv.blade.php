@@ -37,6 +37,35 @@
     </div>
 
 
+
+
+
+
+    @if (Session::has('flash_notification.message'))
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 page-content">
+                    <div class="inner-box category-content">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="alert alert-{{ Session::get('flash_notification.level') }} pgray  alert-lg"
+                                     role="alert">
+                                    <h2 class="no-margin no-padding">{{ Session::get('flash_notification.message') }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+
+
+
+
+
+
     <div class="container">
         <div class="row">
             <div class="col-sm-9 page-content col-thin-right">
@@ -205,7 +234,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <form role="form"
-                      action="{{route('category.advertising.store',$advertising->id}}"
+                      action="{{route('category.advertising.store',$advertising->id)}}"
                       method="post">
 
                     <div class="modal-header">
