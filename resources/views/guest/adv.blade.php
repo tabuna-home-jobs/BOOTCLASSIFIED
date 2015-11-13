@@ -234,7 +234,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <form role="form"
-                      action="{{route('category.advertising.store',[$category->slug,$advertising->id])}}"
+                      action="{{route('category.advertising.update',[$category->slug,$advertising->id])}}"
                       method="post">
 
                     <div class="modal-header">
@@ -266,6 +266,8 @@
                                       placeholder="Напишите сообщение"
                             ></textarea>
                         </div>
+
+                    <input type="hidden" name="_method" value="PUT">
                         {!! csrf_field() !!}
 
                 </div>

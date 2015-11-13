@@ -5,8 +5,9 @@
     use App\Http\Controllers\Controller;
     use App\Http\Requests;
     use App\Http\Requests\FeedBackRequest;
+    use App\Models\Advertising;
+    use App\Models\Category;
     use Flash;
-    use Illuminate\Http\Request;
     use Mail;
 
     class AdvertisingController extends Controller
@@ -38,19 +39,8 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function store(FeedBackRequest $request, $advertising)
+        public function store()
         {
-
-            Mail::send('emails.feedback', ['request' => $request->all()], function ($message) use ($advertising) {
-                $message
-                    ->from('noreply@awedo.ru')
-                    ->to($advertising->email)
-                    ->subject('Вашим объявлением заинтересовались');
-            });
-
-            Flash::success('Вы успешно отправиили сообщение');
-
-            return redirect()->back();
 
         }
 
@@ -92,9 +82,18 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function update(Request $request, $id)
+        public function update(FeedBackRequest $request, Category $category, Advertising $advertising)
         {
-            //
+            Mail::send('emails.feedback', ['request' => $request->all()], function ($message) use ($advertising) {
+                $message
+                    ->from('noreply@awedo.ru')
+                    ->to($advertising->email)
+                    ->subject('Вашим объявлением заинтересовались');
+            });
+
+            Flash::success('Вы успешно отправили сообщение');
+
+            return redirect()->back();
         }
 
         /**
