@@ -119,7 +119,7 @@
                             <a class="btn btn-info "><i class="fa fa-phone"></i>
                                 {{$advertising->phone}} </a>
 
-                            <a href="#reportAdvertiser" data-toggle="modal" class="btn btn-primary pull-right"> <i
+                            <a href="#reportAdvertiser" data-toggle="modal" class="hide btn btn-primary pull-right"> <i
                                         class="fa icon-info-circled-alt"></i> Пожаловаться </a>
 
 
