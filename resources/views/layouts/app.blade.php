@@ -9,7 +9,6 @@
     <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="/assets/ico/favicon.png">
 
-    <meta name="robots" content="none"/>
     <title>@yield('title','Доска Объявлений')</title>
     <meta id="token" name="token" value="{{ csrf_token() }}">
     <meta name="description"
