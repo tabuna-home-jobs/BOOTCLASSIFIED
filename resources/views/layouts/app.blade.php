@@ -187,61 +187,48 @@
 <script type="text/javascript">
 
     /*
-    //Шаблончик для списка option
-    function selectElems(id, name){
-        var option = "<option value='"+id+"'>";
-        option += name;
-        option += "</optin>";
-        return option;
-    }
-    //Шаблон для красивого списка
-    function selecterSelected(id, name){
-        var span = '<span class="selecter-item" data-value="'+id+'">';
-        span += name;
-        span += '</span>';
-        return span;
-    }
-
+     //Шаблончик для списка option
+     function selectElems(id, name){
+     var option = "<option value='"+id+"'>";
+     option += name;
+     option += "</optin>";
+     return option;
+     }
+     //Шаблон для красивого списка
+     function selecterSelected(id, name){
+     var span = '<span class="selecter-item" data-value="'+id+'">';
+     span += name;
+     span += '</span>';
+     return span;
+     }
      */
-
     $(document).ready(function(){
-
         $("#country_id").change(function(){
             //Запрпашиваем города
             //region-state
             var obj = $(this);
             var currentId = $('option:selected',obj).val();
-
-
             $.ajax({
                 type: "GET",
                 url: "/townslist/stowns/"+currentId,
                 dataType: 'json',
                 //data: currentId,
                 success: function(data){
-
-
                     var list = '';
                     for (var i = 0; i < data[0].length; i++) {
                         list += "<li><a href='/city/" + data[0][i].id + "'>" + data[0][i].name + "</a></li>";
                     }
                     $("#countryListSelect-1").html(list);
-
-
                     var list = '';
                     for (var i = 0; i < data[1].length; i++) {
                         list += "<li><a href='/city/" + data[1][i].id + "'>" + data[1][i].name + "</a></li>";
                     }
                     $("#countryListSelect-2").html(list);
-
-
                     var list = '';
                     for (var i = 0; i < data[2].length; i++) {
                         list += "<li><a href='/city/" + data[2][i].id + "'>" + data[2][i].name + "</a></li>";
                     }
                     $("#countryListSelect-3").html(list);
-
-
                     /*
                      var elem = '';
                      var visElem = '';
@@ -249,34 +236,24 @@
                      elem += selectElems(data[i].id, data[i].name);
                      visElem += selecterSelected(data[i].id, data[i].name);
                      }
-
-
-                    $("#region-state").html(elem);
-                    $("#region-state").parent().find("span.selecter-selected").html(data[0].name);
-                    $("#region-state").parent().find(".scroller .scroller-content").html(visElem);
+                     $("#region-state").html(elem);
+                     $("#region-state").parent().find("span.selecter-selected").html(data[0].name);
+                     $("#region-state").parent().find(".scroller .scroller-content").html(visElem);
                      */
-
-
                 }
             });
-
         });
-
-
         $("#selector-country_id").change(function () {
             //Запрпашиваем города
             //region-state
             var obj = $(this);
             var currentId = $('option:selected', obj).val();
-
-
             $.ajax({
                 type: "GET",
                 url: "/townslist/city/" + currentId,
                 dataType: 'json',
                 //data: currentId,
                 success: function (data) {
-
                     $('#city_id').html('');
                     $.each(data, function (key, value) {
                         $('#city_id')
@@ -284,38 +261,20 @@
                                         .attr("value", value.id)
                                         .text(value.name));
                     });
-
                     $('option:selected', obj).remove();
                     $("#city_id").attr('disabled',false);
-
-                   // $('.deleteSub div').remove();
-                   // $('.deleteSub span').remove();
-
-
-                  //  $('#city_id').appendTo('.deleteSub');
-                   // $('.deleteSub').remove();
-
-                 //   $('#city_id').prop('disabled', false);
+                    // $('.deleteSub div').remove();
+                    // $('.deleteSub span').remove();
+                    //  $('#city_id').appendTo('.deleteSub');
+                    // $('.deleteSub').remove();
+                    //   $('#city_id').prop('disabled', false);
                     /*
-                    $('#city_id').selecter({
-                        customClass: "deleteSub"
-                    });*/
-
+                     $('#city_id').selecter({
+                     customClass: "deleteSub"
+                     });*/
                 }
             });
-
         });
-
-
-
-
-
-
-
-
-
-
-
     });
 </script>
 
