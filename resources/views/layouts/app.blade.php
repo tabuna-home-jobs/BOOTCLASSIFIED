@@ -13,16 +13,16 @@
     <title>@yield('title','Доска Объявлений')</title>
     <meta id="token" name="token" value="{{ csrf_token() }}">
     <meta name="description"
-          content="@yield('description','Сайт бесплатных объявлений. Город' . Session::get('GeoCity')->name  )">
+          content="@yield('description','Сайт бесплатных объявлений. Город ' . Session::get('GeoCity')->name  )">
     <meta name="keywords"
           content="@yield('keywords','объявления,бесплатные объявления,доска объявлений,частные объявления,подам объявление,подать объявление,город' . Session::get('GeoCity')->name)">
     <meta property="og:title" content="@yield('title','Доска Объявлений' )">
     <meta property="og:description"
-          content="@yield('description','Сайт бесплатных объявлений. Город' . Session::get('GeoCity')->name )">
+          content="@yield('description','Сайт бесплатных объявлений. Город ' . Session::get('GeoCity')->name )">
     <meta property="og:image" content="@yield('avatar')">
     <meta name="twitter:title" content="@yield('title','Доска Объявлений')">
     <meta name="twitter:description"
-          content="@yield('description','Сайт бесплатных объявлений. Город' . Session::get('GeoCity')->name )"/>
+          content="@yield('description','Сайт бесплатных объявлений. Город ' . Session::get('GeoCity')->name )"/>
     <meta name="twitter:image:src" content="@yield('avatar')"/>
 
 
