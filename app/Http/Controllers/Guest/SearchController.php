@@ -28,6 +28,7 @@
 
             $advertisingList = Advertising::with('getImages', 'getCategory', 'getCity')
                 ->where('city_id', Session::get('GeoCity')->id)
+                ->orWhere('category_id', $request->input('category_id'))
                 ->search($request->input('query'))
                 ->orderBy('id', 'DESC')
                 ->simplePaginate(10);
