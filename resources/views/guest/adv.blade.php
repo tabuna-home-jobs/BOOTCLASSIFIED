@@ -234,7 +234,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <form role="form"
-                      action="{{route('category.advertising.store',$advertising->id)}}"
+                      action="{{route('category.advertising.store',[$category->slug,$advertising->id])}}"
                       method="post">
 
                     <div class="modal-header">
