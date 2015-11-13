@@ -43,6 +43,7 @@
 
             Mail::send('emails.feedback', ['request' => $request->all()], function ($message) use ($advertising) {
                 $message
+                    ->from('noreply@awedo.ru')
                     ->to($advertising->email)
                     ->subject('Вашим объявлением заинтересовались');
             });
