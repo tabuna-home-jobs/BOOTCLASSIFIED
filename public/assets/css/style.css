@@ -677,7 +677,9 @@ button.btn-search {
 }
 
 .search-row .search-col:first-child .form-control {
+    /*
     border-radius: 3px 0 0 3px;
+    */
 }
 
 .search-row .btn-search {
@@ -3121,4 +3123,10 @@ td.ads-details-td {
     100% {
         transform: rotate(-4deg)
     }
+}
+
+.page ul, ol {
+    list-style: inherit;
+    margin: inherit;
+    padding: 0px 50px;
 }

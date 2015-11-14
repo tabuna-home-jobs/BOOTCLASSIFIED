@@ -42,19 +42,17 @@
                             <div aria-labelledby="headingOne" role="tabpanel" class="panel-collapse collapse"
                                  id="collapseOne" style="height: 0px;">
                                 <div class="panel-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
-                                    amet ante nec vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu erat
-                                    mattis lorem, lacinia lacinia dui enim at eros. Pellentesque ut gravida augue. Duis
-                                    ac dictum tellus
+                                    Для размещения объявления необходимо с начало зарегистрироваться (Это займёт не
+                                    более 3 минут),
+                                    и нажать на кнопку "Подать Объявление".
                                     <br><br>
-                                    Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque
-                                    rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi
-                                    quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum.
-                                    Nulla nec odio eu nisi imperdiet dictum.
+                                    Заполните все необходимые поля информации, а так же выбрать категорию, свой
+                                    город\регион.
+                                    Так же вы можете загрузить фотографии для того что бы ваше предложение смотрелось
+                                    качественнее.
                                     <br><br>
-                                    Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit
-                                    varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis
-                                    mollis auctor lobortis.
+                                    Контактная информация может отличаться, от указанной в личном профиле. Вы можете
+                                    оформлять объявление на своих родственников или друзей.
                                 </div>
                             </div>
                         </div>
@@ -70,13 +68,8 @@
                             <div aria-labelledby="headingTwo" role="tabpanel" class="panel-collapse collapse in"
                                  id="collapseTwo" style="height: auto;">
                                 <div class="panel-body">
-                                    Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit
-                                    varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis
-                                    mollis auctor lobortis.
-                                    <br><br>
-                                    Etiam elementum nulla non erat blandit, sed porttitor urna malesuada. Cras euismod a
-                                    nulla sed ornare. Vestibulum id molestie nulla. Phasellus sodales, sapien vitae
-                                    auctor rhoncus
+                                    Сайт «Доска объявлений» не взымает платы со стороны пользователей за размещение
+                                    объявлений.
                                 </div>
                             </div>
                         </div>
@@ -93,10 +86,11 @@
                             <div aria-labelledby="headingThree" role="tabpanel" class="panel-collapse collapse"
                                  id="collapseThree">
                                 <div class="panel-body">
-                                    Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque
-                                    rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi
-                                    quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum.
-                                    Nulla nec odio eu nisi imperdiet dictum.
+                                    Ваш электронный адрес не будет открыто опубликован. <br>
+                                    Установка первоначальной связи происходит через электронную почту осуществляется
+                                    через сайт «Доска объявлений» <br>
+                                    Вам будет прислано сообщение, о том, что вашим объявлением заинтересовались с
+                                    возможностью обратной связи.
                                 </div>
                             </div>
                         </div>
@@ -112,10 +106,8 @@
                             <div aria-labelledby="heading_04" role="tabpanel" class="panel-collapse collapse"
                                  id="collapse_04">
                                 <div class="panel-body">
-                                    Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque
-                                    rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi
-                                    quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum.
-                                    Nulla nec odio eu nisi imperdiet dictum.
+                                    Продолжительность публикации зависит от многих критериев, но средняя
+                                    продолжительность составляет от двух недель до месяца
                                 </div>
                             </div>
                         </div>
@@ -131,28 +123,10 @@
                             <div aria-labelledby="heading_05" role="tabpanel" class="panel-collapse collapse"
                                  id="collapse_05">
                                 <div class="panel-body">
-                                    Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque
-                                    rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi
-                                    quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum.
-                                    Nulla nec odio eu nisi imperdiet dictum.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div id="heading_06" role="tab" class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a aria-controls="collapse_06" aria-expanded="false" href="faq.html#collapse_06"
-                                       data-parent="#accordion" data-toggle="collapse" class="collapsed">
-                                        Что такое список пожеланий?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div aria-labelledby="heading_06" role="tabpanel" class="panel-collapse collapse"
-                                 id="collapse_06">
-                                <div class="panel-body">
-                                    Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit
-                                    varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis
-                                    mollis auctor lobortis.
+                                    В личном кабинете пользователя, вы можете удалить своё объявление. <br>
+                                    Оно будет перемещено в архив и не будет показываться пользователям. <br>
+                                    В архиве, вы можете либо окончательно удалить объявление, либо напротив восстановить
+                                    его.
                                 </div>
                             </div>
                         </div>
@@ -164,37 +138,36 @@
 
 
 
+
     <div class="parallaxbox about-parallax-bottom">
         <div class="container">
             <div class="row text-center featuredbox">
                 <div class="col-sm-4 xs-gap">
                     <div class="inner">
                         <div class="icon-box-wrap"><i class="icon-book-open ln-shadow-box shape-3"></i></div>
-                        <h3 class="title-4">herausragendes Beispiel</h3>
+                        <h3 class="title-4">ОБСЛУЖИВАНИЕ КЛИЕНТОВ</h3>
 
-                        <p>Ein herausragendes Beispiel für Story-Telling im modernen Webdesign. et suscipit sapien
-                            posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit
-                            tortor.</p>
+                        <p>
+                            Мы стараемся помочь каждому пользователю, не важно купить или продать товар.
+                        </p>
                     </div>
                 </div>
                 <div class="col-sm-4 xs-gap">
                     <div class="inner">
-                        <div class="icon-box-wrap"><i class=" icon-lightbulb ln-shadow-box shape-2"></i></div>
-                        <h3 class="title-4">Fusce ex ipsum</h3>
+                        <div class="icon-box-wrap"><i class=" icon-lightbulb ln-shadow-box shape-6"></i></div>
+                        <h3 class="title-4">ПРОВЕРЕННЫЕ ПАРТНЁРЫ</h3>
 
-                        <p>Ein herausragendes Beispiel für Story-Telling im modernen Webdesign. et suscipit sapien
-                            posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor.
-                            .</p>
+                        <p>Мы будем рады сотрудничать по многим вопросам, для того, что бы работать с нами было ещё
+                            удобнее.</p>
                     </div>
                 </div>
                 <div class="col-sm-4 xs-gap">
                     <div class="inner">
-                        <div class="icon-box-wrap"><i class="icon-megaphone ln-shadow-box shape-7"></i></div>
-                        <h3 class="title-4">Pellentesque rhoncus </h3>
+                        <div class="icon-box-wrap"><i class="icon-megaphone ln-shadow-box shape-5"></i></div>
+                        <h3 class="title-4">ЛУЧШИЕ ПРЕДЛОЖЕНИЯ </h3>
 
-                        <p>Ein herausragendes Beispiel für Story-Telling im modernen Webdesign. et suscipit sapien
-                            posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit
-                            tortor. </p>
+                        <p>Наши предложения, публикуют только сами пользователи, по этому они обладают самой актуальной
+                            информацией.</p>
                     </div>
                 </div>
             </div>

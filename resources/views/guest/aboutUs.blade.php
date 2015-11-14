@@ -29,23 +29,37 @@
                     <hr class="center-block small text-hr">
                     <div class="col-sm-6">
                         <div class="text-content has-lead-para text-left">
-                            <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                                consectetur sit amet ante nec vulputate. Nulla aliquam, justo auctor consequat
-                                tincidunt, arcu erat mattis lorem, lacinia lacinia dui enim at eros. Pellentesque ut
-                                gravida augue. Duis ac dictum tellus </p>
 
-                            <p class="lead"> Pellentesque in mauris placerat, porttitor lorem id, ornare nisl.
-                                Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales
-                                nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum.
-                                Nulla nec odio eu nisi imperdiet dictum. </p>
+                            <p class="lead">
+                                «Доска объявлений» основана в 20015-м году. Издателем проекта является творческое
+                                общество «Mautab».
+                            </p>
 
-                            <p class="lead"> Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra
-                                blandit varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis
-                                mollis auctor lobortis. </p>
+                            <p class="lead">
+                                «Доска объявлений» позволит вам подать объявление бесплатно, в любую из представленных
+                                рубрик. Недвижимость, автомобили, работа, юридические и финансовые услуги, строительство
+                                и ремонт – все это лишь малая часть того, что мы можем вам предложить.
+                            </p>
 
-                            <p class="lead"> Etiam elementum nulla non erat blandit, sed porttitor urna malesuada. Cras
-                                euismod a nulla sed ornare. Vestibulum id molestie nulla. Phasellus sodales, sapien
-                                vitae auctor rhoncus </p>
+
+                            <p class="lead">
+                                «Доска объявлений» могут пользоваться не только простые пользователи, но и компании, а
+                                так же юридические лица, что позволяет предлогать не только товары, бывшие в
+                                употреблении, но и абсолютно новые от производителя. Так же, для компаний нашего города,
+                                на сайте бесплатных объявлений .
+                            </p>
+
+
+                            <p class="lead">
+                                «Доска объявлений» не только информационно насыщен, но и позволяет читателям
+                                самостоятельно создать и разместить свое объявление.
+                            </p>
+
+                            <p class="lead">
+                                «Доска объявлений» очень удобный и практичный сайт, созданный для того что бы каждый
+                                продавец нашел своего покупателя.
+                            </p>
+
                         </div>
                     </div>
                     <div class="col-sm-6"><img src="images/info.png" alt="imfo" class="img-responsive"></div>
@@ -64,9 +78,9 @@
                         <div class="icon-box-wrap"><i class="icon-book-open ln-shadow-box shape-3"></i></div>
                         <h3 class="title-4">ОБСЛУЖИВАНИЕ КЛИЕНТОВ</h3>
 
-                        <p>Ein herausragendes Beispiel für Story-Telling im modernen Webdesign. et suscipit sapien
-                            posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit
-                            tortor.</p>
+                        <p>
+                            Мы стараемся помочь каждому пользователю, не важно купить или продать товар.
+                        </p>
                     </div>
                 </div>
                 <div class="col-sm-4 xs-gap">
@@ -74,9 +88,8 @@
                         <div class="icon-box-wrap"><i class=" icon-lightbulb ln-shadow-box shape-6"></i></div>
                         <h3 class="title-4">ПРОВЕРЕННЫЕ ПАРТНЁРЫ</h3>
 
-                        <p>Ein herausragendes Beispiel für Story-Telling im modernen Webdesign. et suscipit sapien
-                            posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor.
-                            .</p>
+                        <p>Мы будем рады сотрудничать по многим вопросам, для того, что бы работать с нами было ещё
+                            удобнее.</p>
                     </div>
                 </div>
                 <div class="col-sm-4 xs-gap">
@@ -84,9 +97,8 @@
                         <div class="icon-box-wrap"><i class="icon-megaphone ln-shadow-box shape-5"></i></div>
                         <h3 class="title-4">ЛУЧШИЕ ПРЕДЛОЖЕНИЯ </h3>
 
-                        <p>Ein herausragendes Beispiel für Story-Telling im modernen Webdesign. et suscipit sapien
-                            posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit
-                            tortor. </p>
+                        <p>Наши предложения, публикуют только сами пользователи, по этому они обладают самой актуальной
+                            информацией.</p>
                     </div>
                 </div>
             </div>
