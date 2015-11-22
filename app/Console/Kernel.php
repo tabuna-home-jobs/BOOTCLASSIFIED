@@ -16,6 +16,7 @@
             \App\Console\Commands\Inspire::class,
             \App\Console\Commands\TransliteCity::class,
             \App\Console\Commands\TransliteCategory::class,
+            \App\Console\Commands\MoyaReklama::class,
         ];
 
         /**
