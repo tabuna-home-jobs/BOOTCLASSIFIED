@@ -22,16 +22,16 @@
         Route::resource('/', 'IndexController@index');
         Route::resource('about', 'AboutController@index');
         Route::resource('faq', 'FAQController@index');
+        Route::resource('sitemap', 'SiteMapController@index');
         Route::resource('rules', 'RulesController@index');
         Route::resource('city', 'CityController@show');
         Route::resource('search', 'SearchController@index');
-        Route::resource('category', 'CategoryController');
-        Route::resource('category.advertising', 'AdvertisingController');
+        Route::resource('city.category', 'CategoryController');
+        Route::resource('city.category.advertising', 'AdvertisingController');
 
 
         //Города взять
         Route::controller('townslist', 'IndexController');
-
     });
 
 

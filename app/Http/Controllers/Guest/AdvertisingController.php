@@ -51,7 +51,7 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function show($category, $advertising)
+        public function show($city, $category, $advertising)
         {
             $advertising->visits++;
             $advertising->save();

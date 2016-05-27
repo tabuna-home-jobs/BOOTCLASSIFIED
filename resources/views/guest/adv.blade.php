@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 
-@section('title', $advertising->title .' | '. $advertising->getCategory->name .' | Доска Объявлений |' . Session::get('GeoCity')->name )
+@section('title', $advertising->title .' | '. $advertising->getCategory->name .' | Доска Объявлений |' . $GeoCity->name )
 @section('description', str_limit($advertising->description, $limit = 100, $end = '...') )
-@section('keywords', 'Купить '. $advertising->title . ' '.  Session::get('GeoCity')->name)
+@section('keywords', 'Купить '. $advertising->title . ' '.  $GeoCity->name)
 
 
 
@@ -26,7 +26,9 @@
 
             @if($parrent = $advertising->getCategory->getParrentCategory()->first())
 
-                <li><a href="{{route('category.show',$parrent->slug)}}">{{$parrent->name}}</a></li>
+                <li>
+                    <a href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$parrent->slug])}}">{{$parrent->name}}</a>
+                </li>
 
             @endif
 
@@ -193,7 +195,7 @@
                 </div>
                 <div class="modal-body">
                     <form role="form"
-                          action="{{route('category.advertising.destroy',[$category->slug,$advertising->id])}}"
+                          action="{{route('city.category.advertising.destroy',[strtolower($GeoCity->ascii_name),$category->slug,$advertising->id])}}"
                           method="post">
                         <div class="form-group">
                             <label for="report-reason" class="control-label">Причина:</label>
@@ -234,7 +236,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <form role="form"
-                      action="{{route('category.advertising.update',[$category->slug,$advertising->id])}}"
+                      action="{{route('city.category.advertising.update',[strtolower($GeoCity->ascii_name),$category->slug,$advertising->id])}}"
                       method="post">
 
                     <div class="modal-header">

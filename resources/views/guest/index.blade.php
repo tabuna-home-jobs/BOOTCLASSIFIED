@@ -3,6 +3,7 @@
 @section('main')
 
 
+
     <div class="intro">
         <div class="dtable hw100">
             <div class="dtable-cell hw100">
@@ -79,7 +80,8 @@
 
                                 @foreach($categoryList[0] as $value)
                                     <div class="cat-list">
-                                        <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
+                                        <h3 class="cat-title"><a
+                                                    href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$value->slug])}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
                                                         class="count">{{$value->getAdvertisingCount()}}</span> </a>
                                             <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
@@ -90,7 +92,7 @@
                                             style="height: auto;">
                                             @foreach($value->getSubCategory as $subValue)
                                                 <li>
-                                                    <a href="{{route('category.show',$subValue->slug)}}">{{$subValue->name}}</a>
+                                                    <a href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$subValue->slug])}}">{{$subValue->name}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -102,7 +104,8 @@
                             <div class="col-md-4 col-sm-4 ">
                                 @foreach($categoryList[1] as $value)
                                     <div class="cat-list">
-                                        <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
+                                        <h3 class="cat-title"><a
+                                                    href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$value->slug])}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
                                                         class="count">{{$value->getAdvertisingCount()}}</span> </a>
                                             <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
@@ -113,7 +116,7 @@
                                             style="height: auto;">
                                             @foreach($value->getSubCategory as $subValue)
                                                 <li>
-                                                    <a href="{{route('category.show',$subValue->slug)}}">{{$subValue->name}}</a>
+                                                    <a href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$subValue->slug])}}">{{$subValue->name}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -125,7 +128,8 @@
                             <div class="col-md-4 col-sm-4   last-column">
                                 @foreach($categoryList[2] as $value)
                                     <div class="cat-list">
-                                        <h3 class="cat-title"><a href="{{route('category.show',$value->slug)}}"><i
+                                        <h3 class="cat-title"><a
+                                                    href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$value->slug])}}"><i
                                                         class="{{$value->icons}} ln-shadow"></i> {{$value->name}} <span
                                                         class="count">{{$value->getAdvertisingCount()}}</span> </a>
                                             <span data-target=".cat-id-{{$value->id}}" data-toggle="collapse"
@@ -136,7 +140,7 @@
                                             style="height: auto;">
                                             @foreach($value->getSubCategory as $subValue)
                                                 <li>
-                                                    <a href="{{route('category.show',$subValue->slug)}}">{{$subValue->name}}</a>
+                                                    <a href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$subValue->slug])}}">{{$subValue->name}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -157,7 +161,8 @@
                             <div class="inner-box-content">
                                 <ul class="cat-list arrow">
                                     @foreach($popularCategory as $value)
-                                        <li><a href="{{route('category.show',$value->slug)}}"> {{$value->name}}
+                                        <li>
+                                            <a href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$value->slug])}}"> {{$value->name}}
                                                 ({{$value->count}}) </a></li>
                                     @endforeach
                                 </ul>

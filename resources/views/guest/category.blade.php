@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 
-@section('title', $category->name  .' | Доска Объявлений |' . Session::get('GeoCity')->name )
-@section('description', $category->name  .' | Доска Объявлений |' . Session::get('GeoCity')->name )
-@section('keywords', $category->name  .' | Доска Объявлений |' . Session::get('GeoCity')->name)
+@section('title', $category->name  .' | '. $GeoCity->name  .' | Доска Объявлений')
+@section('description', $category->name  .' | '.  $GeoCity->name   .' | Доска Объявлений')
+
+<meta name="keywords"
+      content="@yield('keywords',
+      $category->name.',объявления,бесплатные объявления,доска объявлений,частные объявления,подам объявление,подать объявление, в ' . $GeoCity->name)">
 
 
 
@@ -81,7 +84,8 @@
                                 <h5 class="list-title"><strong><a href="{{url('/')}}"><i class="fa fa-angle-left"></i>
                                             Все категории</a></strong></h5>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{route('category.show',$categoryMain->slug)}}"><span
+                                    <li>
+                                        <a href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$categoryMain->slug])}}"><span
                                                     class="title"><strong>{{$categoryMain->name}}</strong></span><span
                                                     class="count">&nbsp; {{number_format($CountAdvListAll, 0, ',', ' ')}}</span></a>
                                         <ul class="list-unstyled long-list">
@@ -89,7 +93,7 @@
 
                                             @foreach($categorySub as $value)
                                                 <li><a class="{{Active::path('category/'.$value->slug)}}"
-                                                       href="{{route('category.show',$value->slug)}}">
+                                                       href="{{route('city.category.show',[strtolower($GeoCity->ascii_name),$value->slug])}}">
                                                         {{$value->name}}</a></li>
                                             @endforeach
 
@@ -118,7 +122,7 @@
                                             <div class="add-image"><span class="photo-count"><i
                                                             class="fa fa-camera"></i> {{count($ads->getImages)}} </span>
                                                 <a
-                                                        href="{{route('category.advertising.show',[$category->slug,$ads->id])}}"><img
+                                                        href="{{route('city.category.advertising.show',[strtolower($GeoCity->ascii_name),$category->slug,$ads->id])}}"><img
                                                             class="thumbnail no-margin"
                                                             src="@if(is_null($ads->getImages->first())) /images/noimage.jpg @else{{$ads->getImages->first()->path .'/'. $ads->getImages->first()->name}}@endif"
                                                                                      alt="img"></a></div>
@@ -127,7 +131,7 @@
                                         <div class="col-sm-7 add-desc-box">
                                             <div class="add-details">
                                                 <h5 class="add-title"><a
-                                                            href="{{route('category.advertising.show',[$category->slug,$ads->id])}}">
+                                                            href="{{route('city.category.advertising.show',[strtolower($GeoCity->ascii_name),$category->slug,$ads->id])}}">
                                                         {{$ads->title}} </a></h5>
 
                                                 <p>{{str_limit($ads->description, $limit = 55, $end = '...')}}</p>

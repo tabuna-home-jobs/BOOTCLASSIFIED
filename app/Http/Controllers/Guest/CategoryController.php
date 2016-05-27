@@ -51,8 +51,14 @@
          *
          * @return Response
          */
-        public function show($category)
+        public function show($city, $category)
         {
+
+            /*
+             * Определяем город
+             */
+
+            $city = City::where('ascii_name', $city)->firstOrFail();
 
             /*
              * Все категории
@@ -68,8 +74,8 @@
              */
 
 
-            $locationCity = Cache::remember('locationCity', 60, function () {
-                return City::where('country_id', Session::get('GeoCity')->country_id)->get();
+            $locationCity = Cache::remember('locationCity-' . $city->country_id, 60, function () use ($city) {
+                return City::where('country_id', $city->country_id)->get();
             });
 
 
@@ -108,7 +114,7 @@
              */
 
             $advertisingList = Advertising::with('getImages', 'getCategory', 'getCity')
-                ->where('city_id', Session::get('GeoCity')->id)
+                ->where('city_id', $city->country_id)
                 ->whereIn('category_id', $WhereIn)
                 ->orderBy('id', 'DESC')
                 ->simplePaginate(10);
@@ -121,9 +127,9 @@
 
             $count_separated = implode(",", $WhereCategory);
 
-            $CountAdvListAll = Cache::remember('CountAdvListAll' . $count_separated . 'City' . Session::get('GeoCity'),
-                60, function () use ($WhereCategory) {
-                    return Advertising::where('city_id', Session::get('GeoCity')->id)
+            $CountAdvListAll = Cache::remember('CountAdvListAll' . $count_separated . 'City' . $city->country_id,
+                60, function () use ($WhereCategory, $city) {
+                    return Advertising::where('city_id', $city->country_id)
                         ->whereIn('category_id', $WhereCategory)
                         ->orderBy('id', 'DESC')
                         ->count();

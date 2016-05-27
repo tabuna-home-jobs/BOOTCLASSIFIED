@@ -3130,3 +3130,9 @@ td.ads-details-td {
     margin: inherit;
     padding: 0px 50px;
 }
+
+.site-map-li > li {
+    width: 33.33333%;
+    float: left;
+    padding: 0px 10px;
+}

@@ -12,16 +12,16 @@
     <title>@yield('title','Доска Объявлений')</title>
     <meta id="token" name="token" value="{{ csrf_token() }}">
     <meta name="description"
-          content="@yield('description','Сайт бесплатных объявлений. Город ' . Session::get('GeoCity')->name  )">
+          content="@yield('description','Сайт бесплатных объявлений. Город ' . $GeoCity->name  )">
     <meta name="keywords"
-          content="@yield('keywords','объявления,бесплатные объявления,доска объявлений,частные объявления,подам объявление,подать объявление,город' . Session::get('GeoCity')->name)">
+          content="@yield('keywords','объявления,бесплатные объявления,доска объявлений,частные объявления,подам объявление,подать объявление,город ' . $GeoCity->name)">
     <meta property="og:title" content="@yield('title','Доска Объявлений' )">
     <meta property="og:description"
-          content="@yield('description','Сайт бесплатных объявлений. Город ' . Session::get('GeoCity')->name )">
+          content="@yield('description','Сайт бесплатных объявлений. Город ' . $GeoCity->name )">
     <meta property="og:image" content="@yield('avatar')">
     <meta name="twitter:title" content="@yield('title','Доска Объявлений')">
     <meta name="twitter:description"
-          content="@yield('description','Сайт бесплатных объявлений. Город ' . Session::get('GeoCity')->name )"/>
+          content="@yield('description','Сайт бесплатных объявлений. Город ' . $GeoCity->name )"/>
     <meta name="twitter:image:src" content="@yield('avatar')"/>
 
 
@@ -105,6 +105,8 @@
                     <a href="{{ route('about.index') }}"><i class="fa fa-users"></i> О нас </a>
                     <a href="{{ route('rules.index') }}"><i class="fa fa-exclamation-triangle"></i> Правила </a>
                     <a href="{{ route('faq.index') }}"><i class="fa fa-life-ring"></i> Помощь </a>
+                    <a href="{{ route('sitemap.index') }}"><i class="fa fa-sitemap"></i> Карта сайта </a>
+
                 </li>
             </ul>
             <ul class=" pull-right navbar-link footer-nav">
